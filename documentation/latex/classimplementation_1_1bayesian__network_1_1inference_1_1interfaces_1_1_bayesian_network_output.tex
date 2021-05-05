@@ -1,0 +1,41 @@
+\hypertarget{classimplementation_1_1bayesian__network_1_1inference_1_1interfaces_1_1_bayesian_network_output}{}\doxysection{implementation.\+bayesian\+\_\+network.\+inference.\+interfaces.\+Bayesian\+Network\+Output Class Reference}
+\label{classimplementation_1_1bayesian__network_1_1inference_1_1interfaces_1_1_bayesian_network_output}\index{implementation.bayesian\_network.inference.interfaces.BayesianNetworkOutput@{implementation.bayesian\_network.inference.interfaces.BayesianNetworkOutput}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{classimplementation_1_1bayesian__network_1_1inference_1_1interfaces_1_1_bayesian_network_output_a32453a2920d9adb2fd61d7cf7957e260}{\+\_\+\+\_\+str\+\_\+\+\_\+}} (self)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}This data class describes the output after a Bayesian network inference for a specific vehicle. For given output
+nodes the infered values and their states are collected in here.
+(Python dataclasses.dataclass object.)
+
+Attributes
+----------
+vehicle_id : str
+    Identifier of the respective vehicle.
+vehicle_situation_state_id : Optional[BayesianNetId]
+    State of the vehicle relative to the ego vehicle and its situation class.  (The default value is None.)
+    (E.g. indicating the state of being a front vehicle in a lane following situation.)
+bayesian_network_id : Optional[str]
+    Identifier for the Bayesian network that was used for the inference.
+output_nodes : List[Node]
+    List of the defined output nodes for this Bayesian network. The infered node values and states are saved in
+    here.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classimplementation_1_1bayesian__network_1_1inference_1_1interfaces_1_1_bayesian_network_output_a32453a2920d9adb2fd61d7cf7957e260}\label{classimplementation_1_1bayesian__network_1_1inference_1_1interfaces_1_1_bayesian_network_output_a32453a2920d9adb2fd61d7cf7957e260}} 
+\index{implementation.bayesian\_network.inference.interfaces.BayesianNetworkOutput@{implementation.bayesian\_network.inference.interfaces.BayesianNetworkOutput}!\_\_str\_\_@{\_\_str\_\_}}
+\index{\_\_str\_\_@{\_\_str\_\_}!implementation.bayesian\_network.inference.interfaces.BayesianNetworkOutput@{implementation.bayesian\_network.inference.interfaces.BayesianNetworkOutput}}
+\doxysubsubsection{\texorpdfstring{\_\_str\_\_()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily  str implementation.\+bayesian\+\_\+network.\+inference.\+interfaces.\+Bayesian\+Network\+Output.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+implementation/bayesian\+\_\+network/inference/\mbox{\hyperlink{interfaces_8py}{interfaces.\+py}}\end{DoxyCompactItemize}

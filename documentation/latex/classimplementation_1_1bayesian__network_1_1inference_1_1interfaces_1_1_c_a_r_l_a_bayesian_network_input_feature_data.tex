@@ -1,0 +1,64 @@
+\hypertarget{classimplementation_1_1bayesian__network_1_1inference_1_1interfaces_1_1_c_a_r_l_a_bayesian_network_input_feature_data}{}\doxysection{implementation.\+bayesian\+\_\+network.\+inference.\+interfaces.\+C\+A\+R\+L\+A\+Bayesian\+Network\+Input\+Feature\+Data Class Reference}
+\label{classimplementation_1_1bayesian__network_1_1inference_1_1interfaces_1_1_c_a_r_l_a_bayesian_network_input_feature_data}\index{implementation.bayesian\_network.inference.interfaces.CARLABayesianNetworkInputFeatureData@{implementation.bayesian\_network.inference.interfaces.CARLABayesianNetworkInputFeatureData}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classimplementation_1_1bayesian__network_1_1inference_1_1interfaces_1_1_c_a_r_l_a_bayesian_network_input_feature_data_a4af9c5129e1f9404cce1a26bb1b6bcaf}{set\+\_\+carla\+\_\+world}} (\char`\"{}carla.\+World\char`\"{} carla\+\_\+world)
+\item 
+None \mbox{\hyperlink{classimplementation_1_1bayesian__network_1_1inference_1_1interfaces_1_1_c_a_r_l_a_bayesian_network_input_feature_data_abdb5a6a3b9a172f7bb2ca4ee0b959ca4}{set\+\_\+carla\+\_\+map}} (\char`\"{}carla.\+Map\char`\"{} carla\+\_\+map)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Data class that is used as input for the creation of the Bayesian network's specific input feature data classes
+that are used in the Bayesian network configurations.
+(Python dataclasses.dataclass object.)
+
+Attributes
+----------
+vehicle_id : str
+    Identifier of the respective vehicle.
+carla_vehicle : carla.Vehicle
+    Vehicle object for the given vehicle from the CARLA simulator.
+bayesian_network_id : Optional[str]
+    Identifier for the Bayesian network that shall be used for the inference. Will only be set if the inference
+    will be performed for this specific vehicle. (The default value is None.)
+
+carla_world : carla.World
+    (Class attribute) World object for the current CARLA simulator world which is the access point for the vehicle's
+    environment.
+carla_map : carla.Map
+    (Class attribute) Map object for the current CARLA simulator world which is the access point for the topology
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classimplementation_1_1bayesian__network_1_1inference_1_1interfaces_1_1_c_a_r_l_a_bayesian_network_input_feature_data_abdb5a6a3b9a172f7bb2ca4ee0b959ca4}\label{classimplementation_1_1bayesian__network_1_1inference_1_1interfaces_1_1_c_a_r_l_a_bayesian_network_input_feature_data_abdb5a6a3b9a172f7bb2ca4ee0b959ca4}} 
+\index{implementation.bayesian\_network.inference.interfaces.CARLABayesianNetworkInputFeatureData@{implementation.bayesian\_network.inference.interfaces.CARLABayesianNetworkInputFeatureData}!set\_carla\_map@{set\_carla\_map}}
+\index{set\_carla\_map@{set\_carla\_map}!implementation.bayesian\_network.inference.interfaces.CARLABayesianNetworkInputFeatureData@{implementation.bayesian\_network.inference.interfaces.CARLABayesianNetworkInputFeatureData}}
+\doxysubsubsection{\texorpdfstring{set\_carla\_map()}{set\_carla\_map()}}
+{\footnotesize\ttfamily  None implementation.\+bayesian\+\_\+network.\+inference.\+interfaces.\+C\+A\+R\+L\+A\+Bayesian\+Network\+Input\+Feature\+Data.\+set\+\_\+carla\+\_\+map (\begin{DoxyParamCaption}\item[{\char`\"{}carla.\+Map\char`\"{}}]{carla\+\_\+map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Sets the given CARLA map object.
+
+Parameters
+----------
+carla_map : carla.Map
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classimplementation_1_1bayesian__network_1_1inference_1_1interfaces_1_1_c_a_r_l_a_bayesian_network_input_feature_data_a4af9c5129e1f9404cce1a26bb1b6bcaf}\label{classimplementation_1_1bayesian__network_1_1inference_1_1interfaces_1_1_c_a_r_l_a_bayesian_network_input_feature_data_a4af9c5129e1f9404cce1a26bb1b6bcaf}} 
+\index{implementation.bayesian\_network.inference.interfaces.CARLABayesianNetworkInputFeatureData@{implementation.bayesian\_network.inference.interfaces.CARLABayesianNetworkInputFeatureData}!set\_carla\_world@{set\_carla\_world}}
+\index{set\_carla\_world@{set\_carla\_world}!implementation.bayesian\_network.inference.interfaces.CARLABayesianNetworkInputFeatureData@{implementation.bayesian\_network.inference.interfaces.CARLABayesianNetworkInputFeatureData}}
+\doxysubsubsection{\texorpdfstring{set\_carla\_world()}{set\_carla\_world()}}
+{\footnotesize\ttfamily  None implementation.\+bayesian\+\_\+network.\+inference.\+interfaces.\+C\+A\+R\+L\+A\+Bayesian\+Network\+Input\+Feature\+Data.\+set\+\_\+carla\+\_\+world (\begin{DoxyParamCaption}\item[{\char`\"{}carla.\+World\char`\"{}}]{carla\+\_\+world }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Sets the given CARLA world object.
+
+Parameters
+----------
+carla_world : carla.World
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+implementation/bayesian\+\_\+network/inference/\mbox{\hyperlink{interfaces_8py}{interfaces.\+py}}\end{DoxyCompactItemize}

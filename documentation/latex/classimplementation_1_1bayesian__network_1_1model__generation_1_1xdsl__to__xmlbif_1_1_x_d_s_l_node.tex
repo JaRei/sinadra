@@ -1,0 +1,24 @@
+\hypertarget{classimplementation_1_1bayesian__network_1_1model__generation_1_1xdsl__to__xmlbif_1_1_x_d_s_l_node}{}\doxysection{implementation.\+bayesian\+\_\+network.\+model\+\_\+generation.\+xdsl\+\_\+to\+\_\+xmlbif.\+X\+D\+S\+L\+Node Class Reference}
+\label{classimplementation_1_1bayesian__network_1_1model__generation_1_1xdsl__to__xmlbif_1_1_x_d_s_l_node}\index{implementation.bayesian\_network.model\_generation.xdsl\_to\_xmlbif.XDSLNode@{implementation.bayesian\_network.model\_generation.xdsl\_to\_xmlbif.XDSLNode}}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}A Bayesian network node data class.
+
+Attributes
+----------
+node_id : str
+    The name/identifier of this specific node.
+states : List[str]
+    The names/identifiers of the node's states.
+parents : List[str]
+    The names/identifiers of the node's direct parents.
+unwrapped_cpt : List[float]
+    The node's conditional probability table unwrapped in a list. The used order is identical to the order in the
+    .xmlbif and .xdsl files.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+implementation/bayesian\+\_\+network/model\+\_\+generation/\mbox{\hyperlink{xdsl__to__xmlbif_8py}{xdsl\+\_\+to\+\_\+xmlbif.\+py}}\end{DoxyCompactItemize}

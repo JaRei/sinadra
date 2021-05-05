@@ -1,0 +1,121 @@
+export CARLA_ROOT=/opt/carla
+export PYTHONPATH=$PYTHONPATH:${CARLA_ROOT}/PythonAPI/carla/dist/carla-0.9.10-py3.6-linux-x86_64.egg
+export PYTHONPATH=$PYTHONPATH:${CARLA_ROOT}/PythonAPI/carla/agents
+export PYTHONPATH=$PYTHONPATH:${CARLA_ROOT}/PythonAPI/carla
+export PYTHONPATH=$PYTHONPATH:${CARLA_ROOT}/PythonAPI
+export PYTHONPATH=$PYTHONPATH:${CARLA_ROOT}/scenario_runner
+
+alias carla="/opt/carla/CarlaUE4.sh"
+
+sinadra() {
+	python3 ~/sinadra/implementation/sinadra_risk_sensor_client.py
+}
+
+run_scenario() {
+
+case "$1" in
+	lf_nobrake)
+
+	python3 /opt/carla/scenario_runner/scenario_runner.py --openscenario ~/sinadra/implementation/scenarios/LaneFollowing1.xosc
+	;;
+
+	lf_nobrake_man)
+
+	python3 /opt/carla/scenario_runner/scenario_runner.py --openscenario ~/sinadra/implementation/scenarios/LaneFollowing1_ManualControl.xosc
+	;;
+
+	lf_stopline_gentle_man)
+
+	python3 /opt/carla/scenario_runner/scenario_runner.py --openscenario ~/sinadra/implementation/scenarios/LaneFollowing2_GentleBraking_ManualControl.xosc
+	;;
+
+	lf_stopline_gentle)
+
+	python3 /opt/carla/scenario_runner/scenario_runner.py --openscenario ~/sinadra/implementation/scenarios/LaneFollowing2_GentleBraking.xosc
+	;;
+
+	lf_stopline_strong_man)
+
+	python3 /opt/carla/scenario_runner/scenario_runner.py --openscenario ~/sinadra/implementation/scenarios/LaneFollowing2_StrongBraking_ManualControl.xosc
+	;;
+
+	lf_stopline_strong)
+
+	python3 /opt/carla/scenario_runner/scenario_runner.py --openscenario ~/sinadra/implementation/scenarios/LaneFollowing2_StrongBraking.xosc
+	;;
+
+	lf_twovehicles_man)
+
+	python3 /opt/carla/scenario_runner/scenario_runner.py --openscenario ~/sinadra/implementation/scenarios/LaneFollowing3_ManualControl.xosc
+	;;
+
+	lf_twovehicles)
+
+	python3 /opt/carla/scenario_runner/scenario_runner.py --openscenario ~/sinadra/implementation/scenarios/LaneFollowing3.xosc
+	;;
+
+	lf_fvlanechange)
+
+	python3 /opt/carla/scenario_runner/scenario_runner.py --openscenario ~/sinadra/implementation/scenarios/LaneFollowing4_FrontLaneChange.xosc
+	;;
+
+	lf_fvlanechange_man)
+
+	python3 /opt/carla/scenario_runner/scenario_runner.py --openscenario ~/sinadra/implementation/scenarios/LaneFollowing4_FrontLaneChange_ManualControl.xosc
+	;;
+
+	lf_overtake)
+
+	python3 /opt/carla/scenario_runner/scenario_runner.py --openscenario ~/sinadra/implementation/scenarios/LaneFollowing5_Overtaken.xosc
+	;;
+
+	lf_overtake_man)
+
+	python3 /opt/carla/scenario_runner/scenario_runner.py --openscenario ~/sinadra/implementation/scenarios/LaneFollowing5_Overtaken_ManualControl.xosc
+	;;
+
+	lf_cutin_ego)
+
+	python3 /opt/carla/scenario_runner/scenario_runner.py --openscenario ~/sinadra/implementation/scenarios/LaneFollowing6_CutInEgo.xosc
+	;;
+
+	lf_cutin_ego_ind)
+
+	python3 /opt/carla/scenario_runner/scenario_runner.py --openscenario ~/sinadra/implementation/scenarios/LaneFollowing6_CutInEgo_Indicator.xosc
+	;;
+
+	lf_cutin_ego_man)
+
+	python3 /opt/carla/scenario_runner/scenario_runner.py --openscenario ~/sinadra/implementation/scenarios/LaneFollowing6_CutInEgo_ManualControl.xosc
+	;;
+
+	lf_cutin_ego_ind_single)
+
+	python3 /opt/carla/scenario_runner/scenario_runner.py --openscenario ~/sinadra/implementation/scenarios/LaneFollowing6_CutInEgo_Indicator_Single.xosc
+	;;
+
+	lf_cutin_ego_single)
+
+	python3 /opt/carla/scenario_runner/scenario_runner.py --openscenario ~/sinadra/implementation/scenarios/LaneFollowing6_CutInEgo_Single.xosc
+	;;
+
+	lf_cutin_fv)
+
+	python3 /opt/carla/scenario_runner/scenario_runner.py --openscenario ~/sinadra/implementation/scenarios/LaneFollowing6_CutInFront.xosc
+	;;
+
+	lf_cutin_fv_ind)
+
+	python3 /opt/carla/scenario_runner/scenario_runner.py --openscenario ~/sinadra/implementation/scenarios/LaneFollowing6_CutInFront_Indicator.xosc
+	;;
+
+
+	lf_cutin_fv_man)
+
+	python3 /opt/carla/scenario_runner/scenario_runner.py --openscenario ~/sinadra/implementation/scenarios/LaneFollowing6_CutInFront_ManualControl.xosc
+	;;
+
+
+esac
+
+}

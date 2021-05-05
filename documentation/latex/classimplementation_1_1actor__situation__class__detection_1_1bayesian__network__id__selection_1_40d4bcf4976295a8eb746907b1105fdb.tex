@@ -1,0 +1,73 @@
+\hypertarget{classimplementation_1_1actor__situation__class__detection_1_1bayesian__network__id__selection_1_40d4bcf4976295a8eb746907b1105fdb}{}\doxysection{implementation.\+actor\+\_\+situation\+\_\+class\+\_\+detection.\+bayesian\+\_\+network\+\_\+id\+\_\+selection.\+bayesian\+\_\+network\+\_\+id\+\_\+selector.\+Bayesian\+Network\+Id\+Selector Class Reference}
+\label{classimplementation_1_1actor__situation__class__detection_1_1bayesian__network__id__selection_1_40d4bcf4976295a8eb746907b1105fdb}\index{implementation.actor\_situation\_class\_detection.bayesian\_network\_id\_selection.bayesian\_network\_id\_selector.BayesianNetworkIdSelector@{implementation.actor\_situation\_class\_detection.bayesian\_network\_id\_selection.bayesian\_network\_id\_selector.BayesianNetworkIdSelector}}
+Inheritance diagram for implementation.\+actor\+\_\+situation\+\_\+class\+\_\+detection.\+bayesian\+\_\+network\+\_\+id\+\_\+selection.\+bayesian\+\_\+network\+\_\+id\+\_\+selector.\+Bayesian\+Network\+Id\+Selector\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.407035cm]{classimplementation_1_1actor__situation__class__detection_1_1bayesian__network__id__selection_1_40d4bcf4976295a8eb746907b1105fdb}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classimplementation_1_1actor__situation__class__detection_1_1bayesian__network__id__selection_1_40d4bcf4976295a8eb746907b1105fdb_abf4d1c5395de40af3b9b1289314420d8}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper}{Vehicle\+Actor\+Wrapper}} \mbox{\hyperlink{classimplementation_1_1actor__situation__class__detection_1_1bayesian__network__id__selection_1_40d4bcf4976295a8eb746907b1105fdb_ab504feda1df4eab9286dab437789804e}{wrapped\+\_\+hero\+\_\+vehicle}}, \mbox{\hyperlink{classimplementation_1_1actor__situation__class__detection_1_1situation__class_1_1_situation_class}{Situation\+Class}} \mbox{\hyperlink{classimplementation_1_1actor__situation__class__detection_1_1bayesian__network__id__selection_1_40d4bcf4976295a8eb746907b1105fdb_a5b964cebad74e374b922eef8623d03f4}{hero\+\_\+situation\+\_\+class}}, List\mbox{[}\char`\"{}Vehicle\+Actor\+Wrapper\char`\"{}\mbox{]} wrapped\+\_\+other\+\_\+vehicles, carla.\+Map carla\+\_\+map, carla.\+Debug\+Helper carla\+\_\+debug\+\_\+helper)
+\item 
+List\mbox{[}\char`\"{}Vehicle\+Dependent\+B\+N\+Id\char`\"{}\mbox{]} \mbox{\hyperlink{classimplementation_1_1actor__situation__class__detection_1_1bayesian__network__id__selection_1_40d4bcf4976295a8eb746907b1105fdb_a7f63374e24b32422721ab02741eda188}{get\+\_\+vehicle\+\_\+dependent\+\_\+bn\+\_\+ids}} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classimplementation_1_1actor__situation__class__detection_1_1bayesian__network__id__selection_1_40d4bcf4976295a8eb746907b1105fdb_ab504feda1df4eab9286dab437789804e}{wrapped\+\_\+hero\+\_\+vehicle}}
+\item 
+\mbox{\hyperlink{classimplementation_1_1actor__situation__class__detection_1_1bayesian__network__id__selection_1_40d4bcf4976295a8eb746907b1105fdb_a5b964cebad74e374b922eef8623d03f4}{hero\+\_\+situation\+\_\+class}}
+\item 
+\mbox{\hyperlink{classimplementation_1_1actor__situation__class__detection_1_1bayesian__network__id__selection_1_40d4bcf4976295a8eb746907b1105fdb_a981123d4f9f47276790da04bac552810}{wrapped\+\_\+other\+\_\+vehicles}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classimplementation_1_1actor__situation__class__detection_1_1bayesian__network__id__selection_1_40d4bcf4976295a8eb746907b1105fdb_abf4d1c5395de40af3b9b1289314420d8}\label{classimplementation_1_1actor__situation__class__detection_1_1bayesian__network__id__selection_1_40d4bcf4976295a8eb746907b1105fdb_abf4d1c5395de40af3b9b1289314420d8}} 
+\index{implementation.actor\_situation\_class\_detection.bayesian\_network\_id\_selection.bayesian\_network\_id\_selector.BayesianNetworkIdSelector@{implementation.actor\_situation\_class\_detection.bayesian\_network\_id\_selection.bayesian\_network\_id\_selector.BayesianNetworkIdSelector}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!implementation.actor\_situation\_class\_detection.bayesian\_network\_id\_selection.bayesian\_network\_id\_selector.BayesianNetworkIdSelector@{implementation.actor\_situation\_class\_detection.bayesian\_network\_id\_selection.bayesian\_network\_id\_selector.BayesianNetworkIdSelector}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def implementation.\+actor\+\_\+situation\+\_\+class\+\_\+detection.\+bayesian\+\_\+network\+\_\+id\+\_\+selection.\+bayesian\+\_\+network\+\_\+id\+\_\+selector.\+Bayesian\+Network\+Id\+Selector.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper}{Vehicle\+Actor\+Wrapper}}}]{wrapped\+\_\+hero\+\_\+vehicle,  }\item[{\mbox{\hyperlink{classimplementation_1_1actor__situation__class__detection_1_1situation__class_1_1_situation_class}{Situation\+Class}}}]{hero\+\_\+situation\+\_\+class,  }\item[{List\mbox{[}\char`\"{}Vehicle\+Actor\+Wrapper\char`\"{}\mbox{]}}]{wrapped\+\_\+other\+\_\+vehicles,  }\item[{carla.\+Map}]{carla\+\_\+map,  }\item[{carla.\+Debug\+Helper}]{carla\+\_\+debug\+\_\+helper }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classimplementation_1_1actor__situation__class__detection_1_1bayesian__network__id__selection_1_40d4bcf4976295a8eb746907b1105fdb_a7f63374e24b32422721ab02741eda188}\label{classimplementation_1_1actor__situation__class__detection_1_1bayesian__network__id__selection_1_40d4bcf4976295a8eb746907b1105fdb_a7f63374e24b32422721ab02741eda188}} 
+\index{implementation.actor\_situation\_class\_detection.bayesian\_network\_id\_selection.bayesian\_network\_id\_selector.BayesianNetworkIdSelector@{implementation.actor\_situation\_class\_detection.bayesian\_network\_id\_selection.bayesian\_network\_id\_selector.BayesianNetworkIdSelector}!get\_vehicle\_dependent\_bn\_ids@{get\_vehicle\_dependent\_bn\_ids}}
+\index{get\_vehicle\_dependent\_bn\_ids@{get\_vehicle\_dependent\_bn\_ids}!implementation.actor\_situation\_class\_detection.bayesian\_network\_id\_selection.bayesian\_network\_id\_selector.BayesianNetworkIdSelector@{implementation.actor\_situation\_class\_detection.bayesian\_network\_id\_selection.bayesian\_network\_id\_selector.BayesianNetworkIdSelector}}
+\doxysubsubsection{\texorpdfstring{get\_vehicle\_dependent\_bn\_ids()}{get\_vehicle\_dependent\_bn\_ids()}}
+{\footnotesize\ttfamily  List\mbox{[}\char`\"{}Vehicle\+Dependent\+B\+N\+Id\char`\"{}\mbox{]} implementation.\+actor\+\_\+situation\+\_\+class\+\_\+detection.\+bayesian\+\_\+network\+\_\+id\+\_\+selection.\+bayesian\+\_\+network\+\_\+id\+\_\+selector.\+Bayesian\+Network\+Id\+Selector.\+get\+\_\+vehicle\+\_\+dependent\+\_\+bn\+\_\+ids (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This method first checks the current situation class the hero vehicle is in.
+Dependent on the active situation class, a specific bayesian network id selector object is created for obtaining
+the corresponding bayesian network ids for each vehicle.
+:return: List of VehicleDependentBNId objects
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classimplementation_1_1actor__situation__class__detection_1_1bayesian__network__id__selection_1_40d4bcf4976295a8eb746907b1105fdb_a5b964cebad74e374b922eef8623d03f4}\label{classimplementation_1_1actor__situation__class__detection_1_1bayesian__network__id__selection_1_40d4bcf4976295a8eb746907b1105fdb_a5b964cebad74e374b922eef8623d03f4}} 
+\index{implementation.actor\_situation\_class\_detection.bayesian\_network\_id\_selection.bayesian\_network\_id\_selector.BayesianNetworkIdSelector@{implementation.actor\_situation\_class\_detection.bayesian\_network\_id\_selection.bayesian\_network\_id\_selector.BayesianNetworkIdSelector}!hero\_situation\_class@{hero\_situation\_class}}
+\index{hero\_situation\_class@{hero\_situation\_class}!implementation.actor\_situation\_class\_detection.bayesian\_network\_id\_selection.bayesian\_network\_id\_selector.BayesianNetworkIdSelector@{implementation.actor\_situation\_class\_detection.bayesian\_network\_id\_selection.bayesian\_network\_id\_selector.BayesianNetworkIdSelector}}
+\doxysubsubsection{\texorpdfstring{hero\_situation\_class}{hero\_situation\_class}}
+{\footnotesize\ttfamily implementation.\+actor\+\_\+situation\+\_\+class\+\_\+detection.\+bayesian\+\_\+network\+\_\+id\+\_\+selection.\+bayesian\+\_\+network\+\_\+id\+\_\+selector.\+Bayesian\+Network\+Id\+Selector.\+hero\+\_\+situation\+\_\+class}
+
+\mbox{\Hypertarget{classimplementation_1_1actor__situation__class__detection_1_1bayesian__network__id__selection_1_40d4bcf4976295a8eb746907b1105fdb_ab504feda1df4eab9286dab437789804e}\label{classimplementation_1_1actor__situation__class__detection_1_1bayesian__network__id__selection_1_40d4bcf4976295a8eb746907b1105fdb_ab504feda1df4eab9286dab437789804e}} 
+\index{implementation.actor\_situation\_class\_detection.bayesian\_network\_id\_selection.bayesian\_network\_id\_selector.BayesianNetworkIdSelector@{implementation.actor\_situation\_class\_detection.bayesian\_network\_id\_selection.bayesian\_network\_id\_selector.BayesianNetworkIdSelector}!wrapped\_hero\_vehicle@{wrapped\_hero\_vehicle}}
+\index{wrapped\_hero\_vehicle@{wrapped\_hero\_vehicle}!implementation.actor\_situation\_class\_detection.bayesian\_network\_id\_selection.bayesian\_network\_id\_selector.BayesianNetworkIdSelector@{implementation.actor\_situation\_class\_detection.bayesian\_network\_id\_selection.bayesian\_network\_id\_selector.BayesianNetworkIdSelector}}
+\doxysubsubsection{\texorpdfstring{wrapped\_hero\_vehicle}{wrapped\_hero\_vehicle}}
+{\footnotesize\ttfamily implementation.\+actor\+\_\+situation\+\_\+class\+\_\+detection.\+bayesian\+\_\+network\+\_\+id\+\_\+selection.\+bayesian\+\_\+network\+\_\+id\+\_\+selector.\+Bayesian\+Network\+Id\+Selector.\+wrapped\+\_\+hero\+\_\+vehicle}
+
+\mbox{\Hypertarget{classimplementation_1_1actor__situation__class__detection_1_1bayesian__network__id__selection_1_40d4bcf4976295a8eb746907b1105fdb_a981123d4f9f47276790da04bac552810}\label{classimplementation_1_1actor__situation__class__detection_1_1bayesian__network__id__selection_1_40d4bcf4976295a8eb746907b1105fdb_a981123d4f9f47276790da04bac552810}} 
+\index{implementation.actor\_situation\_class\_detection.bayesian\_network\_id\_selection.bayesian\_network\_id\_selector.BayesianNetworkIdSelector@{implementation.actor\_situation\_class\_detection.bayesian\_network\_id\_selection.bayesian\_network\_id\_selector.BayesianNetworkIdSelector}!wrapped\_other\_vehicles@{wrapped\_other\_vehicles}}
+\index{wrapped\_other\_vehicles@{wrapped\_other\_vehicles}!implementation.actor\_situation\_class\_detection.bayesian\_network\_id\_selection.bayesian\_network\_id\_selector.BayesianNetworkIdSelector@{implementation.actor\_situation\_class\_detection.bayesian\_network\_id\_selection.bayesian\_network\_id\_selector.BayesianNetworkIdSelector}}
+\doxysubsubsection{\texorpdfstring{wrapped\_other\_vehicles}{wrapped\_other\_vehicles}}
+{\footnotesize\ttfamily implementation.\+actor\+\_\+situation\+\_\+class\+\_\+detection.\+bayesian\+\_\+network\+\_\+id\+\_\+selection.\+bayesian\+\_\+network\+\_\+id\+\_\+selector.\+Bayesian\+Network\+Id\+Selector.\+wrapped\+\_\+other\+\_\+vehicles}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+implementation/actor\+\_\+situation\+\_\+class\+\_\+detection/bayesian\+\_\+network\+\_\+id\+\_\+selection/\mbox{\hyperlink{bayesian__network__id__selector_8py}{bayesian\+\_\+network\+\_\+id\+\_\+selector.\+py}}\end{DoxyCompactItemize}

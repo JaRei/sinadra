@@ -1,0 +1,44 @@
+\hypertarget{classimplementation_1_1bayesian__network_1_1inference_1_1inference_1_1_bayesian_network_inference}{}\doxysection{implementation.\+bayesian\+\_\+network.\+inference.\+inference.\+Bayesian\+Network\+Inference Class Reference}
+\label{classimplementation_1_1bayesian__network_1_1inference_1_1inference_1_1_bayesian_network_inference}\index{implementation.bayesian\_network.inference.inference.BayesianNetworkInference@{implementation.bayesian\_network.inference.inference.BayesianNetworkInference}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List\mbox{[}\mbox{\hyperlink{classimplementation_1_1bayesian__network_1_1inference_1_1interfaces_1_1_bayesian_network_output}{Bayesian\+Network\+Output}}\mbox{]} \mbox{\hyperlink{classimplementation_1_1bayesian__network_1_1inference_1_1inference_1_1_bayesian_network_inference_a54bdfde0ed2e1a2ceff22f5f3d939c9d}{bn\+\_\+inferences\+\_\+for\+\_\+vehicles}} (self, List\mbox{[}\char`\"{}Bayesian\+Network\+Data\char`\"{}\mbox{]} bayesian\+\_\+network\+\_\+data, \char`\"{}multiprocessing.\+Pool\char`\"{} multiprocessing\+\_\+pool)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Performs the Bayesian network inference for all given Bayesian models and input features.\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classimplementation_1_1bayesian__network_1_1inference_1_1inference_1_1_bayesian_network_inference_a54bdfde0ed2e1a2ceff22f5f3d939c9d}\label{classimplementation_1_1bayesian__network_1_1inference_1_1inference_1_1_bayesian_network_inference_a54bdfde0ed2e1a2ceff22f5f3d939c9d}} 
+\index{implementation.bayesian\_network.inference.inference.BayesianNetworkInference@{implementation.bayesian\_network.inference.inference.BayesianNetworkInference}!bn\_inferences\_for\_vehicles@{bn\_inferences\_for\_vehicles}}
+\index{bn\_inferences\_for\_vehicles@{bn\_inferences\_for\_vehicles}!implementation.bayesian\_network.inference.inference.BayesianNetworkInference@{implementation.bayesian\_network.inference.inference.BayesianNetworkInference}}
+\doxysubsubsection{\texorpdfstring{bn\_inferences\_for\_vehicles()}{bn\_inferences\_for\_vehicles()}}
+{\footnotesize\ttfamily  List\mbox{[}\mbox{\hyperlink{classimplementation_1_1bayesian__network_1_1inference_1_1interfaces_1_1_bayesian_network_output}{Bayesian\+Network\+Output}}\mbox{]} implementation.\+bayesian\+\_\+network.\+inference.\+inference.\+Bayesian\+Network\+Inference.\+bn\+\_\+inferences\+\_\+for\+\_\+vehicles (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{List\mbox{[}\char`\"{}Bayesian\+Network\+Data\char`\"{}\mbox{]}}]{bayesian\+\_\+network\+\_\+data,  }\item[{\char`\"{}multiprocessing.\+Pool\char`\"{}}]{multiprocessing\+\_\+pool }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Performs the Bayesian network inference for the given Bayesian network data objects, respectively vehicles,
+and builds the output data instances with the infered values for the defined output nodes in each Bayesian
+network.
+
+Parameters
+----------
+bayesian_network_data : List[BayesianNetworkData]
+    List of the data objects, respectively vehicles, for which the Bayesian network inference shall be
+    performed.
+multiprocessing_pool : multiprocessing.Pool
+    Processing pool that is used for the parallel Bayesian network inference. (Initialized outside once each
+    run for performance reasons.)
+
+Returns
+-------
+List[BayesianNetworkOutput]
+    List of the data objects that hold alle relevant information about the vehicle after the Bayesian inference
+    including the infered values of the defined output nodes.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+implementation/bayesian\+\_\+network/inference/\mbox{\hyperlink{inference_8py}{inference.\+py}}\end{DoxyCompactItemize}

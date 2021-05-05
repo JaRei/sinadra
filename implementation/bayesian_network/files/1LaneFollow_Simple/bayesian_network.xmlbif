@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BIF VERSION="0.3">
+  <NETWORK>
+    <NAME>UNTITLED</NAME>
+    <VARIABLE TYPE="nature">
+      <NAME>TTC</NAME>
+      <OUTCOME>Critical</OUTCOME>
+      <OUTCOME>Medium</OUTCOME>
+      <OUTCOME>High</OUTCOME>
+      <PROPERTY/>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>TTC_Measurement_Uncertainty</NAME>
+      <OUTCOME>High</OUTCOME>
+      <OUTCOME>Low</OUTCOME>
+      <PROPERTY/>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>Measured_TTC</NAME>
+      <OUTCOME>Critical</OUTCOME>
+      <OUTCOME>Medium</OUTCOME>
+      <OUTCOME>High</OUTCOME>
+      <PROPERTY/>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>HeavyRain</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY/>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>FVViewRange</NAME>
+      <OUTCOME>Restricted</OUTCOME>
+      <OUTCOME>Clear</OUTCOME>
+      <PROPERTY/>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>FV_Situation_Perception</NAME>
+      <OUTCOME>Incorrect</OUTCOME>
+      <OUTCOME>Correct</OUTCOME>
+      <PROPERTY/>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>FV_Situation_Assessment</NAME>
+      <OUTCOME>Incorrect</OUTCOME>
+      <OUTCOME>Correct</OUTCOME>
+      <PROPERTY/>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>FV_Maneuver_Decision</NAME>
+      <OUTCOME>Correct</OUTCOME>
+      <OUTCOME>Incorrect</OUTCOME>
+      <PROPERTY/>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>FV_Front_Existence</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY/>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>FV_Braking_Behavior</NAME>
+      <OUTCOME>Emergency</OUTCOME>
+      <OUTCOME>TargetBrake</OUTCOME>
+      <OUTCOME>FollowVehicle</OUTCOME>
+      <OUTCOME>NoBrake</OUTCOME>
+      <PROPERTY/>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>FVType</NAME>
+      <OUTCOME>Smaller_than_ego</OUTCOME>
+      <OUTCOME>Taller_than_ego</OUTCOME>
+      <PROPERTY/>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>Ego_FV_Perception</NAME>
+      <OUTCOME>Obstructed</OUTCOME>
+      <OUTCOME>Unobstructed</OUTCOME>
+      <PROPERTY/>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>Predicted_FV_Braking_Behavior</NAME>
+      <OUTCOME>Emergency</OUTCOME>
+      <OUTCOME>TargetBrake</OUTCOME>
+      <OUTCOME>FollowVehicle</OUTCOME>
+      <OUTCOME>NoBrake</OUTCOME>
+      <PROPERTY/>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>TTC</FOR>
+      <TABLE>0.005 0.6 0.395 </TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>TTC_Measurement_Uncertainty</FOR>
+      <TABLE>0.1 0.9 </TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>Measured_TTC</FOR>
+      <GIVEN>TTC_Measurement_Uncertainty</GIVEN>
+      <GIVEN>TTC</GIVEN>
+      <TABLE>0.8 0.19 0.01 0.1 0.8 0.1 0.01 0.1899999999999999 0.8 0.98 0.019 0.001000000000000018 0.01 0.98 0.01 0.001 0.019 0.98 </TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>HeavyRain</FOR>
+      <TABLE>1e-05 0.99999 </TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>FVViewRange</FOR>
+      <GIVEN>HeavyRain</GIVEN>
+      <TABLE>1.0 0.0 0.0 1.0 </TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>FV_Situation_Perception</FOR>
+      <GIVEN>FVViewRange</GIVEN>
+      <TABLE>0.3 0.7 0.01 0.99 </TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>FV_Situation_Assessment</FOR>
+      <GIVEN>FV_Situation_Perception</GIVEN>
+      <TABLE>0.7 0.3 0.01 0.99 </TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>FV_Maneuver_Decision</FOR>
+      <GIVEN>FV_Situation_Assessment</GIVEN>
+      <TABLE>0.05 0.95 0.999 0.001 </TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>FV_Front_Existence</FOR>
+      <TABLE>0.5 0.5 </TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>FV_Braking_Behavior</FOR>
+      <GIVEN>FV_Maneuver_Decision</GIVEN>
+      <GIVEN>Measured_TTC</GIVEN>
+      <GIVEN>FV_Front_Existence</GIVEN>
+      <TABLE>0.97 0.01 0.01 0.01 0.97 0.01 0.01 0.01 0.01 0.045 0.9 0.045 0.01 0.9 0.01 0.08 0.4 0.05 0.5 0.05 0.4 0.295 0.01 0.295 0.1 0.01 0.88 0.01 0.1 0.445 0.01 0.445 0.02 0.01088888888888889 0.9582222222222221 0.01088888888888889 0.02 0.4845555555555555 0.01088888888888889 0.4845555555555555 0.05 0.01055555555555556 0.9288888888888889 0.01055555555555556 0.05 0.4697222222222222 0.01055555555555556 0.4697222222222222 </TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>FVType</FOR>
+      <TABLE>0.95 0.05 </TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>Ego_FV_Perception</FOR>
+      <GIVEN>FVType</GIVEN>
+      <GIVEN>HeavyRain</GIVEN>
+      <TABLE>0.2 0.8 0.01000000000000001 0.99 0.99 0.01 0.95 0.05 </TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>Predicted_FV_Braking_Behavior</FOR>
+      <GIVEN>Ego_FV_Perception</GIVEN>
+      <GIVEN>FV_Braking_Behavior</GIVEN>
+      <TABLE>0.997 0.001 0.001 0.001 0.8 0.1799999999999999 0.01 0.01 0.8 0.01 0.1799999999999999 0.01 0.8 0.01 0.01 0.1799999999999999 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </TABLE>
+    </DEFINITION>
+  </NETWORK>
+</BIF>

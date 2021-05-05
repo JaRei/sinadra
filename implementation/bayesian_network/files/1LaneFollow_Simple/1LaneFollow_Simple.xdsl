@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<smile version="1.0" id="Network2" numsamples="10000" discsamples="10000">
+	<nodes>
+		<cpt id="TTC">
+			<state id="Critical" />
+			<state id="Medium" />
+			<state id="High" />
+			<probabilities>0.005 0.6 0.395</probabilities>
+		</cpt>
+		<cpt id="TTC_Measurement_Uncertainty">
+			<state id="High" />
+			<state id="Low" />
+			<probabilities>0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="Measured_TTC">
+			<state id="Critical" />
+			<state id="Medium" />
+			<state id="High" />
+			<parents>TTC_Measurement_Uncertainty TTC</parents>
+			<probabilities>0.8 0.19 0.01 0.1 0.8 0.1 0.01 0.1899999999999999 0.8 0.98 0.019 0.001000000000000018 0.01 0.98 0.01 0.001 0.019 0.98</probabilities>
+		</cpt>
+		<cpt id="HeavyRain">
+			<state id="Yes" />
+			<state id="No" />
+			<probabilities>1e-05 0.99999</probabilities>
+		</cpt>
+		<cpt id="FVViewRange">
+			<state id="Restricted" />
+			<state id="Clear" />
+			<parents>HeavyRain</parents>
+			<probabilities>1 0 0 1</probabilities>
+		</cpt>
+		<cpt id="FV_Situation_Perception">
+			<state id="Incorrect" />
+			<state id="Correct" />
+			<parents>FVViewRange</parents>
+			<probabilities>0.3 0.7 0.01 0.99</probabilities>
+		</cpt>
+		<cpt id="FV_Situation_Assessment">
+			<state id="Incorrect" />
+			<state id="Correct" />
+			<parents>FV_Situation_Perception</parents>
+			<probabilities>0.7 0.3 0.01 0.99</probabilities>
+		</cpt>
+		<cpt id="FV_Maneuver_Decision">
+			<state id="Correct" />
+			<state id="Incorrect" />
+			<parents>FV_Situation_Assessment</parents>
+			<probabilities>0.05 0.95 0.999 0.001</probabilities>
+		</cpt>
+		<cpt id="FV_Front_Existence">
+			<state id="Yes" />
+			<state id="No" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="FV_Braking_Behavior">
+			<state id="Emergency" />
+			<state id="TargetBrake" />
+			<state id="FollowVehicle" />
+			<state id="NoBrake" />
+			<parents>FV_Maneuver_Decision Measured_TTC FV_Front_Existence</parents>
+			<probabilities>0.97 0.01 0.01 0.01 0.97 0.01 0.01 0.01 0.01 0.045 0.9 0.045 0.01 0.9 0.01 0.08 0.4 0.05 0.5 0.05 0.4 0.295 0.01 0.295 0.1 0.01 0.88 0.01 0.1 0.445 0.01 0.445 0.02 0.01088888888888889 0.9582222222222221 0.01088888888888889 0.02 0.4845555555555555 0.01088888888888889 0.4845555555555555 0.05 0.01055555555555556 0.9288888888888889 0.01055555555555556 0.05 0.4697222222222222 0.01055555555555556 0.4697222222222222</probabilities>
+		</cpt>
+		<cpt id="FVType">
+			<state id="Smaller_than_ego" />
+			<state id="Taller_than_ego" />
+			<probabilities>0.95 0.05</probabilities>
+		</cpt>
+		<cpt id="Ego_FV_Perception">
+			<state id="Obstructed" />
+			<state id="Unobstructed" />
+			<parents>FVType HeavyRain</parents>
+			<probabilities>0.2 0.8 0.01000000000000001 0.99 0.99 0.01 0.95 0.05</probabilities>
+		</cpt>
+		<cpt id="Predicted_FV_Braking_Behavior" target="true">
+			<state id="Emergency" />
+			<state id="TargetBrake" />
+			<state id="FollowVehicle" />
+			<state id="NoBrake" />
+			<parents>Ego_FV_Perception FV_Braking_Behavior</parents>
+			<probabilities>0.997 0.001 0.001 0.001 0.8 0.1799999999999999 0.01 0.01 0.8 0.01 0.1799999999999999 0.01 0.8 0.01 0.01 0.1799999999999999 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</probabilities>
+		</cpt>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 3.0.5905.2 1d6b38b6cba8f00" name="LaneFollow_FV_AdversaryVehicle">
+			<node id="TTC">
+				<name>TTC</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>464 293 547 338</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="TTC_Measurement_Uncertainty">
+				<name>TTC Measurement Uncertainty</name>
+				<interior color="ccffcc" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>601 286 701 351</position>
+				<barchart active="true" width="128" height="73" />
+			</node>
+			<node id="Measured_TTC">
+				<name>Measured TTC</name>
+				<interior color="ccffcc" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>553 401 635 452</position>
+				<comment>P(Measured TTC | Real TTC, Measurement Uncertainty)</comment>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="FV_Braking_Behavior">
+				<name>FV Braking Behavior</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>679 505 771 572</position>
+				<barchart active="true" width="192" height="90" />
+			</node>
+			<node id="FV_Situation_Assessment">
+				<name>FV Situation Assessment</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>832 286 924 347</position>
+				<barchart active="true" width="155" height="73" />
+			</node>
+			<node id="FV_Situation_Perception">
+				<name>FV Situation Perception</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>837 180 918 230</position>
+				<barchart active="true" width="148" height="69" />
+			</node>
+			<node id="Ego_FV_Perception">
+				<name>Ego FV Situation Perception</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>435 504 522 560</position>
+				<barchart active="true" width="156" height="64" />
+			</node>
+			<node id="Predicted_FV_Braking_Behavior">
+				<name>Predicted FV Braking Behavior</name>
+				<interior color="ffcc99" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>543 633 652 689</position>
+				<barchart active="true" width="186" height="90" />
+			</node>
+			<node id="FV_Maneuver_Decision">
+				<name>FV Maneuver Decision</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>837 397 918 447</position>
+				<barchart active="true" width="148" height="72" />
+			</node>
+			<node id="HeavyRain">
+				<name>Heavy Rain</name>
+				<interior color="ccffcc" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>303 75 451 143</position>
+				<barchart active="true" width="171" height="90" />
+			</node>
+			<node id="FVViewRange">
+				<name>FV View Range</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>601 75 749 143</position>
+				<barchart active="true" width="157" height="90" />
+			</node>
+			<node id="FVType">
+				<name>FV Type</name>
+				<interior color="ccffcc" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>173 493 321 561</position>
+				<barchart active="true" width="181" height="90" />
+			</node>
+			<textbox>
+				<caption>Perception Stack Capabilities</caption>
+				<font color="000000" name="Arial" size="11" bold="true" />
+				<position>190 432 311 468</position>
+			</textbox>
+			<node id="FV_Front_Existence">
+				<name>FV Front Existence</name>
+				<interior color="ccffcc" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>912 503 1060 571</position>
+				<barchart active="true" width="171" height="90" />
+			</node>
+		</genie>
+	</extensions>
+</smile>

@@ -1,0 +1,79 @@
+\hypertarget{sinadra__numpy_8py}{}\section{implementation/sinadra\+\_\+numpy.py File Reference}
+\label{sinadra__numpy_8py}\index{implementation/sinadra\+\_\+numpy.\+py@{implementation/sinadra\+\_\+numpy.\+py}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceimplementation_1_1sinadra__numpy}{implementation.\+sinadra\+\_\+numpy}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespaceimplementation_1_1sinadra__numpy_a6d120eefe9aa77a8583707031d3dc5b1}{implementation.\+sinadra\+\_\+numpy.\+risk\+\_\+parallel\+\_\+np} (parameter\+\_\+dict)
+\item 
+def \hyperlink{namespaceimplementation_1_1sinadra__numpy_aae676b8631ad939cd8e14447efa09532}{implementation.\+sinadra\+\_\+numpy.\+emergency\+\_\+brake\+\_\+risk\+\_\+np} (ego\+\_\+pos\+\_\+mean, ego\+\_\+pos\+\_\+std, fv\+\_\+init)
+\item 
+def \hyperlink{namespaceimplementation_1_1sinadra__numpy_a860a27bdddcb077128f658d1f3588b4c}{implementation.\+sinadra\+\_\+numpy.\+target\+\_\+brake\+\_\+risk\+\_\+np} (ego\+\_\+pos\+\_\+mean, ego\+\_\+pos\+\_\+std, fv\+\_\+init, target\+\_\+distance, target\+\_\+safe\+\_\+distance)
+\item 
+def \hyperlink{namespaceimplementation_1_1sinadra__numpy_a52785bad643f89b926726b76c6d2c51a}{implementation.\+sinadra\+\_\+numpy.\+idm\+\_\+risk\+\_\+np} (ego\+\_\+pos\+\_\+mean, ego\+\_\+pos\+\_\+std, fv\+\_\+init, fv\+\_\+length, fv\+\_\+front\+\_\+init)
+\item 
+def \hyperlink{namespaceimplementation_1_1sinadra__numpy_aad679429167f93ab13073831a35cf785}{implementation.\+sinadra\+\_\+numpy.\+gen\+\_\+emergency\+\_\+brake} (kinematic\+\_\+init, num\+\_\+traj, time\+\_\+horizon, time\+\_\+inc)
+\begin{DoxyCompactList}\small\item\em Trajectory Distribution Generators (Longitudinal Behaviors) \end{DoxyCompactList}\item 
+def \hyperlink{namespaceimplementation_1_1sinadra__numpy_a880ff1cd053cbd5833ccb7955baff31c}{implementation.\+sinadra\+\_\+numpy.\+emergency\+\_\+decel\+\_\+timestep} (time\+\_\+inc, last, decel, pos\+\_\+uncertainty)
+\item 
+def \hyperlink{namespaceimplementation_1_1sinadra__numpy_a52a74e6053f94d63450dafb12a21f2d1}{implementation.\+sinadra\+\_\+numpy.\+gen\+\_\+constant\+\_\+accel} (vehicle\+\_\+init, num\+\_\+traj, time\+\_\+horizon, time\+\_\+inc)
+\item 
+def \hyperlink{namespaceimplementation_1_1sinadra__numpy_a091b3594c1bb34670cad99da45f69bb3}{implementation.\+sinadra\+\_\+numpy.\+constant\+\_\+accel\+\_\+timestep} (time\+\_\+inc, last, decel, pos\+\_\+uncertainty)
+\item 
+def \hyperlink{namespaceimplementation_1_1sinadra__numpy_a1938fc389773760eebb246250ded1b83}{implementation.\+sinadra\+\_\+numpy.\+gen\+\_\+targetbrake} (vehicle\+\_\+init, target\+\_\+distance, target\+\_\+safe\+\_\+distance, num\+\_\+traj, time\+\_\+horizon, time\+\_\+inc)
+\item 
+def \hyperlink{namespaceimplementation_1_1sinadra__numpy_ab1d01df58fb7fcf290059a4e1d3553f3}{implementation.\+sinadra\+\_\+numpy.\+targetbrake\+\_\+timestep} (time\+\_\+inc, last, decel, pos\+\_\+uncertainty)
+\item 
+def \hyperlink{namespaceimplementation_1_1sinadra__numpy_acc612c3cc09bb3f7dd6a1646e6481246}{implementation.\+sinadra\+\_\+numpy.\+gen\+\_\+idm} (vehicle\+\_\+init\+\_\+rear, vehicle\+\_\+length, vehicle\+\_\+front\+\_\+init\+\_\+rear, num\+\_\+traj, time\+\_\+horizon, time\+\_\+inc)
+\item 
+def \hyperlink{namespaceimplementation_1_1sinadra__numpy_ad5a4ac03b8d79ce978157dbb233c4116}{implementation.\+sinadra\+\_\+numpy.\+idm\+\_\+timestep} (time\+\_\+inc, last, length\+\_\+self, vehicle\+\_\+front\+\_\+init, timegap\+\_\+sample, pos\+\_\+uncertainty)
+\item 
+def \hyperlink{namespaceimplementation_1_1sinadra__numpy_adaff4dd4e07da3b80ec677586290a7e3}{implementation.\+sinadra\+\_\+numpy.\+lc\+\_\+right\+\_\+risk\+\_\+np} (ego\+\_\+pos\+\_\+x\+\_\+mean, ego\+\_\+pos\+\_\+x\+\_\+std, ego\+\_\+pos\+\_\+y\+\_\+mean, ego\+\_\+pos\+\_\+y\+\_\+std, sv\+\_\+init, lc\+\_\+target)
+\begin{DoxyCompactList}\small\item\em Trajectory Distribution Generators (Lateral Behaviors) \end{DoxyCompactList}\item 
+def \hyperlink{namespaceimplementation_1_1sinadra__numpy_a4b7cbd2d26084cd3277008980f653f56}{implementation.\+sinadra\+\_\+numpy.\+gen\+\_\+lanechange} (vehicle\+\_\+init, lc\+\_\+target, avg\+\_\+curve\+\_\+speed, num\+\_\+traj, time\+\_\+horizon, time\+\_\+inc)
+\item 
+def \hyperlink{namespaceimplementation_1_1sinadra__numpy_a6340d89002f5f933015712e232c5516b}{implementation.\+sinadra\+\_\+numpy.\+generate\+\_\+bezier}
+\item 
+def \hyperlink{namespaceimplementation_1_1sinadra__numpy_a1b621325a54fc077f500c4fb8becb427}{implementation.\+sinadra\+\_\+numpy.\+eggert\+\_\+risk} (ego\+\_\+pos\+\_\+mean, ego\+\_\+pos\+\_\+std, fv\+\_\+pos\+\_\+mean, fv\+\_\+pos\+\_\+std, time\+\_\+inc)
+\begin{DoxyCompactList}\small\item\em Risk Computation. \end{DoxyCompactList}\item 
+def \hyperlink{namespaceimplementation_1_1sinadra__numpy_a71526482fa4b72a6e4e70803620d4939}{implementation.\+sinadra\+\_\+numpy.\+risk\+\_\+indicator} (mean\+\_\+d\+\_\+t, sig\+\_\+d\+\_\+t)
+\item 
+def \hyperlink{namespaceimplementation_1_1sinadra__numpy_a3ab0b363737f4bd8ac0dc34ffa32e4cb}{implementation.\+sinadra\+\_\+numpy.\+event\+\_\+rate} (risk\+\_\+ind)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{namespaceimplementation_1_1sinadra__numpy_a46e710322c0614f31e91a06300914f57}{implementation.\+sinadra\+\_\+numpy.\+beta} = 1
+\item 
+int \hyperlink{namespaceimplementation_1_1sinadra__numpy_ad241c78c9390af3c90e0f0e5b329475e}{implementation.\+sinadra\+\_\+numpy.\+rate\+\_\+max} = 1
+\item 
+int \hyperlink{namespaceimplementation_1_1sinadra__numpy_a6e461e36aaa1f88a64c42356c03b0c29}{implementation.\+sinadra\+\_\+numpy.\+time\+\_\+horizon\+\_\+secs} = 4
+\item 
+float \hyperlink{namespaceimplementation_1_1sinadra__numpy_a12dc648a1f889bc02c3353e9e40c449b}{implementation.\+sinadra\+\_\+numpy.\+time\+\_\+step\+\_\+secs} = 0.\+2
+\item 
+int \hyperlink{namespaceimplementation_1_1sinadra__numpy_a70e8ee67891d6f7a7037636211b3c425}{implementation.\+sinadra\+\_\+numpy.\+num\+\_\+trajectories} = 10
+\item 
+list \hyperlink{namespaceimplementation_1_1sinadra__numpy_a7e5d963d759b21547d6bfb6e4d59dbb1}{implementation.\+sinadra\+\_\+numpy.\+ego} = \mbox{[} 2.\+4278543 , 0. , 4.\+94966072, -\/0.\+01708032, 1.\+49986053, -\/0.\+01528454\mbox{]}
+\item 
+list \hyperlink{namespaceimplementation_1_1sinadra__numpy_af46bc79a7d30743826bc7ea2614ed60e}{implementation.\+sinadra\+\_\+numpy.\+sv\+\_\+init} = \mbox{[}-\/0.\+49431022, -\/3.\+52472471, 10.\+34933648, 0.\+01858271, 2.\+99963594, 0.\+12546862\mbox{]}
+\item 
+list \hyperlink{namespaceimplementation_1_1sinadra__numpy_aa864273e93960c9fea1b39fd0b5d9d5d}{implementation.\+sinadra\+\_\+numpy.\+lc\+\_\+target} = \mbox{[}12.\+427854299545288, 0.\+0\mbox{]}
+\item 
+\hyperlink{namespaceimplementation_1_1sinadra__numpy_a9e4d923a830ff18359b063c459ad086e}{implementation.\+sinadra\+\_\+numpy.\+sv\+\_\+pos\+\_\+x\+\_\+mean}
+\item 
+\hyperlink{namespaceimplementation_1_1sinadra__numpy_af027725f7945a29278667e52ce882d34}{implementation.\+sinadra\+\_\+numpy.\+sv\+\_\+pos\+\_\+x\+\_\+std}
+\item 
+\hyperlink{namespaceimplementation_1_1sinadra__numpy_aa77bd0ac23bd72febb4ce46ac60752d7}{implementation.\+sinadra\+\_\+numpy.\+sv\+\_\+pos\+\_\+y\+\_\+mean}
+\item 
+\hyperlink{namespaceimplementation_1_1sinadra__numpy_aad9b3991770ec9b701a17aa44d5f27cb}{implementation.\+sinadra\+\_\+numpy.\+sv\+\_\+pos\+\_\+y\+\_\+std}
+\item 
+\hyperlink{namespaceimplementation_1_1sinadra__numpy_a03968fe07c6e67dc7cb0cca30fb4957f}{implementation.\+sinadra\+\_\+numpy.\+ego\+\_\+mean}
+\item 
+\hyperlink{namespaceimplementation_1_1sinadra__numpy_a9faba76b4cca2e2c06b3b5153cc34c62}{implementation.\+sinadra\+\_\+numpy.\+ego\+\_\+std}
+\item 
+def \hyperlink{namespaceimplementation_1_1sinadra__numpy_a9e18ed66f6c61c6adea2d1230d44cb9d}{implementation.\+sinadra\+\_\+numpy.\+collision\+\_\+prob} = eggert\+\_\+risk(ego\+\_\+mean, ego\+\_\+std, sv\+\_\+pos\+\_\+x\+\_\+mean, sv\+\_\+pos\+\_\+x\+\_\+std, time\+\_\+step\+\_\+secs)
+\end{DoxyCompactItemize}

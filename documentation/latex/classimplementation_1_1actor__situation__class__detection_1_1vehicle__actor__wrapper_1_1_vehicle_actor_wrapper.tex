@@ -1,0 +1,172 @@
+\hypertarget{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper}{}\doxysection{implementation.\+actor\+\_\+situation\+\_\+class\+\_\+detection.\+vehicle\+\_\+actor\+\_\+wrapper.\+Vehicle\+Actor\+Wrapper Class Reference}
+\label{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper}\index{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper@{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper}}
+Inheritance diagram for implementation.\+actor\+\_\+situation\+\_\+class\+\_\+detection.\+vehicle\+\_\+actor\+\_\+wrapper.\+Vehicle\+Actor\+Wrapper\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_aa9ba440c4a8a4cef9764033073db67d0}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, carla.\+Vehicle \mbox{\hyperlink{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_a883123671cd96e9d6bb8072119c64608}{vehicle}})
+\item 
+def \mbox{\hyperlink{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_af7077301cef97b0b4842c9d4c221640b}{role\+\_\+name}} (self)
+\item 
+def \mbox{\hyperlink{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_a8833bbb1a122a4aba1aced7d3f7c6530}{id}} (self)
+\item 
+def \mbox{\hyperlink{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_a20beab7a17865630337d1d3797552a17}{transform}} (self)
+\item 
+def \mbox{\hyperlink{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_a0e913c295c7f4276b0f71144aa0c7e43}{forward\+\_\+vector}} (self)
+\item 
+(Polygon, List\mbox{[}\char`\"{}Line\+String\char`\"{}\mbox{]}) \mbox{\hyperlink{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_a5c6c97c4ac3b889384be6ed56c4e52d6}{get\+\_\+front\+\_\+sensing\+\_\+area}} (self, carla.\+Map carla\+\_\+map)
+\item 
+(Polygon, List\mbox{[}\char`\"{}Line\+String\char`\"{}\mbox{]}) \mbox{\hyperlink{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_a128aad88b915e589955235717439f2e7}{get\+\_\+side\+\_\+sensing\+\_\+area}} (self, carla.\+Map carla\+\_\+map, \mbox{\hyperlink{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_point_id}{Vehicle\+Point\+Id}} side\+\_\+vehicle\+\_\+point\+\_\+id)
+\item 
+List\mbox{[}\char`\"{}Point\char`\"{}\mbox{]} \mbox{\hyperlink{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_adabf738f94c19c1d6972073fb0905896}{get\+\_\+rear\+\_\+mid\+\_\+center\+\_\+linestring\+\_\+points}} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_a883123671cd96e9d6bb8072119c64608}{vehicle}}
+\item 
+\mbox{\hyperlink{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_a2d5984ba61d90743c38ba6f69ebe6805}{vehicle\+\_\+points}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Wrapper class for a carla.Vehicle object. The carla.Vehicle object can be accessed through the vehicle attribute.
+
+Attributes
+----------
+vehicle: carla.Vehicle
+    carla.Vehicle object that is wrapped within this object.
+vehicle_points: Dict[VehiclePointId, carla.Vector3D]
+    Wrapped vehicle actors that are on the right lane\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_aa9ba440c4a8a4cef9764033073db67d0}\label{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_aa9ba440c4a8a4cef9764033073db67d0}} 
+\index{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper@{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper@{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def implementation.\+actor\+\_\+situation\+\_\+class\+\_\+detection.\+vehicle\+\_\+actor\+\_\+wrapper.\+Vehicle\+Actor\+Wrapper.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{carla.\+Vehicle}]{vehicle }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_a0e913c295c7f4276b0f71144aa0c7e43}\label{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_a0e913c295c7f4276b0f71144aa0c7e43}} 
+\index{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper@{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper}!forward\_vector@{forward\_vector}}
+\index{forward\_vector@{forward\_vector}!implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper@{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper}}
+\doxysubsubsection{\texorpdfstring{forward\_vector()}{forward\_vector()}}
+{\footnotesize\ttfamily def implementation.\+actor\+\_\+situation\+\_\+class\+\_\+detection.\+vehicle\+\_\+actor\+\_\+wrapper.\+Vehicle\+Actor\+Wrapper.\+forward\+\_\+vector (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Retrieves the forward vector as carla.Vector3D object of the wrapped carla.Vehicle object\end{DoxyVerb}
+ \mbox{\Hypertarget{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_a5c6c97c4ac3b889384be6ed56c4e52d6}\label{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_a5c6c97c4ac3b889384be6ed56c4e52d6}} 
+\index{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper@{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper}!get\_front\_sensing\_area@{get\_front\_sensing\_area}}
+\index{get\_front\_sensing\_area@{get\_front\_sensing\_area}!implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper@{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper}}
+\doxysubsubsection{\texorpdfstring{get\_front\_sensing\_area()}{get\_front\_sensing\_area()}}
+{\footnotesize\ttfamily  (Polygon, List\mbox{[}\char`\"{}Line\+String\char`\"{}\mbox{]}) implementation.\+actor\+\_\+situation\+\_\+class\+\_\+detection.\+vehicle\+\_\+actor\+\_\+wrapper.\+Vehicle\+Actor\+Wrapper.\+get\+\_\+front\+\_\+sensing\+\_\+area (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{carla.\+Map}]{carla\+\_\+map }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Determines front sensing area for this vehicle using the configuration parameter
+FRONT_SENSING_DISTANCE_TIME_GAP_IN_SECONDS. Returns front sensing area as shapely.geometry.Polygon object.
+If configuration parameter DEBUG_MODE is set to true, this method additionally returns the lines of the polygon
+as a list of shapely.geometry.LineString objects for visualization in carla.
+
+Parameters
+----------
+carla_map: carla.Map
+    Map object to obtain way points for sensing area calculation
+
+Returns
+-------
+Polygon
+    A shapely.geometry.Polygon object that defines the front sensing area
+List[LineString]
+    A list of shapely.geometry.LineString objects that represent the edges of the front sensing area.
+    The line strings are only needed for drawing debug lines of the sensing area on the Carla server. Therefore
+    the list is only returned if DEBUG_MODE flag is set to True. Otherwise None is returned instead.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_adabf738f94c19c1d6972073fb0905896}\label{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_adabf738f94c19c1d6972073fb0905896}} 
+\index{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper@{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper}!get\_rear\_mid\_center\_linestring\_points@{get\_rear\_mid\_center\_linestring\_points}}
+\index{get\_rear\_mid\_center\_linestring\_points@{get\_rear\_mid\_center\_linestring\_points}!implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper@{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper}}
+\doxysubsubsection{\texorpdfstring{get\_rear\_mid\_center\_linestring\_points()}{get\_rear\_mid\_center\_linestring\_points()}}
+{\footnotesize\ttfamily  List\mbox{[}\char`\"{}Point\char`\"{}\mbox{]} implementation.\+actor\+\_\+situation\+\_\+class\+\_\+detection.\+vehicle\+\_\+actor\+\_\+wrapper.\+Vehicle\+Actor\+Wrapper.\+get\+\_\+rear\+\_\+mid\+\_\+center\+\_\+linestring\+\_\+points (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Method is used for drawing debug lines. It returns a tuple of two points. First is located above and
+second is located beneath the rear center point of the vehicle.
+
+Returns
+-------
+List[Point]
+    A tuple of shapely.geometry.Point objects, where the first point is located above
+    and the second is located beneath the rear center point of the vehicle.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_a128aad88b915e589955235717439f2e7}\label{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_a128aad88b915e589955235717439f2e7}} 
+\index{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper@{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper}!get\_side\_sensing\_area@{get\_side\_sensing\_area}}
+\index{get\_side\_sensing\_area@{get\_side\_sensing\_area}!implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper@{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper}}
+\doxysubsubsection{\texorpdfstring{get\_side\_sensing\_area()}{get\_side\_sensing\_area()}}
+{\footnotesize\ttfamily  (Polygon, List\mbox{[}\char`\"{}Line\+String\char`\"{}\mbox{]}) implementation.\+actor\+\_\+situation\+\_\+class\+\_\+detection.\+vehicle\+\_\+actor\+\_\+wrapper.\+Vehicle\+Actor\+Wrapper.\+get\+\_\+side\+\_\+sensing\+\_\+area (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{carla.\+Map}]{carla\+\_\+map,  }\item[{\mbox{\hyperlink{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_point_id}{Vehicle\+Point\+Id}}
+                              }]{side\+\_\+vehicle\+\_\+point\+\_\+id }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Determines sensing area next to ego vehicle on other lane. On which side the sensing area is created,
+depends on parameter side_vehicle_point_id.
+
+Parameters
+----------
+carla_map: carla.Map
+    Map object to obtain way points for sensing area calculation
+side_vehicle_point_id: VehiclePointId
+    Center mid location of the vehicle side the sensing area shall be created on.
+    Possible values are CENTER_MID_LEFT and CENTER_MID_RIGHT
+
+Returns
+-------
+Polygon
+    A shapely.geometry.Polygon object that defines the side sensing area
+List[LineString]
+    A list of shapely.geometry.LineString objects that represent the edges of the side sensing area.
+    The line strings are only needed for drawing debug lines of the sensing area on the Carla server. Therefore
+    the list is only returned if DEBUG_MODE flag is set to True. Otherwise None is returned instead.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_a8833bbb1a122a4aba1aced7d3f7c6530}\label{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_a8833bbb1a122a4aba1aced7d3f7c6530}} 
+\index{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper@{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper}!id@{id}}
+\index{id@{id}!implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper@{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily def implementation.\+actor\+\_\+situation\+\_\+class\+\_\+detection.\+vehicle\+\_\+actor\+\_\+wrapper.\+Vehicle\+Actor\+Wrapper.\+id (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Retrieves the id of the wrapped carla.Vehicle object\end{DoxyVerb}
+ \mbox{\Hypertarget{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_af7077301cef97b0b4842c9d4c221640b}\label{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_af7077301cef97b0b4842c9d4c221640b}} 
+\index{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper@{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper}!role\_name@{role\_name}}
+\index{role\_name@{role\_name}!implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper@{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper}}
+\doxysubsubsection{\texorpdfstring{role\_name()}{role\_name()}}
+{\footnotesize\ttfamily def implementation.\+actor\+\_\+situation\+\_\+class\+\_\+detection.\+vehicle\+\_\+actor\+\_\+wrapper.\+Vehicle\+Actor\+Wrapper.\+role\+\_\+name (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Retrieves the role_name attribute value of the wrapped carla.Vehicle object\end{DoxyVerb}
+ \mbox{\Hypertarget{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_a20beab7a17865630337d1d3797552a17}\label{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_a20beab7a17865630337d1d3797552a17}} 
+\index{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper@{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper}!transform@{transform}}
+\index{transform@{transform}!implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper@{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper}}
+\doxysubsubsection{\texorpdfstring{transform()}{transform()}}
+{\footnotesize\ttfamily def implementation.\+actor\+\_\+situation\+\_\+class\+\_\+detection.\+vehicle\+\_\+actor\+\_\+wrapper.\+Vehicle\+Actor\+Wrapper.\+transform (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Retrieves the carla.Transform object of the wrapped carla.Vehicle object\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_a883123671cd96e9d6bb8072119c64608}\label{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_a883123671cd96e9d6bb8072119c64608}} 
+\index{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper@{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper}!vehicle@{vehicle}}
+\index{vehicle@{vehicle}!implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper@{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper}}
+\doxysubsubsection{\texorpdfstring{vehicle}{vehicle}}
+{\footnotesize\ttfamily implementation.\+actor\+\_\+situation\+\_\+class\+\_\+detection.\+vehicle\+\_\+actor\+\_\+wrapper.\+Vehicle\+Actor\+Wrapper.\+vehicle}
+
+\mbox{\Hypertarget{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_a2d5984ba61d90743c38ba6f69ebe6805}\label{classimplementation_1_1actor__situation__class__detection_1_1vehicle__actor__wrapper_1_1_vehicle_actor_wrapper_a2d5984ba61d90743c38ba6f69ebe6805}} 
+\index{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper@{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper}!vehicle\_points@{vehicle\_points}}
+\index{vehicle\_points@{vehicle\_points}!implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper@{implementation.actor\_situation\_class\_detection.vehicle\_actor\_wrapper.VehicleActorWrapper}}
+\doxysubsubsection{\texorpdfstring{vehicle\_points}{vehicle\_points}}
+{\footnotesize\ttfamily implementation.\+actor\+\_\+situation\+\_\+class\+\_\+detection.\+vehicle\+\_\+actor\+\_\+wrapper.\+Vehicle\+Actor\+Wrapper.\+vehicle\+\_\+points}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+implementation/actor\+\_\+situation\+\_\+class\+\_\+detection/\mbox{\hyperlink{vehicle__actor__wrapper_8py}{vehicle\+\_\+actor\+\_\+wrapper.\+py}}\end{DoxyCompactItemize}
