@@ -37,11 +37,15 @@ Here it is important to consider that this requires probabilistic prediction, wh
 Doing this allows obtaining probabilistic behavior models enabling behavior intent prediction for all road users, which can then be transferred into probabilistic motion models enabling trajectory prediction, which can finally be used as input to risk assessment. 
 However, this increases the computational costs of such an approach, and a computationally efficient, yet comprehensive situation-aware DRA solution is still missing.
 
+![SINADRA Risk Sensor Context](documentation/md_resources/sinadra_risk_sensor_context.png "SINADRA Risk Sensor Context")
+
 For this purpose, in this repository we present the software realization of *Situation-Aware* Dynamic Risk Assessment (SINADRA), an approach that aims at improving risk assessment accuracy by employing situational awareness for behavior prediction. 
 SINADRA uses probabilistic Bayesian network models to infer behavior intents of other traffic participants based on dynamically measured environmental cues. 
 These behavior intents are subsequently transformed into trajectory distributions by using behavior-specific motion models. 
 Given the predicted future positions of traffic participants and a planned ego trajectory, probabilistic risk metrics can determine the risk of executing the planned ego trajectory in the current situation. 
 We realized the SINADRA computation pipeline as a Python software component and coupled it with the [CARLA simulator](https://carla.org/).
+
+The work presented in this repository was partially supported by the [Intel Collaborative Research Institute ICRI SAVe](http://icri-save.de/).
 
 ### Paper (**TODO**)
 If you use the SINADRA component for any publication, please cite the following paper:
@@ -53,8 +57,6 @@ If you use the SINADRA component for any publication, please cite the following 
    year={XXX}
 }
 ```
-
-![SINADRA Risk Sensor Context](documentation/md_resources/sinadra_risk_sensor_context.png "SINADRA Risk Sensor Context")
 
 ## How to Setup the System Environment <a name="how_to_setup"/>
 
