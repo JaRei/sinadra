@@ -47,14 +47,19 @@ We realized the SINADRA computation pipeline as a Python software component and 
 
 The work presented in this repository was partially supported by the [Intel Collaborative Research Institute ICRI SAVe](http://icri-save.de/).
 
-### Paper (**TODO**)
+### Paper
 If you use the SINADRA component for any publication, please cite the following paper:
 ```
-@INPROCEEDINGS{
-   title={Towards a Software Component to Perform Situation-Aware Dynamic Risk Assessment for Autonomous Vehicles}
-   author={Reich, Jan and Wellstein, Marc and Sorokos, Ioannis and Oboril, Fabian and Scholl, Kay-Ulrich}
-   booktitle={XXX}
-   year={XXX}
+@InProceedings{SINADRA21,
+author="Reich, Jan
+and Wellstein, Marc
+and Sorokos, Ioannis
+and Oboril, Fabian
+and Scholl, Kay-Ulrich",
+title="Towards a Software Component to Perform Situation-Aware Dynamic Risk Assessment for Autonomous Vehicles",
+booktitle="EDCC 2021 2nd Int. Workshop on Dynamic Risk Management for Autonomous Systems (DREAMS)",
+year="2021",
+publisher="Springer International Publishing"
 }
 ```
 
