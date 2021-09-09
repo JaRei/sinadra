@@ -1,0 +1,80 @@
+\hypertarget{classimplementation_1_1data__model_1_1entity_1_1_bounding_box}{}\section{implementation.\+data\+\_\+model.\+entity.\+Bounding\+Box Class Reference}
+\label{classimplementation_1_1data__model_1_1entity_1_1_bounding_box}\index{implementation.\+data\+\_\+model.\+entity.\+Bounding\+Box@{implementation.\+data\+\_\+model.\+entity.\+Bounding\+Box}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classimplementation_1_1data__model_1_1entity_1_1_bounding_box_aee06e03485e4ca7770eff56e30856cf2}{get\+\_\+middle\+\_\+points}
+\item 
+def \hyperlink{classimplementation_1_1data__model_1_1entity_1_1_bounding_box_af113a1cd36b743c1aeaf4274cd07933a}{get\+\_\+world\+\_\+vertices}
+\item 
+def \hyperlink{classimplementation_1_1data__model_1_1entity_1_1_bounding_box_afc64d90d6cccc29866992de2d6fdb7d7}{get\+\_\+local\+\_\+vertices} (self)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classimplementation_1_1data__model_1_1entity_1_1_bounding_box_a77a1e731c9cfef373c286b0ba2da7706}{Location}
+\item 
+\hyperlink{classimplementation_1_1data__model_1_1entity_1_1_bounding_box_a2260283c12eb6a02a4d6684cb4c44333}{Dimension}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Defines geometric properties of the entities as a simplified three dimensional bounding box.
+(Python dataclasses.dataclass object.)
+
+Attributes
+----------
+center : Location
+    Represents the geometrical center of the bounding expressed in coordinates that refer to the coordinate
+    system of the entity
+dimension: Dimension
+    Width, length and height of the bounding box
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classimplementation_1_1data__model_1_1entity_1_1_bounding_box_afc64d90d6cccc29866992de2d6fdb7d7}\label{classimplementation_1_1data__model_1_1entity_1_1_bounding_box_afc64d90d6cccc29866992de2d6fdb7d7}} 
+\index{implementation\+::data\+\_\+model\+::entity\+::\+Bounding\+Box@{implementation\+::data\+\_\+model\+::entity\+::\+Bounding\+Box}!get\+\_\+local\+\_\+vertices@{get\+\_\+local\+\_\+vertices}}
+\index{get\+\_\+local\+\_\+vertices@{get\+\_\+local\+\_\+vertices}!implementation\+::data\+\_\+model\+::entity\+::\+Bounding\+Box@{implementation\+::data\+\_\+model\+::entity\+::\+Bounding\+Box}}
+\subsubsection{\texorpdfstring{get\+\_\+local\+\_\+vertices()}{get\_local\_vertices()}}
+{\footnotesize\ttfamily def implementation.\+data\+\_\+model.\+entity.\+Bounding\+Box.\+get\+\_\+local\+\_\+vertices (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{List,  }\item[{}]{Location }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the vertices of the bounding box using the local coordinate system of the object
+
+Returns
+-------
+List[Location]
+    List of Location objects representing a vertice using the objects local coordinates
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classimplementation_1_1data__model_1_1entity_1_1_bounding_box_aee06e03485e4ca7770eff56e30856cf2}\label{classimplementation_1_1data__model_1_1entity_1_1_bounding_box_aee06e03485e4ca7770eff56e30856cf2}} 
+\index{implementation\+::data\+\_\+model\+::entity\+::\+Bounding\+Box@{implementation\+::data\+\_\+model\+::entity\+::\+Bounding\+Box}!get\+\_\+middle\+\_\+points@{get\+\_\+middle\+\_\+points}}
+\index{get\+\_\+middle\+\_\+points@{get\+\_\+middle\+\_\+points}!implementation\+::data\+\_\+model\+::entity\+::\+Bounding\+Box@{implementation\+::data\+\_\+model\+::entity\+::\+Bounding\+Box}}
+\subsubsection{\texorpdfstring{get\+\_\+middle\+\_\+points()}{get\_middle\_points()}}
+{\footnotesize\ttfamily def implementation.\+data\+\_\+model.\+entity.\+Bounding\+Box.\+get\+\_\+middle\+\_\+points (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{world\+\_\+position }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classimplementation_1_1data__model_1_1entity_1_1_bounding_box_af113a1cd36b743c1aeaf4274cd07933a}\label{classimplementation_1_1data__model_1_1entity_1_1_bounding_box_af113a1cd36b743c1aeaf4274cd07933a}} 
+\index{implementation\+::data\+\_\+model\+::entity\+::\+Bounding\+Box@{implementation\+::data\+\_\+model\+::entity\+::\+Bounding\+Box}!get\+\_\+world\+\_\+vertices@{get\+\_\+world\+\_\+vertices}}
+\index{get\+\_\+world\+\_\+vertices@{get\+\_\+world\+\_\+vertices}!implementation\+::data\+\_\+model\+::entity\+::\+Bounding\+Box@{implementation\+::data\+\_\+model\+::entity\+::\+Bounding\+Box}}
+\subsubsection{\texorpdfstring{get\+\_\+world\+\_\+vertices()}{get\_world\_vertices()}}
+{\footnotesize\ttfamily def implementation.\+data\+\_\+model.\+entity.\+Bounding\+Box.\+get\+\_\+world\+\_\+vertices (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{world\+\_\+position }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classimplementation_1_1data__model_1_1entity_1_1_bounding_box_a2260283c12eb6a02a4d6684cb4c44333}\label{classimplementation_1_1data__model_1_1entity_1_1_bounding_box_a2260283c12eb6a02a4d6684cb4c44333}} 
+\index{implementation\+::data\+\_\+model\+::entity\+::\+Bounding\+Box@{implementation\+::data\+\_\+model\+::entity\+::\+Bounding\+Box}!Dimension@{Dimension}}
+\index{Dimension@{Dimension}!implementation\+::data\+\_\+model\+::entity\+::\+Bounding\+Box@{implementation\+::data\+\_\+model\+::entity\+::\+Bounding\+Box}}
+\subsubsection{\texorpdfstring{Dimension}{Dimension}}
+{\footnotesize\ttfamily implementation.\+data\+\_\+model.\+entity.\+Bounding\+Box.\+Dimension\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classimplementation_1_1data__model_1_1entity_1_1_bounding_box_a77a1e731c9cfef373c286b0ba2da7706}\label{classimplementation_1_1data__model_1_1entity_1_1_bounding_box_a77a1e731c9cfef373c286b0ba2da7706}} 
+\index{implementation\+::data\+\_\+model\+::entity\+::\+Bounding\+Box@{implementation\+::data\+\_\+model\+::entity\+::\+Bounding\+Box}!Location@{Location}}
+\index{Location@{Location}!implementation\+::data\+\_\+model\+::entity\+::\+Bounding\+Box@{implementation\+::data\+\_\+model\+::entity\+::\+Bounding\+Box}}
+\subsubsection{\texorpdfstring{Location}{Location}}
+{\footnotesize\ttfamily implementation.\+data\+\_\+model.\+entity.\+Bounding\+Box.\+Location\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+implementation/data\+\_\+model/\hyperlink{entity_8py}{entity.\+py}\end{DoxyCompactItemize}

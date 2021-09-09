@@ -11,27 +11,28 @@ from actor_situation_class_detection.bayesian_network_id_selection.two_lane_foll
     TwoLaneFollowingBNIdSelector
 from actor_situation_class_detection.bayesian_network_id_selection.bayesian_network_id import BayesianNetId
 
-from actor_situation_class_detection.vehicle_actor_wrapper import VehicleActorWrapper
 from actor_situation_class_detection.situation_class import SituationClass, TwoLaneFollowingSituationClass
 
-from typing import List
+from typing import List, TYPE_CHECKING
 
-import carla
-
+if TYPE_CHECKING:
+    from data_model.vehicle import EgoVehicle, OtherVehicle
+    from data_model.map import Map
+    from simulators.simulator_controller import SimulatorController
 
 class BayesianNetworkIdSelector(object):
     def __init__(self,
-                 wrapped_hero_vehicle: VehicleActorWrapper,
+                 hero_vehicle: "EgoVehicle",
                  hero_situation_class: SituationClass,
-                 wrapped_other_vehicles: List["VehicleActorWrapper"],
-                 carla_map: carla.Map,
-                 carla_debug_helper: carla.DebugHelper):
-        self.wrapped_hero_vehicle = wrapped_hero_vehicle
+                 other_vehicles: List["OtherVehicle"],
+                 map: "Map",
+                 simulator_controller: "SimulatorController"):
+        self.hero_vehicle: "EgoVehicle" = hero_vehicle
         self.hero_situation_class = hero_situation_class
-        self.wrapped_other_vehicles = wrapped_other_vehicles
+        self.other_vehicles: List["OtherVehicle"] = other_vehicles
 
-        self._carla_map = carla_map
-        self._carla_debug_helper = carla_debug_helper
+        self.map: "Map" = map
+        self._simulator_controller = simulator_controller
 
     def get_vehicle_dependent_bn_ids(self) -> List["VehicleDependentBNId"]:
         """
@@ -47,16 +48,16 @@ class BayesianNetworkIdSelector(object):
             return vehicle_dependent_bn_ids
 
         hero_bn_id = self._get_bayesian_network_id_for_hero()
-        hero_vehicle_bn_id = VehicleDependentBNId(self.wrapped_hero_vehicle, hero_bn_id)
+        hero_vehicle_bn_id = VehicleDependentBNId(self.hero_vehicle, hero_bn_id)
         vehicle_dependent_bn_ids.append(hero_vehicle_bn_id)
 
         if isinstance(self.hero_situation_class, TwoLaneFollowingSituationClass):
             two_lane_foll_bn_id_selector: TwoLaneFollowingBNIdSelector = TwoLaneFollowingBNIdSelector(
                 self.hero_situation_class,
-                self.wrapped_hero_vehicle,
-                self.wrapped_other_vehicles,
-                self._carla_map,
-                self._carla_debug_helper)
+                self.hero_vehicle,
+                self.other_vehicles,
+                self.map,
+                self._simulator_controller)
 
             vehicle_dependent_bn_ids.extend(
                 two_lane_foll_bn_id_selector.get_vehicle_dependent_bn_ids_for_two_lane_following_sit_class()

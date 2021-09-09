@@ -8,17 +8,20 @@
 import inspect
 import math
 from enum import Enum
-from typing import List, Dict
+from typing import List, Dict, TYPE_CHECKING
 
-import carla
+from data_model.positions import Vector3D
 from shapely.geometry import Polygon, LineString, Point
 from shapely_ext.decompose import Decomposer
 
-from sinadra_configuration_parameters import \
-    DEBUG_MODE, \
-    FRONT_SENSING_DISTANCE_TIME_GAP_IN_SECONDS, \
-    SENSING_AREA_WAYPOINT_DISTANCE, \
-    SIDE_SENSING_AREA_LENGTH
+from sinadra_configuration_parameters import DEBUG_MODE, FRONT_SENSING_DISTANCE_TIME_GAP_IN_SECONDS, \
+    SENSING_AREA_WAYPOINT_DISTANCE, SIDE_SENSING_AREA_LENGTH
+
+if TYPE_CHECKING:
+    from data_model.positions import Location
+    from carla import Vehicle
+    from carla import Map
+    from carla import Waypoint
 
 
 class VehiclePointId(Enum):
@@ -44,7 +47,7 @@ class VehicleActorWrapper(object):
 
 
     """
-    def __init__(self, vehicle: carla.Vehicle):
+    def __init__(self, vehicle: "Vehicle"):
         self.vehicle = vehicle
         self.vehicle_points = self._get_vehicle_points()
         pass
@@ -69,7 +72,7 @@ class VehicleActorWrapper(object):
         """Retrieves the forward vector as carla.Vector3D object of the wrapped carla.Vehicle object"""
         return self.transform.get_forward_vector()
 
-    def get_front_sensing_area(self, carla_map: carla.Map) -> (Polygon, List["LineString"]):
+    def get_front_sensing_area(self, carla_map: "Map") -> (Polygon, List["LineString"]):
         """Determines front sensing area for this vehicle using the configuration parameter
         FRONT_SENSING_DISTANCE_TIME_GAP_IN_SECONDS. Returns front sensing area as shapely.geometry.Polygon object.
         If configuration parameter DEBUG_MODE is set to true, this method additionally returns the lines of the polygon
@@ -110,7 +113,7 @@ class VehicleActorWrapper(object):
         return polygon, lines_of_sensing_area
 
     def get_side_sensing_area(self,
-                              carla_map: carla.Map,
+                              carla_map: "Map",
                               side_vehicle_point_id: VehiclePointId
                               ) -> (Polygon, List["LineString"]):
         """Determines sensing area next to ego vehicle on other lane. On which side the sensing area is created,
@@ -209,7 +212,7 @@ class VehicleActorWrapper(object):
                 start_waypoint = next_waypoint
         return waypoints
 
-    def _get_waypoints_next_to_vehicle_by_side(self, carla_map: carla.Map, side_vehicle_point_id: VehiclePointId):
+    def _get_waypoints_next_to_vehicle_by_side(self, carla_map: "Map", side_vehicle_point_id: VehiclePointId):
         right_vector = self.transform.get_right_vector()
         reference_point_on_vehicle_side = None
         if side_vehicle_point_id == VehiclePointId.CENTER_MID_RIGHT or side_vehicle_point_id == VehiclePointId.CENTER_MID_LEFT:
@@ -254,11 +257,11 @@ class VehicleActorWrapper(object):
         return waypoints_next_to_ego
 
     def _get_next_or_previous_waypoints_for_side_lane_sensing(self,
-                                                              starting_waypoint: carla.Waypoint,
+                                                              starting_waypoint: "Waypoint",
                                                               direction_string: str,
                                                               number_of_waypoints: int,
                                                               vehicle_wp_lane_id: int
-                                                              ) -> List["carla.Waypoint"]:
+                                                              ) -> List["Waypoint"]:
         """Returns waypoints to a single given direction depending on value of parameter direction_string for side
         sensing area.
 
@@ -299,7 +302,7 @@ class VehicleActorWrapper(object):
                 starting_waypoint = subsequent_wp
         return waypoints
 
-    def _create_polygon_from_waypoints(self, waypoints: List["carla.Waypoint"]):
+    def _create_polygon_from_waypoints(self, waypoints: List["Waypoint"]):
         line = self._get_line_string_from_waypoints(waypoints)
         dilated = line.buffer(1.5)
         polygon_dict = dilated.__geo_interface__  # {'type':'LineString', 'coordinates':tuple(coords)}
@@ -311,7 +314,7 @@ class VehicleActorWrapper(object):
         polygon = Polygon(polygon_cords)
         return polygon
 
-    def _get_line_string_from_waypoints(self, waypoints: List["carla.Waypoint"]):
+    def _get_line_string_from_waypoints(self, waypoints: List["Waypoint"]):
         line_strings = []
         if waypoints is None:
             return line_strings
@@ -343,10 +346,10 @@ class VehicleActorWrapper(object):
         """
         rear_mid_center_vector = self.vehicle_points[VehiclePointId.REAR_MID_CENTER]
 
-        upper_line_string_point_vec = carla.Vector3D(rear_mid_center_vector.x, rear_mid_center_vector.y,
-                                                     rear_mid_center_vector.z + 3)
-        lower_line_string_point_vec = carla.Vector3D(rear_mid_center_vector.x, rear_mid_center_vector.y,
-                                                     rear_mid_center_vector.z - 3)
+        upper_line_string_point_vec = Vector3D(rear_mid_center_vector.x, rear_mid_center_vector.y,
+                                               rear_mid_center_vector.z + 3)
+        lower_line_string_point_vec = Vector3D(rear_mid_center_vector.x, rear_mid_center_vector.y,
+                                               rear_mid_center_vector.z - 3)
 
         return [upper_line_string_point_vec, lower_line_string_point_vec]
 

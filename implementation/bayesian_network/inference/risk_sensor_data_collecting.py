@@ -6,12 +6,13 @@
 #
 #################### END LICENSE BLOCK #################################
 from sinadra_configuration_parameters import VEHICLE_SITUATION_STATE_TO_BAYESIAN_NETWORK
-from typing import Dict, List, TYPE_CHECKING
+from typing import Dict, List, TYPE_CHECKING, Union
 import importlib
 
 if TYPE_CHECKING:
-    from bayesian_network.inference.interfaces import BayesianNetworkData, CARLABayesianNetworkInputFeatureData
+    from bayesian_network.inference.interfaces import BayesianNetworkData, BayesianNetworkInputFeatureData
     from bayesian_network.inference.sinadra_risk_sensor_data import SINADRARiskSensorData
+    from data_model.vehicle import EgoVehicle, OtherVehicle
 
 
 class RiskSensorDataBuilder:
@@ -26,7 +27,8 @@ class RiskSensorDataBuilder:
 
     def collect_carla_data_and_build_risk_sensor_data(self, bayesian_network_data: List["BayesianNetworkData"],
                                                       carla_input_feature_data:
-                                                      List["CARLABayesianNetworkInputFeatureData"]
+                                                      List["BayesianNetworkInputFeatureData"],
+                                                      all_vehicles: Union["EgoVehicle", "OtherVehicle"]
                                                       ) -> List["BayesianNetworkData"]:
         """Builds the correct SINADRA risk sensor data input feature data interface for each Bayesian network for each 
         vehicle. Uses the CARLA input feature data for the feature extraction and adds the built and updated SINADRA 
@@ -37,7 +39,7 @@ class RiskSensorDataBuilder:
         bayesian_network_data : List[BayesianNetworkData]
             List of the Bayesian network data for all vehicles. Used for the mapping from vehicle states to Bayesian 
             networks each.
-        carla_input_feature_data : List[CARLABayesianNetworkInputFeatureData]
+        carla_input_feature_data : List[BayesianNetworkInputFeatureData]
             CARLA input data for each vehicle which is used for extracting the situation-specific Bayesian network input 
             features.
 
@@ -50,7 +52,7 @@ class RiskSensorDataBuilder:
         """
         bayesian_network_data = self._map_vehicle_situation_states_to_bayesian_network_ids(bayesian_network_data)
         carla_input_feature_data = self._add_bayesian_network_ids(carla_input_feature_data, bayesian_network_data)
-        vehicle_id_to_risk_data = self._build_risk_sensor_data_instances(carla_input_feature_data)
+        vehicle_id_to_risk_data = self._build_risk_sensor_data_instances(carla_input_feature_data, all_vehicles)
         bayesian_network_data = self._add_risk_sensor_data(bayesian_network_data, vehicle_id_to_risk_data)
 
         return bayesian_network_data
@@ -84,15 +86,15 @@ class RiskSensorDataBuilder:
         return bayesian_network_data
 
     @staticmethod
-    def _add_bayesian_network_ids(carla_input_feature_data: List["CARLABayesianNetworkInputFeatureData"],
+    def _add_bayesian_network_ids(carla_input_feature_data: List["BayesianNetworkInputFeatureData"],
                                   bayesian_network_data: List["BayesianNetworkData"]
-                                  ) -> List["CARLABayesianNetworkInputFeatureData"]:
+                                  ) -> List["BayesianNetworkInputFeatureData"]:
         """Extracts the Bayesian network IDs for each vehicle from the Bayesian network data objects and adds it to the
         given input CARLA Bayesian network input feature data objects.
 
         Parameters
         ----------
-        carla_input_feature_data : List[CARLABayesianNetworkInputFeatureData]
+        carla_input_feature_data : List[BayesianNetworkInputFeatureData]
             CARLA Bayesian network input feature data objects to which the Bayesian network identifier shall be added.
         bayesian_network_data : List[BayesianNetworkData]
             Bayesian network data objects from which the Bayesian network identifier for each vehicle is extracted from.
@@ -117,14 +119,15 @@ class RiskSensorDataBuilder:
 
         return carla_input_feature_data
 
-    def _build_risk_sensor_data_instances(self, carla_input_feature_data: List["CARLABayesianNetworkInputFeatureData"]
+    def _build_risk_sensor_data_instances(self, carla_input_feature_data: List["BayesianNetworkInputFeatureData"],
+                                          all_vehicles: List[Union["EgoVehicle", "OtherVehicle"]]
                                           ) -> Dict[str, "SINADRARiskSensorData"]:
         """Builds the SINADRA risk sensor data for each vehicle (that has a Bayesian network associated) in the given
         CARLA Bayesian network input feature data objects.
 
         Parameters
         ----------
-        carla_input_feature_data : List[CARLABayesianNetworkInputFeatureData]
+        carla_input_feature_data : List[BayesianNetworkInputFeatureData]
             CARLA Bayesian network input feature data objects for which the risk data is collected and built.
 
         Returns
@@ -143,7 +146,7 @@ class RiskSensorDataBuilder:
                 corrected_bn_id = corrected_bn_id.replace(" ", "")
                 risk_data_class = getattr(self._risk_data_module, corrected_bn_id)
                 risk_data_instance = risk_data_class()
-                risk_data_instance.collect_data_from_carla(specific_carla_data)
+                risk_data_instance.collect_data_from_carla(specific_carla_data, all_vehicles)
                 vehicle_id = specific_carla_data.vehicle_id
                 vehicle_id_to_risk_data[vehicle_id] = risk_data_instance
 

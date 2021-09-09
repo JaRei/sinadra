@@ -10,35 +10,42 @@
 from actor_situation_class_detection.bayesian_network_id_selection.bayesian_network_id import BayesianNetId
 
 from enum import Enum
-from typing import Dict, Optional
+from typing import Dict, Tuple, Optional
 
-import carla
 
 ####################################
-# Carla client configuration
+# SINADRA client configuration
+####################################
+
+# Framerate of the risk plot refresh rate and the SINADRA client in
+# general (base rate for the risk computation).
+# Used for setting up the simulators as well.
+FRAMERATE: int = 20
+SAVE_EVALUATION_DATA = False
+
+####################################
+# Simulator client configuration
 ####################################
 
 CARLA_SERVER_HOST: str = 'localhost'
 CARLA_SERVER_PORT: int = 2000
-# CARLA server framerate & the framerate of the SINADRA client in general
-# Thus, it is the framerate of the risk plot refresh rate as well.
-FRAMERATE: int = 20
 
 ####################################
-# Carla debugging
+# Simulator debugging
 ####################################
 
 # DEBUG_MODE:
-# Set DEBUG_MODE true to draw sensing areas with carla.DebugHelper
+# Set DEBUG_MODE true to draw sensing areas if the respective simulator does support it.
 # If value = False the sinadra risk sensor is still working but debug lines are not drawn.
 DEBUG_MODE: bool = False
 
-CARLA_DEBUG_LINE_THICKNESS: float = 0.05  # float value in meters
-CARLA_DEBUG_DRAWING_LIFE_TIME: float = 0.05  # value in seconds
+DEBUG_LINE_THICKNESS: float = 0.1  # float value in meters
+DEBUG_DRAWING_LIFE_TIME: float = 1 / FRAMERATE  # value in seconds
 
-DEBUG_COLOR_SENSING_AREA: carla.Color = carla.Color(51, 255, 204)  # green
-DEBUG_COLOR_SENSING_AREA_WITH_SENSED_OBJECT: carla.Color = carla.Color(255, 119, 0)  # orange
-DEBUG_COLOR_DEBUG_LINE_VEHICLE_REAR_END: carla.Color = carla.Color(255, 0, 0)  # red
+Color = Tuple[int, int, int]
+DEBUG_COLOR_SENSING_AREA: Color = (51, 255, 204)  # green
+DEBUG_COLOR_SENSING_AREA_WITH_SENSED_OBJECT: Color = (255, 119, 0)  # orange
+DEBUG_COLOR_DEBUG_LINE_VEHICLE_REAR_END: Color = (255, 0, 0)  # red
 
 ####################################
 # Two lane following situation class
@@ -70,7 +77,7 @@ VEHICLE_SITUATION_STATE_TO_BAYESIAN_NETWORK: Dict[BayesianNetId, Optional[str]] 
     BayesianNetId.TWO_LANE_FOLLOWING_FRONT_VEHICLE: "1LaneFollow_Simple",
     BayesianNetId.TWO_LANE_FOLLOWING_FRONT_VEHICLE_IN_LANE_CHANGE: "1LaneFollow_Simple",
     BayesianNetId.TWO_LANE_FOLLOWING_SIDE_VEHICLE_ON_OTHER_LANE_LEFT: "CutInFromLeft",
-    BayesianNetId.TWO_LANE_FOLLOWING_SIDE_VEHICLE_ON_OTHER_LANE_RIGHT: None,
+    BayesianNetId.TWO_LANE_FOLLOWING_SIDE_VEHICLE_ON_OTHER_LANE_RIGHT: "CutInFromRight",
     BayesianNetId.TWO_LANE_FOLLOWING_EGO: None,
     BayesianNetId.UNKNOWN: None
 }
@@ -97,7 +104,8 @@ class BehaviorType(Enum):
 # This is required so that the trajectory sampling algorithm knows, which behavior types to generate behaviors for
 BEHAVIOR_TYPE_MAPPING = {
     "Predicted_FV_Braking_Behavior": BehaviorType.Braking,
-    "Predicted_SV_Cut_In_Behavior": BehaviorType.LaneChangeToRight
+    "Predicted_Left_SV_Cut_In_Behavior": BehaviorType.LaneChangeToRight,
+    "Predicted_Right_SV_Cut_In_Behavior": BehaviorType.LaneChangeToLeft
 }
 
 SKIP_CYCLE_COUNT: int = 4  # Performance param: Only every n-th game loop cycle, the risk computation is executed

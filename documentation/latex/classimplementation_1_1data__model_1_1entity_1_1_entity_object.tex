@@ -1,0 +1,110 @@
+\hypertarget{classimplementation_1_1data__model_1_1entity_1_1_entity_object}{}\section{implementation.\+data\+\_\+model.\+entity.\+Entity\+Object Class Reference}
+\label{classimplementation_1_1data__model_1_1entity_1_1_entity_object}\index{implementation.\+data\+\_\+model.\+entity.\+Entity\+Object@{implementation.\+data\+\_\+model.\+entity.\+Entity\+Object}}
+Inheritance diagram for implementation.\+data\+\_\+model.\+entity.\+Entity\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.428571cm]{classimplementation_1_1data__model_1_1entity_1_1_entity_object}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classimplementation_1_1data__model_1_1entity_1_1_entity_object_a5daf332215d128db4067cb3d57708fd7}{get\+\_\+location} (self)
+\item 
+def \hyperlink{classimplementation_1_1data__model_1_1entity_1_1_entity_object_af4e061592d0d6ee3d191faace28ab781}{get\+\_\+orientation} (self)
+\item 
+def \hyperlink{classimplementation_1_1data__model_1_1entity_1_1_entity_object_a13695fb863c4e98d2c391f70a8373637}{get\+\_\+world\+\_\+position} (self)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classimplementation_1_1data__model_1_1entity_1_1_entity_object_a7ddc178ef36e8b94018411edb5ea62be}{str}
+\item 
+\hyperlink{classimplementation_1_1data__model_1_1entity_1_1_entity_object_a07c9819804b2d844354ba54ca1ccd563}{Position}
+\item 
+\hyperlink{classimplementation_1_1data__model_1_1entity_1_1_entity_object_a83e7ce8061eee760273dc616d92fb54d}{Bounding\+Box}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A vehicle type, pedestrian type or miscellaneous object type
+
+ Attributes
+ ----------
+ name : str
+    Name of the Entity
+mass : Optional[float]
+    The mass of the object in kg
+position : Position
+    Position object of the Entity
+bounding_box : BoundingBox
+    The three dimensional bounding box that encloses the vehicle
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classimplementation_1_1data__model_1_1entity_1_1_entity_object_a5daf332215d128db4067cb3d57708fd7}\label{classimplementation_1_1data__model_1_1entity_1_1_entity_object_a5daf332215d128db4067cb3d57708fd7}} 
+\index{implementation\+::data\+\_\+model\+::entity\+::\+Entity\+Object@{implementation\+::data\+\_\+model\+::entity\+::\+Entity\+Object}!get\+\_\+location@{get\+\_\+location}}
+\index{get\+\_\+location@{get\+\_\+location}!implementation\+::data\+\_\+model\+::entity\+::\+Entity\+Object@{implementation\+::data\+\_\+model\+::entity\+::\+Entity\+Object}}
+\subsubsection{\texorpdfstring{get\+\_\+location()}{get\_location()}}
+{\footnotesize\ttfamily def implementation.\+data\+\_\+model.\+entity.\+Entity\+Object.\+get\+\_\+location (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{Location }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the location of the entity in world coordinates.
+
+Returns
+-------
+Location
+    Location of the entity in world coordinates
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classimplementation_1_1data__model_1_1entity_1_1_entity_object_af4e061592d0d6ee3d191faace28ab781}\label{classimplementation_1_1data__model_1_1entity_1_1_entity_object_af4e061592d0d6ee3d191faace28ab781}} 
+\index{implementation\+::data\+\_\+model\+::entity\+::\+Entity\+Object@{implementation\+::data\+\_\+model\+::entity\+::\+Entity\+Object}!get\+\_\+orientation@{get\+\_\+orientation}}
+\index{get\+\_\+orientation@{get\+\_\+orientation}!implementation\+::data\+\_\+model\+::entity\+::\+Entity\+Object@{implementation\+::data\+\_\+model\+::entity\+::\+Entity\+Object}}
+\subsubsection{\texorpdfstring{get\+\_\+orientation()}{get\_orientation()}}
+{\footnotesize\ttfamily def implementation.\+data\+\_\+model.\+entity.\+Entity\+Object.\+get\+\_\+orientation (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{Orientation }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the orientation of the entity in world coordinates.
+
+Returns
+-------
+Orientation
+    Orientation of the entity in world coordinates
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classimplementation_1_1data__model_1_1entity_1_1_entity_object_a13695fb863c4e98d2c391f70a8373637}\label{classimplementation_1_1data__model_1_1entity_1_1_entity_object_a13695fb863c4e98d2c391f70a8373637}} 
+\index{implementation\+::data\+\_\+model\+::entity\+::\+Entity\+Object@{implementation\+::data\+\_\+model\+::entity\+::\+Entity\+Object}!get\+\_\+world\+\_\+position@{get\+\_\+world\+\_\+position}}
+\index{get\+\_\+world\+\_\+position@{get\+\_\+world\+\_\+position}!implementation\+::data\+\_\+model\+::entity\+::\+Entity\+Object@{implementation\+::data\+\_\+model\+::entity\+::\+Entity\+Object}}
+\subsubsection{\texorpdfstring{get\+\_\+world\+\_\+position()}{get\_world\_position()}}
+{\footnotesize\ttfamily def implementation.\+data\+\_\+model.\+entity.\+Entity\+Object.\+get\+\_\+world\+\_\+position (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{World\+Position }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the world position of the entity in world coordinates.
+
+Returns
+-------
+WorldPosition
+    WorldPosition of the entity in world coordinates
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classimplementation_1_1data__model_1_1entity_1_1_entity_object_a83e7ce8061eee760273dc616d92fb54d}\label{classimplementation_1_1data__model_1_1entity_1_1_entity_object_a83e7ce8061eee760273dc616d92fb54d}} 
+\index{implementation\+::data\+\_\+model\+::entity\+::\+Entity\+Object@{implementation\+::data\+\_\+model\+::entity\+::\+Entity\+Object}!Bounding\+Box@{Bounding\+Box}}
+\index{Bounding\+Box@{Bounding\+Box}!implementation\+::data\+\_\+model\+::entity\+::\+Entity\+Object@{implementation\+::data\+\_\+model\+::entity\+::\+Entity\+Object}}
+\subsubsection{\texorpdfstring{Bounding\+Box}{BoundingBox}}
+{\footnotesize\ttfamily implementation.\+data\+\_\+model.\+entity.\+Entity\+Object.\+Bounding\+Box\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classimplementation_1_1data__model_1_1entity_1_1_entity_object_a07c9819804b2d844354ba54ca1ccd563}\label{classimplementation_1_1data__model_1_1entity_1_1_entity_object_a07c9819804b2d844354ba54ca1ccd563}} 
+\index{implementation\+::data\+\_\+model\+::entity\+::\+Entity\+Object@{implementation\+::data\+\_\+model\+::entity\+::\+Entity\+Object}!Position@{Position}}
+\index{Position@{Position}!implementation\+::data\+\_\+model\+::entity\+::\+Entity\+Object@{implementation\+::data\+\_\+model\+::entity\+::\+Entity\+Object}}
+\subsubsection{\texorpdfstring{Position}{Position}}
+{\footnotesize\ttfamily implementation.\+data\+\_\+model.\+entity.\+Entity\+Object.\+Position\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classimplementation_1_1data__model_1_1entity_1_1_entity_object_a7ddc178ef36e8b94018411edb5ea62be}\label{classimplementation_1_1data__model_1_1entity_1_1_entity_object_a7ddc178ef36e8b94018411edb5ea62be}} 
+\index{implementation\+::data\+\_\+model\+::entity\+::\+Entity\+Object@{implementation\+::data\+\_\+model\+::entity\+::\+Entity\+Object}!str@{str}}
+\index{str@{str}!implementation\+::data\+\_\+model\+::entity\+::\+Entity\+Object@{implementation\+::data\+\_\+model\+::entity\+::\+Entity\+Object}}
+\subsubsection{\texorpdfstring{str}{str}}
+{\footnotesize\ttfamily implementation.\+data\+\_\+model.\+entity.\+Entity\+Object.\+str\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+implementation/data\+\_\+model/\hyperlink{entity_8py}{entity.\+py}\end{DoxyCompactItemize}

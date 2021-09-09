@@ -1,0 +1,54 @@
+#!/bin/bash
+
+EXECUTE_CMD=/bin/bash
+DOCKER_NAME=${docker_name:-sinadra-docker}
+RUN_CARLA=${run_carla:-false}
+
+if [ ! -d "$HOME/sinadra_home" ]; then
+        mkdir "$HOME/sinadra_home"
+    fi
+
+for ARGUMENT in "$@"
+do
+    case $ARGUMENT in
+        carla)   RUN_CARLA=true ;;
+    esac
+done
+
+gnome-terminal --tab --title="Sinadra" -- bash -c " \
+            docker run -it --rm \
+		--name=$DOCKER_NAME \
+		-e CMD=$EXECUTE_CMD \
+		-e DISPLAY=$DISPLAY\
+		-v /tmp/.X11-unix/X0:/tmp/.X11-unix/X0 \
+		-e XAUTHORITY \
+		--privileged \
+		--net=host \
+		--ipc=host \
+		-v /home/$(whoami)/sinadra_home:/home/sinadra \
+		sinadra:latest"
+
+sleep 0.5
+
+        while [ ! "$( docker container inspect -f '{{.State.Running}}' $DOCKER_NAME )" == "true" ]; 
+        do
+	        sleep 0.5
+        done
+
+gnome-terminal --tab --title="Sinadra-Srunner" -- bash -c "docker exec -it $DOCKER_NAME bash" 
+
+if [ "$RUN_CARLA" = true ]; then
+	gnome-terminal --tab --title="ESQDocker" -- bash -c " \
+		docker run \
+		  -e SDL_VIDEODRIVER=x11 \
+		  -e DISPLAY=$DISPLAY\
+		  -v /tmp/.X11-unix:/tmp/.X11-unix \
+		  -p 2000-2002:2000-2002 \
+		  -it \
+		  --rm \
+		  --name="CarlaDocker" \
+		  --gpus all \
+		 --privileged \
+		 --net=host \
+		  carlasim/carla:0.9.10.1 ./CarlaUE4.sh -opengl"
+fi

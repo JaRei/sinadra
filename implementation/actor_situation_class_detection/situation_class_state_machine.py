@@ -5,12 +5,17 @@
 # SPDX-License-Identifier: LGPL-2.1-only
 #
 #################### END LICENSE BLOCK #################################
-from typing import List
+
+from typing import List, Union, Optional, TYPE_CHECKING
 
 import numpy as np
 
 from actor_situation_class_detection.situation_class import SituationClass
-from actor_situation_class_detection.vehicle_actor_wrapper import VehicleActorWrapper, VehiclePointId
+from data_model.vehicle import EgoVehicle, VehiclePointId
+
+if TYPE_CHECKING:
+    from data_model.vehicle import OtherVehicle
+    from data_model.positions import Location, Orientation
 
 
 class SituationClassStateMachine(object):
@@ -29,27 +34,28 @@ class SituationClassStateMachine(object):
             situation_class.ego_is_in_situation_class = False
             pass
 
-    def update_situation_classes(self, wrapped_vehicles: List["VehicleActorWrapper"]):
+    def update_situation_classes(self, vehicles: List[Union["OtherVehicle", EgoVehicle]]):
         """Method to allocate vehicles to their corresponding situation classes they are currently in. Therefore it is
-        checked for each wrapped vehicle whether the center point of the wrapped vehicle's front bumper is within a
+        checked for each vehicle whether the center point of the vehicle's front bumper is within a
         situation class defined for this state machine or not. If a respective situation class has been determined, the
-        wrapped vehicle is associated to it.
+        vehicle is associated to it.
 
         Parameters
         ----------
-        wrapped_vehicles : List[VehicleActorWrapper]
-            All carla vehicles wrapped as VehicleActorWrapper objects
+        vehicles : Union[EgoVehicle, OtherVehicle]
+            All vehicles as EgoVehicle or OtherVehicle objects
         """
-        for wrapped_vehicle in wrapped_vehicles:
-            actor_transform = wrapped_vehicle.vehicle.get_transform()
-            actor_front_mid_location = wrapped_vehicle.vehicle_points[VehiclePointId.FRONT_MID_CENTER]
-            actor_rotation = actor_transform.rotation
-            situation_class_of_actor = self._get_active_situation_class(actor_front_mid_location, actor_rotation)
+
+        for vehicle in vehicles:
+            actor_transform = vehicle.position.world_position
+            actor_front_mid_location = vehicle.vehicle_points[VehiclePointId.FRONT_MID_CENTER]
+            actor_orientation = actor_transform.orientation
+            situation_class_of_actor = self._get_active_situation_class(actor_front_mid_location, actor_orientation)
 
             if situation_class_of_actor is not None:
-                situation_class_of_actor.update_wrapped_actor_association(wrapped_vehicle)
+                situation_class_of_actor.update_actor_association(vehicle)
 
-    def get_hero_situation_class(self) -> SituationClass:
+    def get_hero_situation_class(self) -> Optional[SituationClass]:
         """Retrieves the situation class the hero vehicle is currently in.
 
         Returns
@@ -57,14 +63,15 @@ class SituationClassStateMachine(object):
         SituationClass object, which the hero vehicle is currently allocated to. If hero vehicle can not be found in any
         situation class, None is returned instead.
         """
+
         for situation_class in self.situation_classes:
-            wrapped_actors_in_situation_class = situation_class.wrapped_actors_in_situation_class
-            if any(wrapped_actor.role_name == "hero" for wrapped_actor in wrapped_actors_in_situation_class):
+            actors_in_situation_class = situation_class.actors_in_situation_class
+            if any(isinstance(actor, EgoVehicle) for actor in actors_in_situation_class):
                 return situation_class
         return None
 
-    def _get_active_situation_class(self, actor_location, actor_rotation):
-        actor_forward_vector = actor_rotation.get_forward_vector()
+    def _get_active_situation_class(self, actor_location: "Location", actor_orientation: "Orientation"):
+        actor_forward_vector = actor_orientation.get_forward_vector()
         possible_situation_classes = self._get_possible_situation_classes(actor_location)
 
         if len(possible_situation_classes) == 1:
@@ -83,7 +90,7 @@ class SituationClassStateMachine(object):
 
         return None
 
-    def _get_possible_situation_classes(self, actor_location):
+    def _get_possible_situation_classes(self, actor_location: "Location"):
         possible_situation_classes = []
         for situation_class in self.situation_classes:
             if situation_class.contains_location(actor_location):

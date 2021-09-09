@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BIF VERSION="0.3">
+  <NETWORK>
+    <NAME>UNTITLED</NAME>
+    <VARIABLE TYPE="nature">
+      <NAME>Lane_Ends</NAME>
+      <OUTCOME>small</OUTCOME>
+      <OUTCOME>medium</OUTCOME>
+      <OUTCOME>no_lane_end</OUTCOME>
+      <PROPERTY/>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>Lane_Change_Intent</NAME>
+      <OUTCOME>LC_Required</OUTCOME>
+      <OUTCOME>LC_Not_Required</OUTCOME>
+      <PROPERTY/>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>Gap_Availability</NAME>
+      <OUTCOME>lt_SV_length</OUTCOME>
+      <OUTCOME>gt_SV_length</OUTCOME>
+      <OUTCOME>gt_4_secs</OUTCOME>
+      <PROPERTY/>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>Gap_Acceptance</NAME>
+      <OUTCOME>Acceptable</OUTCOME>
+      <OUTCOME>Unacceptable</OUTCOME>
+      <PROPERTY/>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>HeavyRain</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY/>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>FVViewRange</NAME>
+      <OUTCOME>Restricted</OUTCOME>
+      <OUTCOME>Clear</OUTCOME>
+      <PROPERTY/>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SV_Situation_Perception</NAME>
+      <OUTCOME>Incorrect</OUTCOME>
+      <OUTCOME>Correct</OUTCOME>
+      <PROPERTY/>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SV_Situation_Assessment</NAME>
+      <OUTCOME>Incorrect</OUTCOME>
+      <OUTCOME>Correct</OUTCOME>
+      <PROPERTY/>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SV_Maneuver_Decision</NAME>
+      <OUTCOME>Safe_Cutin</OUTCOME>
+      <OUTCOME>Unsafe_Cutin</OUTCOME>
+      <OUTCOME>No_Cutin</OUTCOME>
+      <PROPERTY/>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>SV_Cutin_Behavior</NAME>
+      <OUTCOME>CutIn</OUTCOME>
+      <OUTCOME>NoCutIn</OUTCOME>
+      <PROPERTY/>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>Ego_FV_Perception</NAME>
+      <OUTCOME>Obstructed</OUTCOME>
+      <OUTCOME>Unobstructed</OUTCOME>
+      <PROPERTY/>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>Predicted_Right_SV_Cut_In_Behavior</NAME>
+      <OUTCOME>CutIn</OUTCOME>
+      <OUTCOME>NoCutIn</OUTCOME>
+      <PROPERTY/>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>Steering_Angle</NAME>
+      <OUTCOME>lt_10_deg</OUTCOME>
+      <OUTCOME>gt_10_deg</OUTCOME>
+      <PROPERTY/>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>Turn_Indicator</NAME>
+      <OUTCOME>Yes</OUTCOME>
+      <OUTCOME>No</OUTCOME>
+      <PROPERTY/>
+    </VARIABLE>
+    <VARIABLE TYPE="nature">
+      <NAME>Distance_Center</NAME>
+      <OUTCOME>MidLane</OUTCOME>
+      <OUTCOME>BetweenLaneAndCrossing</OUTCOME>
+      <OUTCOME>RightBeforeCrossing</OUTCOME>
+      <PROPERTY/>
+    </VARIABLE>
+    <DEFINITION>
+      <FOR>Lane_Ends</FOR>
+      <TABLE>0.02 0.18 0.8 </TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>Lane_Change_Intent</FOR>
+      <GIVEN>Lane_Ends</GIVEN>
+      <TABLE>0.95 0.05000000000000004 0.5 0.5 0.05000000000000004 0.95 </TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>Gap_Availability</FOR>
+      <TABLE>0.33 0.33 0.34 </TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>Gap_Acceptance</FOR>
+      <GIVEN>Gap_Availability</GIVEN>
+      <TABLE>1e-05 0.99999 0.3 0.7 0.8 0.2 </TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>HeavyRain</FOR>
+      <TABLE>1e-05 0.99999 </TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>FVViewRange</FOR>
+      <GIVEN>HeavyRain</GIVEN>
+      <TABLE>1.0 0.0 0.0 1.0 </TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>SV_Situation_Perception</FOR>
+      <GIVEN>FVViewRange</GIVEN>
+      <TABLE>0.3 0.7 0.01 0.99 </TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>SV_Situation_Assessment</FOR>
+      <GIVEN>SV_Situation_Perception</GIVEN>
+      <TABLE>0.7 0.3 0.01 0.99 </TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>SV_Maneuver_Decision</FOR>
+      <GIVEN>Lane_Change_Intent</GIVEN>
+      <GIVEN>SV_Situation_Assessment</GIVEN>
+      <GIVEN>Gap_Acceptance</GIVEN>
+      <TABLE>0.989 0.001 0.01 0.009099999999999997 0.001 0.9899 0.9899 0.0001 0.01 0.01 0.0001 0.9899 0.001 0.049 0.95 0.001 0.009 0.99 0.049 0.001 0.95 0.009 0.001 0.99 </TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>SV_Cutin_Behavior</FOR>
+      <GIVEN>SV_Maneuver_Decision</GIVEN>
+      <TABLE>0.99 0.01 0.99 0.01 0.01 0.99 </TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>Ego_FV_Perception</FOR>
+      <GIVEN>HeavyRain</GIVEN>
+      <TABLE>0.2 0.8 0.01000000000000001 0.99 </TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>Predicted_Right_SV_Cut_In_Behavior</FOR>
+      <GIVEN>Ego_FV_Perception</GIVEN>
+      <GIVEN>SV_Cutin_Behavior</GIVEN>
+      <TABLE>0.99 0.01 0.01 0.99 0.9999 9.999999999998899e-05 0.0001 0.9999 </TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>Steering_Angle</FOR>
+      <GIVEN>SV_Cutin_Behavior</GIVEN>
+      <TABLE>0.05 0.95 0.95 0.05000000000000004 </TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>Turn_Indicator</FOR>
+      <GIVEN>SV_Cutin_Behavior</GIVEN>
+      <TABLE>0.98 0.02000000000000002 0.001 0.999 </TABLE>
+    </DEFINITION>
+    <DEFINITION>
+      <FOR>Distance_Center</FOR>
+      <GIVEN>SV_Cutin_Behavior</GIVEN>
+      <TABLE>0.05 0.15 0.8 0.9 0.09 0.01 </TABLE>
+    </DEFINITION>
+  </NETWORK>
+</BIF>

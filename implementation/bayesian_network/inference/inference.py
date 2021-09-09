@@ -14,17 +14,18 @@ from typing import TYPE_CHECKING, List, Dict, Tuple
 
 if TYPE_CHECKING:
     from bayesian_network.model_generation.config_template import BayesianNetworkConfig
-    from bayesian_network.inference.interfaces import BayesianNetworkData, VehicleLocation
+    from bayesian_network.inference.interfaces import BayesianNetworkData
     from pgmpy.models import BayesianModel
     from pgmpy.factors.discrete import DiscreteFactor
-    import multiprocessing
+    from multiprocessing import Pool
+    from data_model.positions import Location
 
 
 class BayesianNetworkInference:
     """Performs the Bayesian network inference for all given Bayesian models and input features."""
 
     def bn_inferences_for_vehicles(self, bayesian_network_data: List["BayesianNetworkData"],
-                                   multiprocessing_pool: "multiprocessing.Pool") -> List[BayesianNetworkOutput]:
+                                   multiprocessing_pool: "Pool") -> List[BayesianNetworkOutput]:
         """Performs the Bayesian network inference for the given Bayesian network data objects, respectively vehicles,
         and builds the output data instances with the infered values for the defined output nodes in each Bayesian
         network.
@@ -115,7 +116,7 @@ class BayesianNetworkInference:
         List[BayesianNetworkData]
             Sorted list of the given input Bayesian network data objects.
         """
-        reference_location: "VehicleLocation" = reference_vehicle.vehicle_location
+        reference_location: "Location" = reference_vehicle.vehicle_location
         vehicles_to_check.sort(key=lambda data: reference_location.get_2d_distance(data.vehicle_location))
         return vehicles_to_check
 
@@ -162,10 +163,11 @@ class BayesianNetworkInference:
         bn_config_instance.update_dra_data(risk_sensor_data)
 
         output_nodes, evidence_nodes = self._extract_node_values_from_bn_config(bn_instance, bn_config_instance)
+        all_nodes_with_outcomes = evidence_nodes
         evidence_nodes = self._filter_supported_evidence_nodes(evidence_nodes)
         evidence_query = self._create_evidence_query(evidence_nodes)
         output_network = self._inference_query_and_build_infered_bn_output(bn_instance, output_nodes, evidence_query,
-                                                                           vehicle_id, bn_id)
+                                                                           vehicle_id, bn_id, all_nodes_with_outcomes)
 
         return output_network
 
@@ -240,17 +242,32 @@ class BayesianNetworkInference:
 
     @staticmethod
     def _inference_query_and_build_infered_bn_output(bn_instance: "BayesianModel", output_nodes: List[str],
-                                                     evidence_query: Dict[str, str], vehicle_id: str, bn_id: str
+                                                     evidence_query: Dict[str, str], vehicle_id: str, bn_id: str,
+                                                     all_nodes_with_outcomes: Dict[str, List[Outcome]]
                                                      ) -> BayesianNetworkOutput:
         infered_output_nodes = []
         inference_algorithm = VariableElimination(bn_instance)
-        output_discrete_factors = inference_algorithm.query(variables=output_nodes, evidence=evidence_query,
+
+        # Required because PGMPY cannot output variables that are also evidences
+        variables_to_compute = []
+        evidence_to_output = []
+        for node in output_nodes:
+            if node not in evidence_query.keys():
+                variables_to_compute.append(node)
+            else:
+                evidence_to_output.append(node)
+
+        output_discrete_factors = inference_algorithm.query(variables=variables_to_compute, evidence=evidence_query,
                                                             joint=False, show_progress=False)
 
         if output_nodes:
             for node_id, discrete_factor in output_discrete_factors.items():
                 node_output = BayesianNetworkInference._extract_outcomes_and_build_node_output(discrete_factor, node_id)
                 infered_output_nodes.append(node_output)
+
+        for node in evidence_to_output:
+            outcomes = all_nodes_with_outcomes[node]
+            infered_output_nodes.append(Node(node, outcomes))
 
         network_output = BayesianNetworkOutput(vehicle_id, bn_id, infered_output_nodes)
 

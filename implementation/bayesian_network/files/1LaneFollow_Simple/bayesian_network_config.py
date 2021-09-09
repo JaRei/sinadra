@@ -87,6 +87,8 @@ class BayesianNetworkConfig:
         outcome_Medium = 0.0
         outcome_High = 0.0
         '''----------Manual edit begin----------'''
+        is_bn_output = True
+
         if self.dra_data.lead_speed:
             relative_speed = self.dra_data.speed - self.dra_data.lead_speed
             if relative_speed <= 0.0:

@@ -1,24 +1,28 @@
-\hypertarget{sinadra_8py}{}\doxysection{implementation/sinadra.py File Reference}
-\label{sinadra_8py}\index{implementation/sinadra.py@{implementation/sinadra.py}}
-\doxysubsection*{Namespaces}
+\hypertarget{sinadra_8py}{}\section{implementation/sinadra.py File Reference}
+\label{sinadra_8py}\index{implementation/sinadra.\+py@{implementation/sinadra.\+py}}
+\subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
- \mbox{\hyperlink{namespaceimplementation_1_1sinadra}{implementation.\+sinadra}}
+ \hyperlink{namespaceimplementation_1_1sinadra}{implementation.\+sinadra}
 \end{DoxyCompactItemize}
-\doxysubsection*{Functions}
+\subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-List\mbox{[}\char`\"{}Bayesian\+Network\+Output\char`\"{}\mbox{]} \mbox{\hyperlink{namespaceimplementation_1_1sinadra_a67d8eefb160ce2bc59be59c6ca08ccf8}{implementation.\+sinadra.\+evaluate\+\_\+bayesian\+\_\+networks}} (bn\+\_\+inference\+\_\+multiprocessing\+\_\+pool, List\mbox{[}\char`\"{}Vehicle\+Dependent\+B\+N\+Id\char`\"{}\mbox{]} vehicle\+\_\+dependent\+\_\+bn\+\_\+ids, carla.\+World carla\+\_\+world, carla.\+Map carla\+\_\+map)
+def \hyperlink{namespaceimplementation_1_1sinadra_a9c99c51967919cb8364efccda48af70d}{implementation.\+sinadra.\+evaluate\+\_\+bayesian\+\_\+networks}
 \begin{DoxyCompactList}\small\item\em Bayesian Network Evaluation. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespaceimplementation_1_1sinadra_ad13d5653e8d4562e522ead829bd36b39}{implementation.\+sinadra.\+emergency\+\_\+brake\+\_\+risk}} (ego\+\_\+pos\+\_\+mean, ego\+\_\+pos\+\_\+std, fv\+\_\+init)
+def \hyperlink{namespaceimplementation_1_1sinadra_ad13d5653e8d4562e522ead829bd36b39}{implementation.\+sinadra.\+emergency\+\_\+brake\+\_\+risk} (ego\+\_\+pos\+\_\+mean, ego\+\_\+pos\+\_\+std, fv\+\_\+init)
 \begin{DoxyCompactList}\small\item\em Trajectory Generation and Eggert Risk Computation for ego-\/front vehicle behavior pairs. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespaceimplementation_1_1sinadra_a84cc54d0f9eef0f6564b6af56315f3d9}{implementation.\+sinadra.\+target\+\_\+brake\+\_\+risk}} (ego\+\_\+pos\+\_\+mean, ego\+\_\+pos\+\_\+std, fv\+\_\+init, target\+\_\+distance, target\+\_\+safe\+\_\+distance)
+def \hyperlink{namespaceimplementation_1_1sinadra_a84cc54d0f9eef0f6564b6af56315f3d9}{implementation.\+sinadra.\+target\+\_\+brake\+\_\+risk} (ego\+\_\+pos\+\_\+mean, ego\+\_\+pos\+\_\+std, fv\+\_\+init, target\+\_\+distance, target\+\_\+safe\+\_\+distance)
 \item 
-def \mbox{\hyperlink{namespaceimplementation_1_1sinadra_a28170a6db73e1acb09f5948771730bc4}{implementation.\+sinadra.\+idm\+\_\+risk}} (ego\+\_\+pos\+\_\+mean, ego\+\_\+pos\+\_\+std, fv\+\_\+init, fv\+\_\+length, fv\+\_\+front\+\_\+init)
+def \hyperlink{namespaceimplementation_1_1sinadra_a28170a6db73e1acb09f5948771730bc4}{implementation.\+sinadra.\+idm\+\_\+risk} (ego\+\_\+pos\+\_\+mean, ego\+\_\+pos\+\_\+std, fv\+\_\+init, fv\+\_\+length, fv\+\_\+front\+\_\+init)
 \item 
-def \mbox{\hyperlink{namespaceimplementation_1_1sinadra_aefe0dcaa5197d1a117b6d457172c06bd}{implementation.\+sinadra.\+lc\+\_\+right\+\_\+risk}} (ego\+\_\+pos\+\_\+x\+\_\+mean, ego\+\_\+pos\+\_\+x\+\_\+std, ego\+\_\+pos\+\_\+y\+\_\+mean, ego\+\_\+pos\+\_\+y\+\_\+std, sv\+\_\+init, lc\+\_\+target)
+def \hyperlink{namespaceimplementation_1_1sinadra_aefe0dcaa5197d1a117b6d457172c06bd}{implementation.\+sinadra.\+lc\+\_\+right\+\_\+risk} (ego\+\_\+pos\+\_\+x\+\_\+mean, ego\+\_\+pos\+\_\+x\+\_\+std, ego\+\_\+pos\+\_\+y\+\_\+mean, ego\+\_\+pos\+\_\+y\+\_\+std, sv\+\_\+init, lc\+\_\+target)
 \item 
-def \mbox{\hyperlink{namespaceimplementation_1_1sinadra_a5a538278e7e675820ace17163d77699e}{implementation.\+sinadra.\+long\+\_\+risk\+\_\+parallel}} (parameter\+\_\+dict)
+def \hyperlink{namespaceimplementation_1_1sinadra_a82226ce32c07f60a683f77343f4ebfc4}{implementation.\+sinadra.\+lc\+\_\+left\+\_\+risk} (ego\+\_\+pos\+\_\+x\+\_\+mean, ego\+\_\+pos\+\_\+x\+\_\+std, ego\+\_\+pos\+\_\+y\+\_\+mean, ego\+\_\+pos\+\_\+y\+\_\+std, sv\+\_\+init, lc\+\_\+target)
 \item 
-List\mbox{[}float\mbox{]} \mbox{\hyperlink{namespaceimplementation_1_1sinadra_a91227065719b9c6cf2cbe68551291b20}{implementation.\+sinadra.\+compute\+\_\+total\+\_\+risk}} (List\mbox{[}Tuple\mbox{[}List\mbox{[}float\mbox{]}, float\mbox{]}\mbox{]} brake\+\_\+behavior\+\_\+risks)
+def \hyperlink{namespaceimplementation_1_1sinadra_a6e6ff8c6fd9f63ad37f882293bfefc3b}{implementation.\+sinadra.\+lc\+\_\+risk} (ego\+\_\+pos\+\_\+x\+\_\+mean, ego\+\_\+pos\+\_\+x\+\_\+std, ego\+\_\+pos\+\_\+y\+\_\+mean, ego\+\_\+pos\+\_\+y\+\_\+std, sv\+\_\+init, lc\+\_\+target)
+\item 
+def \hyperlink{namespaceimplementation_1_1sinadra_a5a538278e7e675820ace17163d77699e}{implementation.\+sinadra.\+long\+\_\+risk\+\_\+parallel} (parameter\+\_\+dict)
+\item 
+def \hyperlink{namespaceimplementation_1_1sinadra_a44158ab1ac67876e44ce2fa987d2c83a}{implementation.\+sinadra.\+compute\+\_\+total\+\_\+risk}
 \begin{DoxyCompactList}\small\item\em Risk weighing. \end{DoxyCompactList}\end{DoxyCompactItemize}

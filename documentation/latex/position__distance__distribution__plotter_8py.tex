@@ -1,0 +1,53 @@
+\hypertarget{position__distance__distribution__plotter_8py}{}\section{implementation/position\+\_\+distance\+\_\+distribution\+\_\+plotter.py File Reference}
+\label{position__distance__distribution__plotter_8py}\index{implementation/position\+\_\+distance\+\_\+distribution\+\_\+plotter.\+py@{implementation/position\+\_\+distance\+\_\+distribution\+\_\+plotter.\+py}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceimplementation_1_1position__distance__distribution__plotter}{implementation.\+position\+\_\+distance\+\_\+distribution\+\_\+plotter}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespaceimplementation_1_1position__distance__distribution__plotter_a6e57e056b0bc337bf5f63e91843905fd}{implementation.\+position\+\_\+distance\+\_\+distribution\+\_\+plotter.\+position\+\_\+distance\+\_\+distribution\+\_\+plot\+\_\+generating\+\_\+and\+\_\+saving} (ego\+\_\+trajectory, other\+\_\+trajectory, save\+\_\+path, label, time\+\_\+step\+\_\+dist=1.\+0)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{namespaceimplementation_1_1position__distance__distribution__plotter_aca3116579891a8ad50a6ba54587bfb8c}{implementation.\+position\+\_\+distance\+\_\+distribution\+\_\+plotter.\+P\+R\+E\+D\+I\+C\+T\+I\+O\+N\+\_\+\+H\+O\+R\+I\+Z\+ON} = 4
+\item 
+float \hyperlink{namespaceimplementation_1_1position__distance__distribution__plotter_af26de4158f9d9bb625b573164d1acb22}{implementation.\+position\+\_\+distance\+\_\+distribution\+\_\+plotter.\+P\+R\+E\+D\+I\+C\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+S\+T\+EP} = 0.\+2
+\item 
+string \hyperlink{namespaceimplementation_1_1position__distance__distribution__plotter_aab3cf32c2c3d618e2cb642e4801432c1}{implementation.\+position\+\_\+distance\+\_\+distribution\+\_\+plotter.\+stored\+\_\+data\+\_\+directory} = \char`\"{}./stored\+\_\+data/\char`\"{}
+\begin{DoxyCompactList}\small\item\em Load Trajectories File \#. \end{DoxyCompactList}\item 
+string \hyperlink{namespaceimplementation_1_1position__distance__distribution__plotter_a65a50aa1a281d0f113d708b0b239d27b}{implementation.\+position\+\_\+distance\+\_\+distribution\+\_\+plotter.\+scenario\+\_\+data\+\_\+directory} = \char`\"{}L\+F3\+\_\+50\+\_\+trajectories/\char`\"{}
+\item 
+int \hyperlink{namespaceimplementation_1_1position__distance__distribution__plotter_a5c1107e3165e079bc50bfc328992ebe3}{implementation.\+position\+\_\+distance\+\_\+distribution\+\_\+plotter.\+start\+\_\+cycle\+\_\+counter} = 169
+\item 
+int \hyperlink{namespaceimplementation_1_1position__distance__distribution__plotter_acf2518bbe622b8cf3015776d5970ede1}{implementation.\+position\+\_\+distance\+\_\+distribution\+\_\+plotter.\+file\+\_\+cycle\+\_\+counter} = 248
+\item 
+string \hyperlink{namespaceimplementation_1_1position__distance__distribution__plotter_aba42530e444458359de02d82c419aeb2}{implementation.\+position\+\_\+distance\+\_\+distribution\+\_\+plotter.\+plot\+\_\+postfix} = \char`\"{}\+\_\+distance\+\_\+distribution\+\_\+plot.\+png\char`\"{}
+\item 
+string \hyperlink{namespaceimplementation_1_1position__distance__distribution__plotter_a1df71760c4ec8dbb7f6bbf3a7ab9b709}{implementation.\+position\+\_\+distance\+\_\+distribution\+\_\+plotter.\+file\+\_\+postfix} = \char`\"{}\+\_\+trajectories.\+pickle\char`\"{}
+\item 
+string \hyperlink{namespaceimplementation_1_1position__distance__distribution__plotter_a2b8ab72df5fc3fee74abddb193c716cc}{implementation.\+position\+\_\+distance\+\_\+distribution\+\_\+plotter.\+pickle\+\_\+file\+\_\+path} = f\char`\"{}\{stored\+\_\+data\+\_\+directory\}\{scenario\+\_\+data\+\_\+directory\}\{file\+\_\+cycle\+\_\+counter\}\{file\+\_\+postfix\}\char`\"{}
+\item 
+\hyperlink{namespaceimplementation_1_1position__distance__distribution__plotter_a055771f0350fc9b520cbc23a15e2a010}{implementation.\+position\+\_\+distance\+\_\+distribution\+\_\+plotter.\+trajectories\+\_\+file} = open(pickle\+\_\+file\+\_\+path, \char`\"{}rb\char`\"{})
+\item 
+\hyperlink{namespaceimplementation_1_1position__distance__distribution__plotter_a147220372f66407d092186f0928e5000}{implementation.\+position\+\_\+distance\+\_\+distribution\+\_\+plotter.\+trajectories} = pickle.\+load(trajectories\+\_\+file)
+\item 
+\hyperlink{namespaceimplementation_1_1position__distance__distribution__plotter_a89ec6d992eb771c7bae52ca515ad503a}{implementation.\+position\+\_\+distance\+\_\+distribution\+\_\+plotter.\+ego\+\_\+trajectory} = trajectories\mbox{[}\char`\"{}Ego\char`\"{}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Extract Trajectories \#. \end{DoxyCompactList}\item 
+\hyperlink{namespaceimplementation_1_1position__distance__distribution__plotter_a48ffbcc4b36f454881a6cc058dd135c4}{implementation.\+position\+\_\+distance\+\_\+distribution\+\_\+plotter.\+front\+\_\+idm\+\_\+trajectory} = trajectories\mbox{[}\char`\"{}Front\+I\+DM\char`\"{}\mbox{]}
+\item 
+\hyperlink{namespaceimplementation_1_1position__distance__distribution__plotter_aa0142c971ac31bcd691988ef6fb8226c}{implementation.\+position\+\_\+distance\+\_\+distribution\+\_\+plotter.\+front\+\_\+emergency\+\_\+trajectory} = trajectories\mbox{[}\char`\"{}Front\+Emergency\char`\"{}\mbox{]}
+\item 
+\hyperlink{namespaceimplementation_1_1position__distance__distribution__plotter_abe878b1b059c1fe7f6a2fbf27bde7572}{implementation.\+position\+\_\+distance\+\_\+distribution\+\_\+plotter.\+front\+\_\+target\+\_\+brake\+\_\+trajectory} = trajectories\mbox{[}\char`\"{}Front\+Target\+Brake\char`\"{}\mbox{]}
+\item 
+string \hyperlink{namespaceimplementation_1_1position__distance__distribution__plotter_a911df4486f6da5deb1bf4a6ac7ec2b69}{implementation.\+position\+\_\+distance\+\_\+distribution\+\_\+plotter.\+plot\+\_\+file\+\_\+path\+\_\+prefix} = f\char`\"{}\{stored\+\_\+data\+\_\+directory\}\{scenario\+\_\+data\+\_\+directory\}\{file\+\_\+cycle\+\_\+counter\}\char`\"{}
+\item 
+string \hyperlink{namespaceimplementation_1_1position__distance__distribution__plotter_a2d1ec485572f5ae57d02d17429aaaaf8}{implementation.\+position\+\_\+distance\+\_\+distribution\+\_\+plotter.\+plot\+\_\+file\+\_\+path\+\_\+idm} = f\char`\"{}\{plot\+\_\+file\+\_\+path\+\_\+prefix\}\+\_\+idm\{plot\+\_\+postfix\}\char`\"{}
+\item 
+string \hyperlink{namespaceimplementation_1_1position__distance__distribution__plotter_a248f5388045462b02df5842dc76302e7}{implementation.\+position\+\_\+distance\+\_\+distribution\+\_\+plotter.\+plot\+\_\+file\+\_\+path\+\_\+emergency} = f\char`\"{}\{plot\+\_\+file\+\_\+path\+\_\+prefix\}\+\_\+emergency\{plot\+\_\+postfix\}\char`\"{}
+\item 
+string \hyperlink{namespaceimplementation_1_1position__distance__distribution__plotter_a50018f94fb89fc706668ae9898ae661f}{implementation.\+position\+\_\+distance\+\_\+distribution\+\_\+plotter.\+plot\+\_\+file\+\_\+path\+\_\+target\+\_\+brake} = f\char`\"{}\{plot\+\_\+file\+\_\+path\+\_\+prefix\}\+\_\+target\+\_\+brake\{plot\+\_\+postfix\}\char`\"{}
+\end{DoxyCompactItemize}

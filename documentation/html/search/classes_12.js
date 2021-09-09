@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['world_437',['World',['../classimplementation_1_1manual__control_1_1_world.html',1,'implementation::manual_control']]]
+  ['unsignalizedfourwayjunction',['UnsignalizedFourWayJunction',['../classimplementation_1_1actor__situation__class__detection_1_1situation__class_1_1_unsignalized_four_way_junction.html',1,'implementation::actor_situation_class_detection::situation_class']]]
 ];

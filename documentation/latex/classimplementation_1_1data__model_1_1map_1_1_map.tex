@@ -1,0 +1,111 @@
+\hypertarget{classimplementation_1_1data__model_1_1map_1_1_map}{}\section{implementation.\+data\+\_\+model.\+map.\+Map Class Reference}
+\label{classimplementation_1_1data__model_1_1map_1_1_map}\index{implementation.\+data\+\_\+model.\+map.\+Map@{implementation.\+data\+\_\+model.\+map.\+Map}}
+Inheritance diagram for implementation.\+data\+\_\+model.\+map.\+Map\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classimplementation_1_1data__model_1_1map_1_1_map}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classimplementation_1_1data__model_1_1map_1_1_map_a4fc6942eed69c519ac3b34ff2ff0a92d}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, map\+\_\+name)
+\item 
+def \hyperlink{classimplementation_1_1data__model_1_1map_1_1_map_aa594532ade53c7e6ec730e657e383271}{get\+\_\+distance\+\_\+to\+\_\+lane\+\_\+end}
+\item 
+def \hyperlink{classimplementation_1_1data__model_1_1map_1_1_map_a03736a8ebf18a875f53992b977736108}{get\+\_\+waypoint}
+\item 
+def \hyperlink{classimplementation_1_1data__model_1_1map_1_1_map_a815310646f53527f0be529d336b0317c}{get\+\_\+point\+\_\+on\+\_\+lane\+\_\+right}
+\item 
+def \hyperlink{classimplementation_1_1data__model_1_1map_1_1_map_a799206c287976e7291ffbe509c3754ce}{get\+\_\+point\+\_\+on\+\_\+lane\+\_\+left}
+\item 
+def \hyperlink{classimplementation_1_1data__model_1_1map_1_1_map_afc749937439c4c831c1061928563030a}{get\+\_\+next\+\_\+point\+\_\+on\+\_\+lane}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classimplementation_1_1data__model_1_1map_1_1_map_a9c9d66086867f8a00ed50f814a4323b1}{map}
+\item 
+\hyperlink{classimplementation_1_1data__model_1_1map_1_1_map_a0a36c23f92da7063d8377fc83c373128}{map\+\_\+matching}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Map class that holds a representation of the ad map and provides severel functions to work with the map.
+Takes the map name of the current town to create an ad representation.
+
+Attributes;
+map : ad.map
+    ad map object of the current map
+map_matching : ad.map.match.AdMapMatching
+    Object that handles all map matching actions
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classimplementation_1_1data__model_1_1map_1_1_map_a4fc6942eed69c519ac3b34ff2ff0a92d}\label{classimplementation_1_1data__model_1_1map_1_1_map_a4fc6942eed69c519ac3b34ff2ff0a92d}} 
+\index{implementation\+::data\+\_\+model\+::map\+::\+Map@{implementation\+::data\+\_\+model\+::map\+::\+Map}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!implementation\+::data\+\_\+model\+::map\+::\+Map@{implementation\+::data\+\_\+model\+::map\+::\+Map}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def implementation.\+data\+\_\+model.\+map.\+Map.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{map\+\_\+name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Constructor for the Map class. Loads the ad map from an OpenDrive File
+
+Parameters
+----------
+map_name : str
+    Name of the map (i.e. Town03) without .xodr
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classimplementation_1_1data__model_1_1map_1_1_map_aa594532ade53c7e6ec730e657e383271}\label{classimplementation_1_1data__model_1_1map_1_1_map_aa594532ade53c7e6ec730e657e383271}} 
+\index{implementation\+::data\+\_\+model\+::map\+::\+Map@{implementation\+::data\+\_\+model\+::map\+::\+Map}!get\+\_\+distance\+\_\+to\+\_\+lane\+\_\+end@{get\+\_\+distance\+\_\+to\+\_\+lane\+\_\+end}}
+\index{get\+\_\+distance\+\_\+to\+\_\+lane\+\_\+end@{get\+\_\+distance\+\_\+to\+\_\+lane\+\_\+end}!implementation\+::data\+\_\+model\+::map\+::\+Map@{implementation\+::data\+\_\+model\+::map\+::\+Map}}
+\subsubsection{\texorpdfstring{get\+\_\+distance\+\_\+to\+\_\+lane\+\_\+end()}{get\_distance\_to\_lane\_end()}}
+{\footnotesize\ttfamily def implementation.\+data\+\_\+model.\+map.\+Map.\+get\+\_\+distance\+\_\+to\+\_\+lane\+\_\+end (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{location }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classimplementation_1_1data__model_1_1map_1_1_map_afc749937439c4c831c1061928563030a}\label{classimplementation_1_1data__model_1_1map_1_1_map_afc749937439c4c831c1061928563030a}} 
+\index{implementation\+::data\+\_\+model\+::map\+::\+Map@{implementation\+::data\+\_\+model\+::map\+::\+Map}!get\+\_\+next\+\_\+point\+\_\+on\+\_\+lane@{get\+\_\+next\+\_\+point\+\_\+on\+\_\+lane}}
+\index{get\+\_\+next\+\_\+point\+\_\+on\+\_\+lane@{get\+\_\+next\+\_\+point\+\_\+on\+\_\+lane}!implementation\+::data\+\_\+model\+::map\+::\+Map@{implementation\+::data\+\_\+model\+::map\+::\+Map}}
+\subsubsection{\texorpdfstring{get\+\_\+next\+\_\+point\+\_\+on\+\_\+lane()}{get\_next\_point\_on\_lane()}}
+{\footnotesize\ttfamily def implementation.\+data\+\_\+model.\+map.\+Map.\+get\+\_\+next\+\_\+point\+\_\+on\+\_\+lane (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{start\+\_\+point }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classimplementation_1_1data__model_1_1map_1_1_map_a799206c287976e7291ffbe509c3754ce}\label{classimplementation_1_1data__model_1_1map_1_1_map_a799206c287976e7291ffbe509c3754ce}} 
+\index{implementation\+::data\+\_\+model\+::map\+::\+Map@{implementation\+::data\+\_\+model\+::map\+::\+Map}!get\+\_\+point\+\_\+on\+\_\+lane\+\_\+left@{get\+\_\+point\+\_\+on\+\_\+lane\+\_\+left}}
+\index{get\+\_\+point\+\_\+on\+\_\+lane\+\_\+left@{get\+\_\+point\+\_\+on\+\_\+lane\+\_\+left}!implementation\+::data\+\_\+model\+::map\+::\+Map@{implementation\+::data\+\_\+model\+::map\+::\+Map}}
+\subsubsection{\texorpdfstring{get\+\_\+point\+\_\+on\+\_\+lane\+\_\+left()}{get\_point\_on\_lane\_left()}}
+{\footnotesize\ttfamily def implementation.\+data\+\_\+model.\+map.\+Map.\+get\+\_\+point\+\_\+on\+\_\+lane\+\_\+left (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{location }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classimplementation_1_1data__model_1_1map_1_1_map_a815310646f53527f0be529d336b0317c}\label{classimplementation_1_1data__model_1_1map_1_1_map_a815310646f53527f0be529d336b0317c}} 
+\index{implementation\+::data\+\_\+model\+::map\+::\+Map@{implementation\+::data\+\_\+model\+::map\+::\+Map}!get\+\_\+point\+\_\+on\+\_\+lane\+\_\+right@{get\+\_\+point\+\_\+on\+\_\+lane\+\_\+right}}
+\index{get\+\_\+point\+\_\+on\+\_\+lane\+\_\+right@{get\+\_\+point\+\_\+on\+\_\+lane\+\_\+right}!implementation\+::data\+\_\+model\+::map\+::\+Map@{implementation\+::data\+\_\+model\+::map\+::\+Map}}
+\subsubsection{\texorpdfstring{get\+\_\+point\+\_\+on\+\_\+lane\+\_\+right()}{get\_point\_on\_lane\_right()}}
+{\footnotesize\ttfamily def implementation.\+data\+\_\+model.\+map.\+Map.\+get\+\_\+point\+\_\+on\+\_\+lane\+\_\+right (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{location }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classimplementation_1_1data__model_1_1map_1_1_map_a03736a8ebf18a875f53992b977736108}\label{classimplementation_1_1data__model_1_1map_1_1_map_a03736a8ebf18a875f53992b977736108}} 
+\index{implementation\+::data\+\_\+model\+::map\+::\+Map@{implementation\+::data\+\_\+model\+::map\+::\+Map}!get\+\_\+waypoint@{get\+\_\+waypoint}}
+\index{get\+\_\+waypoint@{get\+\_\+waypoint}!implementation\+::data\+\_\+model\+::map\+::\+Map@{implementation\+::data\+\_\+model\+::map\+::\+Map}}
+\subsubsection{\texorpdfstring{get\+\_\+waypoint()}{get\_waypoint()}}
+{\footnotesize\ttfamily def implementation.\+data\+\_\+model.\+map.\+Map.\+get\+\_\+waypoint (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{location }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classimplementation_1_1data__model_1_1map_1_1_map_a9c9d66086867f8a00ed50f814a4323b1}\label{classimplementation_1_1data__model_1_1map_1_1_map_a9c9d66086867f8a00ed50f814a4323b1}} 
+\index{implementation\+::data\+\_\+model\+::map\+::\+Map@{implementation\+::data\+\_\+model\+::map\+::\+Map}!map@{map}}
+\index{map@{map}!implementation\+::data\+\_\+model\+::map\+::\+Map@{implementation\+::data\+\_\+model\+::map\+::\+Map}}
+\subsubsection{\texorpdfstring{map}{map}}
+{\footnotesize\ttfamily implementation.\+data\+\_\+model.\+map.\+Map.\+map}
+
+\mbox{\Hypertarget{classimplementation_1_1data__model_1_1map_1_1_map_a0a36c23f92da7063d8377fc83c373128}\label{classimplementation_1_1data__model_1_1map_1_1_map_a0a36c23f92da7063d8377fc83c373128}} 
+\index{implementation\+::data\+\_\+model\+::map\+::\+Map@{implementation\+::data\+\_\+model\+::map\+::\+Map}!map\+\_\+matching@{map\+\_\+matching}}
+\index{map\+\_\+matching@{map\+\_\+matching}!implementation\+::data\+\_\+model\+::map\+::\+Map@{implementation\+::data\+\_\+model\+::map\+::\+Map}}
+\subsubsection{\texorpdfstring{map\+\_\+matching}{map\_matching}}
+{\footnotesize\ttfamily implementation.\+data\+\_\+model.\+map.\+Map.\+map\+\_\+matching}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+implementation/data\+\_\+model/\hyperlink{map_8py}{map.\+py}\end{DoxyCompactItemize}

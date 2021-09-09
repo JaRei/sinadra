@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['imusensor_408',['IMUSensor',['../classimplementation_1_1manual__control_1_1_i_m_u_sensor.html',1,'implementation::manual_control']]]
+  ['helptext',['HelpText',['../classimplementation_1_1manual__control_1_1_help_text.html',1,'implementation::manual_control']]],
+  ['hud',['HUD',['../classimplementation_1_1manual__control_1_1_h_u_d.html',1,'implementation::manual_control']]]
 ];

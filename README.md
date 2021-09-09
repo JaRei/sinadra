@@ -5,6 +5,7 @@
 ## Table of Contents
 
 1. [Introduction](#introduction)
+1. [Run SINADRA using Docker](#docker_setup)
 1. [How to Setup the System Environment](#how_to_setup)
     1. [System Requirements](#system_requirements)
     1. [Python Environment Requirements](#python_env_requirements)
@@ -63,16 +64,53 @@ publisher="Springer International Publishing"
 }
 ```
 
+## Run SINADRA using Docker <a name="docker_setup"/>
+
+A Docker image is provided, completly set up to run SINADRA. The *.bashrc* located in the root folder will be automatically loaded by the docker container. 
+
+```
+# Download the prebuilt Carla Docker:
+docker pull carlasim/carla:0.9.10.1
+
+# Download the SINADRA Docker:
+docker pull iesesaf/sinadra:latest
+
+# Create a shared volume for the Docker at the desired directory
+mkdir $HOME/sinadra_home
+
+# Clone the SINADRA repository into the shared volume. You can change the folder name, but make sure then, to update the "SINADRA_FOLDER" variable in the .bashrc file
+cd $HOME/sinadra_home
+git clone https://github.com/JaRei/sinadra.git sinadra
+
+# make run script executable
+cd sinadra
+chmod +x run_sinadra_docker
+
+# Copy .bashrc to the dockers home directory so it will be sourced automatically on startup
+cp .bashrc ../
+```
+
+Executing the *run_sinadra_docker* script will start the Carla and Sinadra Docker and create a connection between both container. 
+```
+# Execute SINADRA and Carla Docker. Without the "carla" parameter, only the SINADRA docker will be started.
+./run_sinadra_docker carla
+```
+To execute SINADRA itself follow the steps shown in [Running the SINADRA risk sensor](#running), starting with step 2 (Carla is already running).
+
+
 ## How to Setup the System Environment <a name="how_to_setup"/>
 
 ### System Requirements <a name="system_requirements"/>
 
 * Ubuntu 18.04
-* [CARLA 0.9.10](https://github.com/carla-simulator/carla)
+* [CARLA 0.9.10.1](https://github.com/carla-simulator/carla/tree/0.9.10.1)
     * The Python environment must have all CARLA requirements installed and the Python path to the CARLA Python API `.egg` file must be set up correctly. [CARLA Quickstart](https://carla.readthedocs.io/en/latest/start_quickstart/)
 * [ScenarioRunner for CARLA](https://github.com/carla-simulator/scenario_runner) including correctly set Python paths
     * The Python environment must have all CARLA requirements installed and the Python path must be correctly set up. [ScenarioRunner Getting Started](https://github.com/carla-simulator/scenario_runner/blob/master/Docs/getting_scenariorunner.md)
     * The *SINADRA Risk Sensor* and the provided scenarios are tested with commit [4e0b197b](https://github.com/carla-simulator/scenario_runner/tree/4e0b197bce349a14598154e8313698092b37c210)
+* [Intel Ad Map Access](https://github.com/carla-simulator/map)
+	* The INTEL Ad Map Access must be built [Build Ad Map Access](https://ad-map-access.readthedocs.io/en/latest/BUILDING/index.html)
+	* Implementation was tested with commit b1ec6f3047f05de1df801d4d3441bde3e34e8983
 
 ### Python Environment Requirements <a name="python_env_requirements"/>
 
@@ -101,21 +139,32 @@ Python 3.8 environment with the built-in packages.
 
 ### Helpful .bashrc Adjustments <a name="bashrc"/>
 
-The following are optional adjustments to the `.bashrc` file located in the home directory which makes working with *CARLA* easier. The below commands are existent in `documentation/bashrc.txt` so that you can easily copy it to your own `.bashrc`.
+The following are optional adjustments to the `.bashrc` file located in the home directory which makes working with *CARLA* easier. The below commands are existent in `documentation/bashrc.txt` so that you can easily copy it to your own `.bashrc`. Make sure to adapt the "ROOT" parameters to your installation dircetories.
 
 * Adding *CARLA* to the `PYTHONPATH` environment variable:
 ```
 export CARLA_ROOT=/opt/carla
+export SRUNNER_ROOT=/opt/carla
+export INTEL_LIB_ROOT=~/map
+export sinadra_repo_root=~/sinadra
+
 export PYTHONPATH=$PYTHONPATH:${CARLA_ROOT}/PythonAPI/carla/dist/carla-0.9.10-py3.7-linux-x86_64.egg
 export PYTHONPATH=$PYTHONPATH:${CARLA_ROOT}/PythonAPI/carla/agents
 export PYTHONPATH=$PYTHONPATH:${CARLA_ROOT}/PythonAPI/carla
 export PYTHONPATH=$PYTHONPATH:${CARLA_ROOT}/PythonAPI
-export PYTHONPATH=$PYTHONPATH:${CARLA_ROOT}/scenario_runner
+export PYTHONPATH=$PYTHONPATH:${SRUNNER_ROOT}/scenario_runner
+export PYTHONPATH=$PYTHONPATH:${INTEL_LIB_ROOT}/install/ad_map_access/lib/python3.6
+
+export scenario_runner_path=${SRUNNER_ROOT}/scenario_runner/scenario_runner.py
+export sinadra_scenarios_path=${sinadra_repo_root}/implementation/scenarios/carla_scenarios
 ```
 * Adding a shortcut to launch the *CARLA* server and *SINADRA* smoothly
 ```
-alias carla="/opt/carla/CarlaUE4.sh"
-sinadra() {"python3 ~/sinadra/implementation/sinadra_risk_sensor_client.py"}
+alias carla="${CARLA_ROOT}/CarlaUE4.sh"
+
+sinadra() {
+	python3 ${sinadra_repo_root}/implementation/sinadra_risk_sensor_client.py
+}
 ```
 * Adding a shortcut to run scenarios with the *ScenarioRunner for CARLA* (you can append this method by any scenarios). In the `.bashrc` file in the `documentation/` directory all existent scenarios are already included.
 ```
@@ -125,7 +174,7 @@ run_scenario() {
     # <scenarioID> = {lf_normal}
     case "$1" in
         lf_normal)
-        python3 /opt/carla/scenario_runner/scenario_runner.py --openscenario ~/sinadra/implementation/scenarios/LaneFollowing1.xosc
+        python3 ${scenario_runner_path} --openscenario ${sinadra_scenarios_path}/LaneFollowing1.xosc
         ;;
     esac
 }
@@ -146,6 +195,8 @@ run_scenario() {
             * `lf_stopline_strong`
             * `lf_twovehicles`
             * `lf_fvlanechange`
+			* `lf_cutin_ego_from_right_ind_single`
+			* `lf_cutin_ego_from_right_single`
             * `dlf_overtake`
             * `lf_cutin_ego`
             * `lf_cutin_ego_ind`

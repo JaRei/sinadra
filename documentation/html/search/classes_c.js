@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pose_414',['Pose',['../classimplementation_1_1util_1_1kinematic__transform_1_1_pose.html',1,'implementation::util::kinematic_transform']]]
+  ['node',['Node',['../classimplementation_1_1bayesian__network_1_1inference_1_1interfaces_1_1_node.html',1,'implementation::bayesian_network::inference::interfaces']]]
 ];

@@ -1,20 +1,28 @@
 export CARLA_ROOT=/opt/carla
-export PYTHONPATH=$PYTHONPATH:${CARLA_ROOT}/PythonAPI/carla/dist/carla-0.9.10-py3.7-linux-x86_64.egg
+export SRUNNER_ROOT=/opt/carla
+export INTEL_LIB_ROOT=~/map
+export sinadra_repo_root=~/sinadra_carla_intel
+
+export PYTHONPATH=$PYTHONPATH:${CARLA_ROOT}/PythonAPI/carla/dist/carla-0.9.10-py3.6-linux-x86_64.egg
 export PYTHONPATH=$PYTHONPATH:${CARLA_ROOT}/PythonAPI/carla/agents
 export PYTHONPATH=$PYTHONPATH:${CARLA_ROOT}/PythonAPI/carla
 export PYTHONPATH=$PYTHONPATH:${CARLA_ROOT}/PythonAPI
-export PYTHONPATH=$PYTHONPATH:${CARLA_ROOT}/scenario_runner
+export PYTHONPATH=$PYTHONPATH:${SRUNNER_ROOT}/scenario_runner
+export PYTHONPATH=$PYTHONPATH:${INTEL_LIB_ROOT}/install/ad_map_access/lib/python3.6
 
 alias carla="${CARLA_ROOT}/CarlaUE4.sh"
-
-export sinadra_repo_root=~/sinadra
 
 sinadra() {
 	python3 ${sinadra_repo_root}/implementation/sinadra_risk_sensor_client.py
 }
 
-export scenario_runner_path=${CARLA_ROOT}/scenario_runner/scenario_runner.py
-export sinadra_scenarios_path=${sinadra_repo_root}/implementation/scenarios
+export scenario_runner_path=${SRUNNER_ROOT}/scenario_runner/scenario_runner.py
+export sinadra_scenarios_path=${sinadra_repo_root}/implementation/scenarios/carla_scenarios
+
+
+cp ~/sinadra/scenario_runner_adjustments/simple_vehicle_control* /opt/carla/scenario_runner/srunner/scenariomanager/actorcontrols/ &&
+cp ~/sinadra/scenario_runner_adjustments/scenario_manager.py /opt/carla/scenario_runner/srunner/scenariomanager/
+
 
 run_scenario() {
 
@@ -89,6 +97,16 @@ case "$1" in
 	python3 ${scenario_runner_path} --openscenario ${sinadra_scenarios_path}/LaneFollowing6_CutInEgo_Indicator.xosc
 	;;
 
+	lf_cutin_ego_from_right_single)
+
+	python3 ${scenario_runner_path} --openscenario ${sinadra_scenarios_path}/LaneFollowing6_CutInEgoFromRight_Single.xosc
+	;;
+	
+	lf_cutin_ego_from_right_ind_single)
+
+	python3 ${scenario_runner_path} --openscenario ${sinadra_scenarios_path}/LaneFollowing6_CutInEgoFromRight_Indicator_Single.xosc
+	;;
+
 	lf_cutin_ego_man)
 
 	python3 ${scenario_runner_path} --openscenario ${sinadra_scenarios_path}/LaneFollowing6_CutInEgo_ManualControl.xosc
@@ -119,8 +137,6 @@ case "$1" in
 
 	python3 ${scenario_runner_path} --openscenario ${sinadra_scenarios_path}/LaneFollowing6_CutInFront_ManualControl.xosc
 	;;
-
-
 esac
 
 }

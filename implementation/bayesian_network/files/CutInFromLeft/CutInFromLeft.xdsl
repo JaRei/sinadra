@@ -67,7 +67,7 @@
 			<parents>HeavyRain</parents>
 			<probabilities>0.2 0.8 0.01000000000000001 0.99</probabilities>
 		</cpt>
-		<cpt id="Predicted_SV_Cut_In_Behavior">
+		<cpt id="Predicted_Left_SV_Cut_In_Behavior">
 			<state id="CutIn" />
 			<state id="NoCutIn" />
 			<parents>Ego_FV_Perception SV_Cutin_Behavior</parents>
@@ -144,8 +144,8 @@
 				<position>427 531 514 587</position>
 				<barchart active="true" width="156" height="64" />
 			</node>
-			<node id="Predicted_SV_Cut_In_Behavior">
-				<name>Predicted SV Cut-In Behavior</name>
+			<node id="Predicted_Left_SV_Cut_In_Behavior">
+				<name>Predicted Left SV Cut-In Behavior</name>
 				<interior color="ffcc99" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />

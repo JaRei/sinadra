@@ -1,0 +1,51 @@
+\hypertarget{classimplementation_1_1bayesian__network_1_1inference_1_1interfaces_1_1_bayesian_network_input_feature_data}{}\section{implementation.\+bayesian\+\_\+network.\+inference.\+interfaces.\+Bayesian\+Network\+Input\+Feature\+Data Class Reference}
+\label{classimplementation_1_1bayesian__network_1_1inference_1_1interfaces_1_1_bayesian_network_input_feature_data}\index{implementation.\+bayesian\+\_\+network.\+inference.\+interfaces.\+Bayesian\+Network\+Input\+Feature\+Data@{implementation.\+bayesian\+\_\+network.\+inference.\+interfaces.\+Bayesian\+Network\+Input\+Feature\+Data}}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classimplementation_1_1bayesian__network_1_1inference_1_1interfaces_1_1_bayesian_network_input_feature_data_a23717b9e24d7048b1af3425c7e824432}{set\+\_\+environment}
+\item 
+def \hyperlink{classimplementation_1_1bayesian__network_1_1inference_1_1interfaces_1_1_bayesian_network_input_feature_data_a159d5e2bf1018e48846f577c7cab8b67}{set\+\_\+map}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Data class that is used as input for the creation of the Bayesian network's specific input feature data classes
+that are used in the Bayesian network configurations.
+(Python dataclasses.dataclass object.)
+
+Attributes
+----------
+vehicle_id : str
+    Identifier of the respective vehicle.
+vehicle : EgoVehicle,  OtherVehicle
+    Vehicle object for the given vehicle
+bayesian_network_id : Optional[str]
+    Identifier for the Bayesian network that shall be used for the inference. Will only be set if the inference
+    will be performed for this specific vehicle. (The default value is None.)
+
+environment : Environment
+    (Class attribute) Environment object, containing information about the weather etc
+map : Map
+    (Class attribute) Map object for the current world which is the access point for the topology
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classimplementation_1_1bayesian__network_1_1inference_1_1interfaces_1_1_bayesian_network_input_feature_data_a23717b9e24d7048b1af3425c7e824432}\label{classimplementation_1_1bayesian__network_1_1inference_1_1interfaces_1_1_bayesian_network_input_feature_data_a23717b9e24d7048b1af3425c7e824432}} 
+\index{implementation\+::bayesian\+\_\+network\+::inference\+::interfaces\+::\+Bayesian\+Network\+Input\+Feature\+Data@{implementation\+::bayesian\+\_\+network\+::inference\+::interfaces\+::\+Bayesian\+Network\+Input\+Feature\+Data}!set\+\_\+environment@{set\+\_\+environment}}
+\index{set\+\_\+environment@{set\+\_\+environment}!implementation\+::bayesian\+\_\+network\+::inference\+::interfaces\+::\+Bayesian\+Network\+Input\+Feature\+Data@{implementation\+::bayesian\+\_\+network\+::inference\+::interfaces\+::\+Bayesian\+Network\+Input\+Feature\+Data}}
+\subsubsection{\texorpdfstring{set\+\_\+environment()}{set\_environment()}}
+{\footnotesize\ttfamily def implementation.\+bayesian\+\_\+network.\+inference.\+interfaces.\+Bayesian\+Network\+Input\+Feature\+Data.\+set\+\_\+environment (\begin{DoxyParamCaption}\item[{}]{environment }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classimplementation_1_1bayesian__network_1_1inference_1_1interfaces_1_1_bayesian_network_input_feature_data_a159d5e2bf1018e48846f577c7cab8b67}\label{classimplementation_1_1bayesian__network_1_1inference_1_1interfaces_1_1_bayesian_network_input_feature_data_a159d5e2bf1018e48846f577c7cab8b67}} 
+\index{implementation\+::bayesian\+\_\+network\+::inference\+::interfaces\+::\+Bayesian\+Network\+Input\+Feature\+Data@{implementation\+::bayesian\+\_\+network\+::inference\+::interfaces\+::\+Bayesian\+Network\+Input\+Feature\+Data}!set\+\_\+map@{set\+\_\+map}}
+\index{set\+\_\+map@{set\+\_\+map}!implementation\+::bayesian\+\_\+network\+::inference\+::interfaces\+::\+Bayesian\+Network\+Input\+Feature\+Data@{implementation\+::bayesian\+\_\+network\+::inference\+::interfaces\+::\+Bayesian\+Network\+Input\+Feature\+Data}}
+\subsubsection{\texorpdfstring{set\+\_\+map()}{set\_map()}}
+{\footnotesize\ttfamily def implementation.\+bayesian\+\_\+network.\+inference.\+interfaces.\+Bayesian\+Network\+Input\+Feature\+Data.\+set\+\_\+map (\begin{DoxyParamCaption}\item[{}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+implementation/bayesian\+\_\+network/inference/\hyperlink{interfaces_8py}{interfaces.\+py}\end{DoxyCompactItemize}

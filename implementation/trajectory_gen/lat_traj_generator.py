@@ -7,11 +7,12 @@
 #################### END LICENSE BLOCK #################################
 import numpy as np
 import math
-from sinadra_configuration_parameters import *
+from sinadra_configuration_parameters import LC_ENDPOINT_VARIATION_STD
 
 ##########################################################################################
 # Trajectory Distribution Generators (Lateral Behaviors)
 ##########################################################################################
+
 
 def gen_lanechange(vehicle_init, lc_target, avg_curve_speed, num_traj, time_horizon, time_inc):
     '''
@@ -24,10 +25,11 @@ def gen_lanechange(vehicle_init, lc_target, avg_curve_speed, num_traj, time_hori
     :param time_inc:
     :return:
     '''
-    #print(f"Time Horizon: {time_horizon}, Time Increment: {time_inc}, Num Traj: {num_traj}")
+    # print(f"Time Horizon: {time_horizon}, Time Increment: {time_inc}, Num Traj: {num_traj}")
     # This is the distance accounting for the variation of cut-in distance from in front of other vehicle
-    endpoint_x_variation_samples = np.random.normal(lc_target[0], LC_ENDPOINT_VARIATION_STD, num_traj)  # [1,...,num_traj]
-    #print(f'Endpoint variation:{endpoint_x_variation_samples}')
+    # [1,...,num_traj]
+    endpoint_x_variation_samples = np.random.normal(lc_target[0], LC_ENDPOINT_VARIATION_STD, num_traj)
+    # print(f'Endpoint variation:{endpoint_x_variation_samples}')
 
     all_timesteps = int(time_horizon / time_inc + 1)
 
@@ -59,15 +61,15 @@ def gen_lanechange(vehicle_init, lc_target, avg_curve_speed, num_traj, time_hori
         # see https://pomax.github.io/bezierinfo/#arclength
         legendre_gauss = lambda vel_func, params: 0.5 * np.sum([np.linalg.norm(vel_func(x)) for x in params])
         curve_length = legendre_gauss(vel_func, np.array([-0.5 * 0.577 + 0.5, 0.5 * 0.577 + 0.5]))
-        #print(f"Curve Length: {curve_length}")
+        # print(f"Curve Length: {curve_length}")
 
         # Get time, when vehicle reaches endpoint given the initial speed of vehicle
         time_at_endpoint = curve_length / avg_curve_speed
-        #print(f"Time at end of bezier: {time_at_endpoint}")
+        # print(f"Time at end of bezier: {time_at_endpoint}")
 
         # Get all sample times, where the position is located on the Bezier curve
         time_space = np.arange(0, time_at_endpoint, time_inc)
-        #print(f"Time Space: {time_space}")
+        # print(f"Time Space: {time_space}")
 
         # Get parametric points for samples (the parametric space is [0,1] for Bezier)
         # This means normalizing the time space [0s, time_at_end] to [0,1]
@@ -79,7 +81,7 @@ def gen_lanechange(vehicle_init, lc_target, avg_curve_speed, num_traj, time_hori
         if parametric_space.shape[0] > (all_timesteps - 1):
             parametric_space = parametric_space[::math.ceil(parametric_space.shape[0] / (all_timesteps - 1))]
         parametric_space = np.append(parametric_space, 1.0)
-        #print(f"Parametric Space: {parametric_space}")
+        # print(f"Parametric Space: {parametric_space}")
 
         positions = pos_func(parametric_space)
         velocities = vel_func(parametric_space)
@@ -87,12 +89,12 @@ def gen_lanechange(vehicle_init, lc_target, avg_curve_speed, num_traj, time_hori
         # Normalize velocities to match initial speed
         velocities = velocities / (velocities[0][0] / vehicle_init[2])
 
-        #print(positions)
+        # print(positions)
 
         trajectory = positions[:-1]
 
-        # Add next point after bezier to trajectory (needs to be done manually, because bezier end is not the position at
-        # the next time step of the generation
+        # Add next point after bezier to trajectory (needs to be done manually, because bezier end is not the position
+        # at the next time step of the generation
         pos_at_bezier_end = positions[-1]
         v_at_bezier_end = velocities[-1]
         next_t_after_end = time_space[-1] + time_inc
@@ -109,19 +111,26 @@ def gen_lanechange(vehicle_init, lc_target, avg_curve_speed, num_traj, time_hori
             next_pos = np.array([np.array([last_pos[0] + v_at_bezier_end[0] * time_inc, last_pos[1]])])
             trajectory = np.concatenate((trajectory, next_pos))
 
-        print(trajectory[:, 0].shape)
+        # print(trajectory[:, 0].shape)
 
         pos_x_list[:, i] = trajectory[:, 0]  # Copy x positions for current trajectory in pos list at column i
         pos_y_list[:, i] = trajectory[:, 1]  # Copy y positions for current trajectory in pos list at column i
 
-    #print(pos_x_list)
+    # print("lane_change trajectory:")
+    # for i in range(num_traj):
+    #     print("x:")
+    #     print(pos_x_list[:, i].tolist())
+    #     print("y:")
+    #     print(pos_y_list[:, i].tolist())
+    # print("----------")
     pos_mean_x = np.mean(pos_x_list, axis=1)
     pos_mean_y = np.mean(pos_y_list, axis=1)
-    #print(f"Position Means: x={pos_mean_x}, y={pos_mean_y}")
+    # print(f"Position Means: x={pos_mean_x}, y={pos_mean_y}")
     pos_std_x = np.std(pos_x_list, axis=1)
     pos_std_y = np.std(pos_y_list, axis=1)
-    #print(f"Position Std: x={pos_std_x}, y={pos_std_y}")
+    # print(f"Position Std: x={pos_std_x}, y={pos_std_y}")
     return pos_mean_x, pos_std_x, pos_mean_y, pos_std_y
+
 
 def generate_bezier(control_points: np.array, derivative: int = 0):
     # B(3, t) = (1-t)**3 * P0 + 3 * (1-t)**2*t * P1 + 3 * (1-t)*t**2 * P2 + t**3 * P3
@@ -156,4 +165,3 @@ def generate_bezier(control_points: np.array, derivative: int = 0):
         2: internal_bezier_second_derivative}
 
     return switch_derivative[derivative]
-

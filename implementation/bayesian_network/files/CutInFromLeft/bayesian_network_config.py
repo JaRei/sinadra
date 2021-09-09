@@ -285,8 +285,8 @@ class BayesianNetworkConfig:
             {'Obstructed': outcome_Obstructed,
             'Unobstructed': outcome_Unobstructed}
 
-    def node_Predicted_SV_Cut_In_Behavior(self):
-        """Method for the CPT node 'Predicted_SV_Cut_In_Behavior' that allows setting the node as output node, 
+    def node_Predicted_Left_SV_Cut_In_Behavior(self):
+        """Method for the CPT node 'Predicted_Left_SV_Cut_In_Behavior' that allows setting the node as output node,
         and allows changing this nodes outcomes for the Bayesian network inference.
 
         Returns

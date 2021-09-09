@@ -6,10 +6,10 @@
 #
 #################### END LICENSE BLOCK #################################
 import math
-
 import numpy as np
-
-from sinadra_configuration_parameters import *
+from sinadra_configuration_parameters import EMERGENCY_ACC_MEAN, EMERGENCY_ACC_STD, EMERGENCY_POS_STD, \
+    CONST_ACCEL_MEAN, CONST_ACCEL_STD, CONST_ACCEL_POS_STD, TB_POS_STD, TB_MAX_DECELERATION, IDM_POS_STD, \
+    IDM_TIMEGAP_STD, IDM_TIME_GAP_FRONT_VEHICLE, S_0, V_DESIRED, DELTA, A_MAX, B_COMFORT
 
 ##########################################################################################
 # Trajectory Distribution Generators (Longitudinal Behaviors)
@@ -84,7 +84,13 @@ def gen_constant_accel(vehicle_init, num_traj, time_horizon, time_inc):
         trajectories = np.concatenate((trajectories, next_time))
     # print(trajectories)
     pos_list = trajectories[0:len(trajectories), 0].reshape((int(time_horizon / time_inc) + 1, num_traj))
-    # print(pos_list)
+    # print("Ego constant accel:")
+    # for i in range(num_traj):
+    #     print("x:")
+    #     print(pos_list[:, i].tolist())
+    #     print("y:")
+    #     print([0] * int(pos_sample_size / 2))
+    # print("-----")
     pos_mean = np.mean(pos_list, axis=1)
     # print(pos_mean)
     pos_std = np.std(pos_list, axis=1)
@@ -130,7 +136,8 @@ def gen_targetbrake(vehicle_init, target_distance, target_safe_distance, num_tra
     d_samples = np.zeros(num_traj)
 
     # Standard deviation chosen according to Schreier paper
-    safe_distance_variation_samples = np.random.normal(0.0, (target_safe_distance / 3.0) ** 2, num_traj)  # [1,...,num_traj]
+    # [1,...,num_traj]
+    safe_distance_variation_samples = np.random.normal(0.0, (target_safe_distance / 3.0) ** 2, num_traj)
 
     for i in range(0, num_traj):
         # This is the safe distance accounting for the variation of distance from target among different drivers

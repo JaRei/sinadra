@@ -1,0 +1,71 @@
+\hypertarget{classimplementation_1_1data__model_1_1positions_1_1_world_position}{}\section{implementation.\+data\+\_\+model.\+positions.\+World\+Position Class Reference}
+\label{classimplementation_1_1data__model_1_1positions_1_1_world_position}\index{implementation.\+data\+\_\+model.\+positions.\+World\+Position@{implementation.\+data\+\_\+model.\+positions.\+World\+Position}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classimplementation_1_1data__model_1_1positions_1_1_world_position_a4370a875ed91b01c5ea46999cf35520d}{get\+\_\+forward\+\_\+vector} (self)
+\item 
+def \hyperlink{classimplementation_1_1data__model_1_1positions_1_1_world_position_a10c9e56720a2ed53734bcc30aeb80f0f}{get\+\_\+inverse\+\_\+matrix} (self)
+\item 
+def \hyperlink{classimplementation_1_1data__model_1_1positions_1_1_world_position_a2f9f55dbf68b7e3c839d630c815b8a34}{get\+\_\+matrix} (self)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Data class containg an entities transform in world coordinates.
+
+Attributes
+----------
+location : Location
+    position of the entity in world coordinates (x, y, z)
+orientation : Orientation
+    orientation of the entity in world coordinates (heading, pitch, roll)
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classimplementation_1_1data__model_1_1positions_1_1_world_position_a4370a875ed91b01c5ea46999cf35520d}\label{classimplementation_1_1data__model_1_1positions_1_1_world_position_a4370a875ed91b01c5ea46999cf35520d}} 
+\index{implementation\+::data\+\_\+model\+::positions\+::\+World\+Position@{implementation\+::data\+\_\+model\+::positions\+::\+World\+Position}!get\+\_\+forward\+\_\+vector@{get\+\_\+forward\+\_\+vector}}
+\index{get\+\_\+forward\+\_\+vector@{get\+\_\+forward\+\_\+vector}!implementation\+::data\+\_\+model\+::positions\+::\+World\+Position@{implementation\+::data\+\_\+model\+::positions\+::\+World\+Position}}
+\subsubsection{\texorpdfstring{get\+\_\+forward\+\_\+vector()}{get\_forward\_vector()}}
+{\footnotesize\ttfamily def implementation.\+data\+\_\+model.\+positions.\+World\+Position.\+get\+\_\+forward\+\_\+vector (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{Vector3D }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a vector directing in forward direction of the vehicle.
+
+Returns
+-------
+Vector3D
+    vector in forward direction with length 1
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classimplementation_1_1data__model_1_1positions_1_1_world_position_a10c9e56720a2ed53734bcc30aeb80f0f}\label{classimplementation_1_1data__model_1_1positions_1_1_world_position_a10c9e56720a2ed53734bcc30aeb80f0f}} 
+\index{implementation\+::data\+\_\+model\+::positions\+::\+World\+Position@{implementation\+::data\+\_\+model\+::positions\+::\+World\+Position}!get\+\_\+inverse\+\_\+matrix@{get\+\_\+inverse\+\_\+matrix}}
+\index{get\+\_\+inverse\+\_\+matrix@{get\+\_\+inverse\+\_\+matrix}!implementation\+::data\+\_\+model\+::positions\+::\+World\+Position@{implementation\+::data\+\_\+model\+::positions\+::\+World\+Position}}
+\subsubsection{\texorpdfstring{get\+\_\+inverse\+\_\+matrix()}{get\_inverse\_matrix()}}
+{\footnotesize\ttfamily def implementation.\+data\+\_\+model.\+positions.\+World\+Position.\+get\+\_\+inverse\+\_\+matrix (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{List,  }\item[{}]{List,  }\item[{}]{float }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the inverse 4x4 transformation matrix of the entity
+
+Returns
+-------
+List[List[float]]
+    4x4 inverse transformation matrix
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classimplementation_1_1data__model_1_1positions_1_1_world_position_a2f9f55dbf68b7e3c839d630c815b8a34}\label{classimplementation_1_1data__model_1_1positions_1_1_world_position_a2f9f55dbf68b7e3c839d630c815b8a34}} 
+\index{implementation\+::data\+\_\+model\+::positions\+::\+World\+Position@{implementation\+::data\+\_\+model\+::positions\+::\+World\+Position}!get\+\_\+matrix@{get\+\_\+matrix}}
+\index{get\+\_\+matrix@{get\+\_\+matrix}!implementation\+::data\+\_\+model\+::positions\+::\+World\+Position@{implementation\+::data\+\_\+model\+::positions\+::\+World\+Position}}
+\subsubsection{\texorpdfstring{get\+\_\+matrix()}{get\_matrix()}}
+{\footnotesize\ttfamily def implementation.\+data\+\_\+model.\+positions.\+World\+Position.\+get\+\_\+matrix (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{List,  }\item[{}]{List,  }\item[{}]{float }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the 4x4 transformation matrix of the entity
+R|t
+0|1
+Returns
+-------
+List[List[float]]
+    4x4 transformation matrix
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+implementation/data\+\_\+model/\hyperlink{positions_8py}{positions.\+py}\end{DoxyCompactItemize}

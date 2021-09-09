@@ -72,7 +72,7 @@
       <PROPERTY/>
     </VARIABLE>
     <VARIABLE TYPE="nature">
-      <NAME>Predicted_SV_Cut_In_Behavior</NAME>
+      <NAME>Predicted_Left_SV_Cut_In_Behavior</NAME>
       <OUTCOME>CutIn</OUTCOME>
       <OUTCOME>NoCutIn</OUTCOME>
       <PROPERTY/>
@@ -151,7 +151,7 @@
       <TABLE>0.2 0.8 0.01000000000000001 0.99 </TABLE>
     </DEFINITION>
     <DEFINITION>
-      <FOR>Predicted_SV_Cut_In_Behavior</FOR>
+      <FOR>Predicted_Left_SV_Cut_In_Behavior</FOR>
       <GIVEN>Ego_FV_Perception</GIVEN>
       <GIVEN>SV_Cutin_Behavior</GIVEN>
       <TABLE>0.99 0.01 0.01 0.99 0.9999 9.999999999998899e-05 0.0001 0.9999 </TABLE>

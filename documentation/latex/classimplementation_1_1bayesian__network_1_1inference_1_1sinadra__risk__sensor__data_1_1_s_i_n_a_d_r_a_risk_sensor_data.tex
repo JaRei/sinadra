@@ -1,50 +1,33 @@
-\hypertarget{classimplementation_1_1bayesian__network_1_1inference_1_1sinadra__risk__sensor__data_1_1_s_i_n_a_d_r_a_risk_sensor_data}{}\doxysection{implementation.\+bayesian\+\_\+network.\+inference.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+data.\+S\+I\+N\+A\+D\+R\+A\+Risk\+Sensor\+Data Class Reference}
-\label{classimplementation_1_1bayesian__network_1_1inference_1_1sinadra__risk__sensor__data_1_1_s_i_n_a_d_r_a_risk_sensor_data}\index{implementation.bayesian\_network.inference.sinadra\_risk\_sensor\_data.SINADRARiskSensorData@{implementation.bayesian\_network.inference.sinadra\_risk\_sensor\_data.SINADRARiskSensorData}}
+\hypertarget{classimplementation_1_1bayesian__network_1_1inference_1_1sinadra__risk__sensor__data_1_1_s_i_n_a_d_r_a_risk_sensor_data}{}\section{implementation.\+bayesian\+\_\+network.\+inference.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+data.\+S\+I\+N\+A\+D\+R\+A\+Risk\+Sensor\+Data Class Reference}
+\label{classimplementation_1_1bayesian__network_1_1inference_1_1sinadra__risk__sensor__data_1_1_s_i_n_a_d_r_a_risk_sensor_data}\index{implementation.\+bayesian\+\_\+network.\+inference.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+data.\+S\+I\+N\+A\+D\+R\+A\+Risk\+Sensor\+Data@{implementation.\+bayesian\+\_\+network.\+inference.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+data.\+S\+I\+N\+A\+D\+R\+A\+Risk\+Sensor\+Data}}
 Inheritance diagram for implementation.\+bayesian\+\_\+network.\+inference.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+data.\+S\+I\+N\+A\+D\+R\+A\+Risk\+Sensor\+Data\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=0.994671cm]{classimplementation_1_1bayesian__network_1_1inference_1_1sinadra__risk__sensor__data_1_1_s_i_n_a_d_r_a_risk_sensor_data}
+\includegraphics[height=0.663114cm]{classimplementation_1_1bayesian__network_1_1inference_1_1sinadra__risk__sensor__data_1_1_s_i_n_a_d_r_a_risk_sensor_data}
 \end{center}
 \end{figure}
-\doxysubsection*{Public Member Functions}
+\subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-None \mbox{\hyperlink{classimplementation_1_1bayesian__network_1_1inference_1_1sinadra__risk__sensor__data_1_1_s_i_n_a_d_r_a_risk_sensor_data_af69eaaaab54e904dec17fb8b7e465b64}{collect\+\_\+data\+\_\+from\+\_\+carla}} (self, \char`\"{}C\+A\+R\+L\+A\+Bayesian\+Network\+Input\+Feature\+Data\char`\"{} carla\+\_\+input\+\_\+feature\+\_\+data)
+def \hyperlink{classimplementation_1_1bayesian__network_1_1inference_1_1sinadra__risk__sensor__data_1_1_s_i_n_a_d_r_a_risk_sensor_data_a554eb2647b96b3956764d60ecdec2425}{collect\+\_\+data\+\_\+from\+\_\+carla}
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\subsection{Detailed Description}
 \begin{DoxyVerb}Input feature data class for Bayesian networks. Each Bayesian network shall have its own custom implementation
 with its custom input features for situation-specific runtime updates.
 \end{DoxyVerb}
  
 
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classimplementation_1_1bayesian__network_1_1inference_1_1sinadra__risk__sensor__data_1_1_s_i_n_a_d_r_a_risk_sensor_data_af69eaaaab54e904dec17fb8b7e465b64}\label{classimplementation_1_1bayesian__network_1_1inference_1_1sinadra__risk__sensor__data_1_1_s_i_n_a_d_r_a_risk_sensor_data_af69eaaaab54e904dec17fb8b7e465b64}} 
-\index{implementation.bayesian\_network.inference.sinadra\_risk\_sensor\_data.SINADRARiskSensorData@{implementation.bayesian\_network.inference.sinadra\_risk\_sensor\_data.SINADRARiskSensorData}!collect\_data\_from\_carla@{collect\_data\_from\_carla}}
-\index{collect\_data\_from\_carla@{collect\_data\_from\_carla}!implementation.bayesian\_network.inference.sinadra\_risk\_sensor\_data.SINADRARiskSensorData@{implementation.bayesian\_network.inference.sinadra\_risk\_sensor\_data.SINADRARiskSensorData}}
-\doxysubsubsection{\texorpdfstring{collect\_data\_from\_carla()}{collect\_data\_from\_carla()}}
-{\footnotesize\ttfamily  None implementation.\+bayesian\+\_\+network.\+inference.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+data.\+S\+I\+N\+A\+D\+R\+A\+Risk\+Sensor\+Data.\+collect\+\_\+data\+\_\+from\+\_\+carla (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\char`\"{}C\+A\+R\+L\+A\+Bayesian\+Network\+Input\+Feature\+Data\char`\"{}}]{carla\+\_\+input\+\_\+feature\+\_\+data }\end{DoxyParamCaption})}
-
-\begin{DoxyVerb}Method that extracts the required input feature from the CARLA simulator.
-
-Parameters
-----------
-carla_input_feature_data : CARLABayesianNetworkInputFeatureData
-    CARLA specific input comprising the CARLA world instance and the CARLA vehicle instance for the given
-    vehicle.
-
-Raises
--------
-NotImplementedError
-    Interface base class, thus, this method must be implemented by the child classes.
-\end{DoxyVerb}
- 
-
-Reimplemented in \mbox{\hyperlink{classimplementation_1_1bayesian__network_1_1inference_1_1sinadra__risk__sensor__data_1_1_cut_in_from_left_aa397065e28e1d537dab70df0f44e1cca}{implementation.\+bayesian\+\_\+network.\+inference.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+data.\+Cut\+In\+From\+Left}}, and \mbox{\hyperlink{classimplementation_1_1bayesian__network_1_1inference_1_1sinadra__risk__sensor__data_1_1_data1_lane_follow___simple_a55ad281c0c2c21144548ce369b4cf7fa}{implementation.\+bayesian\+\_\+network.\+inference.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+data.\+Data1\+Lane\+Follow\+\_\+\+Simple}}.
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classimplementation_1_1bayesian__network_1_1inference_1_1sinadra__risk__sensor__data_1_1_s_i_n_a_d_r_a_risk_sensor_data_a554eb2647b96b3956764d60ecdec2425}\label{classimplementation_1_1bayesian__network_1_1inference_1_1sinadra__risk__sensor__data_1_1_s_i_n_a_d_r_a_risk_sensor_data_a554eb2647b96b3956764d60ecdec2425}} 
+\index{implementation\+::bayesian\+\_\+network\+::inference\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+data\+::\+S\+I\+N\+A\+D\+R\+A\+Risk\+Sensor\+Data@{implementation\+::bayesian\+\_\+network\+::inference\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+data\+::\+S\+I\+N\+A\+D\+R\+A\+Risk\+Sensor\+Data}!collect\+\_\+data\+\_\+from\+\_\+carla@{collect\+\_\+data\+\_\+from\+\_\+carla}}
+\index{collect\+\_\+data\+\_\+from\+\_\+carla@{collect\+\_\+data\+\_\+from\+\_\+carla}!implementation\+::bayesian\+\_\+network\+::inference\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+data\+::\+S\+I\+N\+A\+D\+R\+A\+Risk\+Sensor\+Data@{implementation\+::bayesian\+\_\+network\+::inference\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+data\+::\+S\+I\+N\+A\+D\+R\+A\+Risk\+Sensor\+Data}}
+\subsubsection{\texorpdfstring{collect\+\_\+data\+\_\+from\+\_\+carla()}{collect\_data\_from\_carla()}}
+{\footnotesize\ttfamily def implementation.\+bayesian\+\_\+network.\+inference.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+data.\+S\+I\+N\+A\+D\+R\+A\+Risk\+Sensor\+Data.\+collect\+\_\+data\+\_\+from\+\_\+carla (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{input\+\_\+feature\+\_\+data }\end{DoxyParamCaption})}
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-implementation/bayesian\+\_\+network/inference/\mbox{\hyperlink{sinadra__risk__sensor__data_8py}{sinadra\+\_\+risk\+\_\+sensor\+\_\+data.\+py}}\end{DoxyCompactItemize}
+implementation/bayesian\+\_\+network/inference/\hyperlink{sinadra__risk__sensor__data_8py}{sinadra\+\_\+risk\+\_\+sensor\+\_\+data.\+py}\end{DoxyCompactItemize}

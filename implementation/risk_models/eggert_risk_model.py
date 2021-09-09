@@ -9,11 +9,12 @@ import math
 import numpy as np
 from scipy.integrate import simps
 
-from sinadra_configuration_parameters import *
+from sinadra_configuration_parameters import EGGERT_BETA, EGGERT_RATE_MAX
 
 ##########################################################################################
 # Eggert Risk Model
 ##########################################################################################
+
 
 def eggert_risk(ego_pos_mean, ego_pos_std, fv_pos_mean, fv_pos_std, time_inc):
     mean_d_t = fv_pos_mean - ego_pos_mean
@@ -37,14 +38,11 @@ def eggert_risk(ego_pos_mean, ego_pos_std, fv_pos_mean, fv_pos_std, time_inc):
         collision_prob[i] = event_prob[i] * survival_prob[i]
     return collision_prob
 
+
 def risk_indicator(mean_d_t, sig_d_t):
     thresh_crit = 0  # All distances below 0m are deemed critical as this means a collision occured
     return 0.5 * (math.erf((thresh_crit - mean_d_t) / math.sqrt(2.0 * sig_d_t ** 2.0)) + 1)
 
+
 def event_rate(risk_ind):
     return (1 / EGGERT_RATE_MAX) * ((1 - math.exp(-EGGERT_BETA * risk_ind)) / (1 - math.exp(-EGGERT_BETA)))
-
-
-
-
-

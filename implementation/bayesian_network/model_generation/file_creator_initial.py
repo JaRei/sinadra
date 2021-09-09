@@ -8,7 +8,7 @@
 import argparse
 import os
 
-# Required to run from PyCharm as well as from terminal
+# Required to run from PyCharm as well as independently from terminal
 try:
     from bayesian_network.model_generation.config_creator import BayesianNetworkConfigCreator
 except ModuleNotFoundError:

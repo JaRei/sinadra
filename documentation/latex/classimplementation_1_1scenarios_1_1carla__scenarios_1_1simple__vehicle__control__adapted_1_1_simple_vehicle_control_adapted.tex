@@ -1,0 +1,96 @@
+\hypertarget{classimplementation_1_1scenarios_1_1carla__scenarios_1_1simple__vehicle__control__adapted_1_1_simple_vehicle_control_adapted}{}\section{implementation.\+scenarios.\+carla\+\_\+scenarios.\+simple\+\_\+vehicle\+\_\+control\+\_\+adapted.\+Simple\+Vehicle\+Control\+Adapted Class Reference}
+\label{classimplementation_1_1scenarios_1_1carla__scenarios_1_1simple__vehicle__control__adapted_1_1_simple_vehicle_control_adapted}\index{implementation.\+scenarios.\+carla\+\_\+scenarios.\+simple\+\_\+vehicle\+\_\+control\+\_\+adapted.\+Simple\+Vehicle\+Control\+Adapted@{implementation.\+scenarios.\+carla\+\_\+scenarios.\+simple\+\_\+vehicle\+\_\+control\+\_\+adapted.\+Simple\+Vehicle\+Control\+Adapted}}
+Inheritance diagram for implementation.\+scenarios.\+carla\+\_\+scenarios.\+simple\+\_\+vehicle\+\_\+control\+\_\+adapted.\+Simple\+Vehicle\+Control\+Adapted\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.737813cm]{classimplementation_1_1scenarios_1_1carla__scenarios_1_1simple__vehicle__control__adapted_1_1_simple_vehicle_control_adapted}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classimplementation_1_1scenarios_1_1carla__scenarios_1_1simple__vehicle__control__adapted_1_1_simple_vehicle_control_adapted_ab8480f0c42238a13f8504d84f893b762}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, actor, args=None)
+\item 
+def \hyperlink{classimplementation_1_1scenarios_1_1carla__scenarios_1_1simple__vehicle__control__adapted_1_1_simple_vehicle_control_adapted_acc7f8329b0043a22bd7095e7d58ead1b}{run\+\_\+step} (self)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Controller class for vehicles derived from BasicControl.
+
+The controller directly sets velocities in CARLA, therefore bypassing
+CARLA's vehicle engine. This allows a very precise speed control, but comes
+with limitations during cornering.
+
+In addition, the controller can consider blocking obstacles, which are
+classified as dynamic (i.e. vehicles, bikes, pedestrians). Activation of this
+features is controlled by passing proper arguments to the class constructor.
+The collision detection uses CARLA's obstacle sensor (sensor.other.obstacle),
+which checks for obstacles in the direct forward channel of the vehicle, i.e.
+there are limitation with sideways obstacles and while cornering.
+
+Args:
+    actor (carla.Actor): Vehicle actor that should be controlled.
+    args (dictionary): Dictonary of (key, value) arguments to be used by the controller.
+                       May include: (consider_obstacles, true/false) - Enable consideration of obstacles
+                                    (proximity_threshold, distance)  - Distance in front of actor in which
+                                                                       obstacles are considered
+                                    (attach_camera, true/false)      - Attach OpenCV display to actor
+                                                                       (useful for debugging)
+
+Attributes:
+
+    _generated_waypoint_list (list of carla.Transform): List of target waypoints the actor
+        should travel along. A waypoint here is of type carla.Transform!
+        Defaults to [].
+    _last_update (float): Last time step the update function (tick()) was called.
+        Defaults to None.
+    _consider_obstacles (boolean): Enable/Disable consideration of obstacles
+        Defaults to False.
+    _proximity_threshold (float): Distance in front of actor in which obstacles are considered
+        Defaults to infinity.
+    _cv_image (CV Image): Contains the OpenCV image, in case a debug camera is attached to the actor
+        Defaults to None.
+    _camera (sensor.camera.rgb): Debug camera attached to actor
+        Defaults to None.
+    _obstacle_sensor (sensor.other.obstacle): Obstacle sensor attached to actor
+        Defaults to None.
+    _obstacle_distance (float): Distance of the closest obstacle returned by the obstacle sensor
+        Defaults to infinity.
+    _obstacle_actor (carla.Actor): Closest obstacle returned by the obstacle sensor
+        Defaults to None.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classimplementation_1_1scenarios_1_1carla__scenarios_1_1simple__vehicle__control__adapted_1_1_simple_vehicle_control_adapted_ab8480f0c42238a13f8504d84f893b762}\label{classimplementation_1_1scenarios_1_1carla__scenarios_1_1simple__vehicle__control__adapted_1_1_simple_vehicle_control_adapted_ab8480f0c42238a13f8504d84f893b762}} 
+\index{implementation\+::scenarios\+::carla\+\_\+scenarios\+::simple\+\_\+vehicle\+\_\+control\+\_\+adapted\+::\+Simple\+Vehicle\+Control\+Adapted@{implementation\+::scenarios\+::carla\+\_\+scenarios\+::simple\+\_\+vehicle\+\_\+control\+\_\+adapted\+::\+Simple\+Vehicle\+Control\+Adapted}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!implementation\+::scenarios\+::carla\+\_\+scenarios\+::simple\+\_\+vehicle\+\_\+control\+\_\+adapted\+::\+Simple\+Vehicle\+Control\+Adapted@{implementation\+::scenarios\+::carla\+\_\+scenarios\+::simple\+\_\+vehicle\+\_\+control\+\_\+adapted\+::\+Simple\+Vehicle\+Control\+Adapted}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def implementation.\+scenarios.\+carla\+\_\+scenarios.\+simple\+\_\+vehicle\+\_\+control\+\_\+adapted.\+Simple\+Vehicle\+Control\+Adapted.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{actor,  }\item[{}]{args = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classimplementation_1_1scenarios_1_1carla__scenarios_1_1simple__vehicle__control__adapted_1_1_simple_vehicle_control_adapted_acc7f8329b0043a22bd7095e7d58ead1b}\label{classimplementation_1_1scenarios_1_1carla__scenarios_1_1simple__vehicle__control__adapted_1_1_simple_vehicle_control_adapted_acc7f8329b0043a22bd7095e7d58ead1b}} 
+\index{implementation\+::scenarios\+::carla\+\_\+scenarios\+::simple\+\_\+vehicle\+\_\+control\+\_\+adapted\+::\+Simple\+Vehicle\+Control\+Adapted@{implementation\+::scenarios\+::carla\+\_\+scenarios\+::simple\+\_\+vehicle\+\_\+control\+\_\+adapted\+::\+Simple\+Vehicle\+Control\+Adapted}!run\+\_\+step@{run\+\_\+step}}
+\index{run\+\_\+step@{run\+\_\+step}!implementation\+::scenarios\+::carla\+\_\+scenarios\+::simple\+\_\+vehicle\+\_\+control\+\_\+adapted\+::\+Simple\+Vehicle\+Control\+Adapted@{implementation\+::scenarios\+::carla\+\_\+scenarios\+::simple\+\_\+vehicle\+\_\+control\+\_\+adapted\+::\+Simple\+Vehicle\+Control\+Adapted}}
+\subsubsection{\texorpdfstring{run\+\_\+step()}{run\_step()}}
+{\footnotesize\ttfamily def implementation.\+scenarios.\+carla\+\_\+scenarios.\+simple\+\_\+vehicle\+\_\+control\+\_\+adapted.\+Simple\+Vehicle\+Control\+Adapted.\+run\+\_\+step (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Execute on tick of the controller's control loop
+
+If _waypoints are provided, the vehicle moves towards the next waypoint
+with the given _target_speed, until reaching the final waypoint. Upon reaching
+the final waypoint, _reached_goal is set to True.
+
+If _waypoints is empty, the vehicle moves in its current direction with
+the given _target_speed.
+
+For further details see :func:`_set_new_velocity`
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+implementation/scenarios/carla\+\_\+scenarios/\hyperlink{simple__vehicle__control__adapted_8py}{simple\+\_\+vehicle\+\_\+control\+\_\+adapted.\+py}\end{DoxyCompactItemize}

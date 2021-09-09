@@ -1,0 +1,55 @@
+\hypertarget{classimplementation_1_1data__model_1_1vehicle_1_1_ego_vehicle}{}\section{implementation.\+data\+\_\+model.\+vehicle.\+Ego\+Vehicle Class Reference}
+\label{classimplementation_1_1data__model_1_1vehicle_1_1_ego_vehicle}\index{implementation.\+data\+\_\+model.\+vehicle.\+Ego\+Vehicle@{implementation.\+data\+\_\+model.\+vehicle.\+Ego\+Vehicle}}
+Inheritance diagram for implementation.\+data\+\_\+model.\+vehicle.\+Ego\+Vehicle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classimplementation_1_1data__model_1_1vehicle_1_1_ego_vehicle}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classimplementation_1_1data__model_1_1vehicle_1_1_ego_vehicle_ad8165c0170e23589f0c6279ba4f7375d}{get\+\_\+side\+\_\+sensing\+\_\+area}
+\item 
+def \hyperlink{classimplementation_1_1data__model_1_1vehicle_1_1_ego_vehicle_acf6215a9d5f680822306f8dc785764f5}{get\+\_\+front\+\_\+sensing\+\_\+area} (self, map, Polygon, List, Line\+String)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classimplementation_1_1data__model_1_1vehicle_1_1_ego_vehicle_acf6215a9d5f680822306f8dc785764f5}\label{classimplementation_1_1data__model_1_1vehicle_1_1_ego_vehicle_acf6215a9d5f680822306f8dc785764f5}} 
+\index{implementation\+::data\+\_\+model\+::vehicle\+::\+Ego\+Vehicle@{implementation\+::data\+\_\+model\+::vehicle\+::\+Ego\+Vehicle}!get\+\_\+front\+\_\+sensing\+\_\+area@{get\+\_\+front\+\_\+sensing\+\_\+area}}
+\index{get\+\_\+front\+\_\+sensing\+\_\+area@{get\+\_\+front\+\_\+sensing\+\_\+area}!implementation\+::data\+\_\+model\+::vehicle\+::\+Ego\+Vehicle@{implementation\+::data\+\_\+model\+::vehicle\+::\+Ego\+Vehicle}}
+\subsubsection{\texorpdfstring{get\+\_\+front\+\_\+sensing\+\_\+area()}{get\_front\_sensing\_area()}}
+{\footnotesize\ttfamily def implementation.\+data\+\_\+model.\+vehicle.\+Ego\+Vehicle.\+get\+\_\+front\+\_\+sensing\+\_\+area (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{map,  }\item[{}]{Polygon,  }\item[{}]{List,  }\item[{}]{Line\+String }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Determines front sensing area for this vehicle using the configuration parameter
+FRONT_SENSING_DISTANCE_TIME_GAP_IN_SECONDS. Returns front sensing area as shapely.geometry.Polygon object.
+If configuration parameter DEBUG_MODE is set to true, this method additionally returns the lines of the polygon
+as a list of shapely.geometry.LineString objects for visualization in carla.
+
+Parameters
+----------
+map: Map
+    Map object to obtain points for sensing area calculation
+
+Returns
+-------
+Polygon
+    A shapely.geometry.Polygon object that defines the front sensing area
+List[LineString]
+    A list of shapely.geometry.LineString objects that represent the edges of the front sensing area.
+    The line strings are only needed for drawing debug lines of the sensing area on the Carla server. Therefore
+    the list is only returned if DEBUG_MODE flag is set to True. Otherwise None is returned instead.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classimplementation_1_1data__model_1_1vehicle_1_1_ego_vehicle_ad8165c0170e23589f0c6279ba4f7375d}\label{classimplementation_1_1data__model_1_1vehicle_1_1_ego_vehicle_ad8165c0170e23589f0c6279ba4f7375d}} 
+\index{implementation\+::data\+\_\+model\+::vehicle\+::\+Ego\+Vehicle@{implementation\+::data\+\_\+model\+::vehicle\+::\+Ego\+Vehicle}!get\+\_\+side\+\_\+sensing\+\_\+area@{get\+\_\+side\+\_\+sensing\+\_\+area}}
+\index{get\+\_\+side\+\_\+sensing\+\_\+area@{get\+\_\+side\+\_\+sensing\+\_\+area}!implementation\+::data\+\_\+model\+::vehicle\+::\+Ego\+Vehicle@{implementation\+::data\+\_\+model\+::vehicle\+::\+Ego\+Vehicle}}
+\subsubsection{\texorpdfstring{get\+\_\+side\+\_\+sensing\+\_\+area()}{get\_side\_sensing\_area()}}
+{\footnotesize\ttfamily def implementation.\+data\+\_\+model.\+vehicle.\+Ego\+Vehicle.\+get\+\_\+side\+\_\+sensing\+\_\+area (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{map }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+implementation/data\+\_\+model/\hyperlink{vehicle_8py}{vehicle.\+py}\end{DoxyCompactItemize}

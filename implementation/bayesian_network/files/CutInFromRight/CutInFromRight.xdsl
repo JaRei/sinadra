@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<smile version="1.0" id="Network2" numsamples="10000" discsamples="10000">
+	<nodes>
+		<cpt id="Lane_Ends">
+			<state id="small" />
+			<state id="medium" />
+			<state id="no_lane_end" />
+			<probabilities>0.02 0.18 0.8</probabilities>
+		</cpt>
+		<cpt id="Lane_Change_Intent">
+			<state id="LC_Required" />
+			<state id="LC_Not_Required" />
+			<parents>Lane_Ends</parents>
+			<probabilities>0.95 0.05000000000000004 0.5 0.5 0.05000000000000004 0.95</probabilities>
+		</cpt>
+		<cpt id="Gap_Availability">
+			<state id="lt_SV_length" />
+			<state id="gt_SV_length" />
+			<state id="gt_4_secs" />
+			<probabilities>0.33 0.33 0.34</probabilities>
+		</cpt>
+		<cpt id="Gap_Acceptance">
+			<state id="Acceptable" />
+			<state id="Unacceptable" />
+			<parents>Gap_Availability</parents>
+			<probabilities>1e-05 0.99999 0.3 0.7 0.8 0.2</probabilities>
+		</cpt>
+		<cpt id="HeavyRain">
+			<state id="Yes" />
+			<state id="No" />
+			<probabilities>1e-05 0.99999</probabilities>
+		</cpt>
+		<cpt id="FVViewRange">
+			<state id="Restricted" />
+			<state id="Clear" />
+			<parents>HeavyRain</parents>
+			<probabilities>1 0 0 1</probabilities>
+		</cpt>
+		<cpt id="SV_Situation_Perception">
+			<state id="Incorrect" />
+			<state id="Correct" />
+			<parents>FVViewRange</parents>
+			<probabilities>0.3 0.7 0.01 0.99</probabilities>
+		</cpt>
+		<cpt id="SV_Situation_Assessment">
+			<state id="Incorrect" />
+			<state id="Correct" />
+			<parents>SV_Situation_Perception</parents>
+			<probabilities>0.7 0.3 0.01 0.99</probabilities>
+		</cpt>
+		<cpt id="SV_Maneuver_Decision">
+			<state id="Safe_Cutin" />
+			<state id="Unsafe_Cutin" />
+			<state id="No_Cutin" />
+			<parents>Lane_Change_Intent SV_Situation_Assessment Gap_Acceptance</parents>
+			<probabilities>0.989 0.001 0.01 0.009099999999999997 0.001 0.9899 0.9899 0.0001 0.01 0.01 0.0001 0.9899 0.001 0.049 0.95 0.001 0.008999999999999999 0.99 0.049 0.001 0.95 0.008999999999999999 0.001 0.99</probabilities>
+		</cpt>
+		<cpt id="SV_Cutin_Behavior">
+			<state id="CutIn" />
+			<state id="NoCutIn" />
+			<parents>SV_Maneuver_Decision</parents>
+			<probabilities>0.99 0.01 0.99 0.01 0.01 0.99</probabilities>
+		</cpt>
+		<cpt id="Ego_FV_Perception">
+			<state id="Obstructed" />
+			<state id="Unobstructed" />
+			<parents>HeavyRain</parents>
+			<probabilities>0.2 0.8 0.01000000000000001 0.99</probabilities>
+		</cpt>
+		<cpt id="Predicted_Right_SV_Cut_In_Behavior">
+			<state id="CutIn" />
+			<state id="NoCutIn" />
+			<parents>Ego_FV_Perception SV_Cutin_Behavior</parents>
+			<probabilities>0.99 0.01 0.01 0.99 0.9999 9.999999999998899e-05 0.0001 0.9999</probabilities>
+		</cpt>
+		<cpt id="Steering_Angle">
+			<state id="lt_10_deg" />
+			<state id="gt_10_deg" />
+			<parents>SV_Cutin_Behavior</parents>
+			<probabilities>0.05 0.95 0.95 0.05000000000000004</probabilities>
+		</cpt>
+		<cpt id="Turn_Indicator">
+			<state id="Yes" />
+			<state id="No" />
+			<parents>SV_Cutin_Behavior</parents>
+			<probabilities>0.98 0.02000000000000002 0.001 0.999</probabilities>
+		</cpt>
+		<cpt id="Distance_Center">
+			<state id="MidLane" />
+			<state id="BetweenLaneAndCrossing" />
+			<state id="RightBeforeCrossing" />
+			<parents>SV_Cutin_Behavior</parents>
+			<probabilities>0.05 0.15 0.8 0.9 0.09 0.01</probabilities>
+		</cpt>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 3.0.5905.2 1d6b38b6cba8f00" name="LaneFollow_FV_AdversaryVehicle">
+			<node id="Gap_Availability">
+				<name>Gap Availability</name>
+				<interior color="ccffcc" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1120 278 1220 343</position>
+				<barchart active="true" width="162" height="73" />
+			</node>
+			<node id="Gap_Acceptance">
+				<name>Gap Acceptance</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1063 400 1145 451</position>
+				<comment>P(Measured TTC | Real TTC, Measurement Uncertainty)</comment>
+				<barchart active="true" width="143" height="72" />
+			</node>
+			<node id="SV_Cutin_Behavior">
+				<name>SV Cut-In Behavior</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>692 537 784 604</position>
+				<barchart active="true" width="192" height="90" />
+			</node>
+			<node id="SV_Situation_Assessment">
+				<name>SV Situation Assessment</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>688 251 780 312</position>
+				<barchart active="true" width="155" height="73" />
+			</node>
+			<node id="SV_Situation_Perception">
+				<name>SV Situation Perception</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>698 105 779 155</position>
+				<barchart active="true" width="148" height="69" />
+			</node>
+			<node id="Ego_FV_Perception">
+				<name>Ego SV Situation Perception</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>427 531 514 587</position>
+				<barchart active="true" width="156" height="64" />
+			</node>
+			<node id="Predicted_Right_SV_Cut_In_Behavior">
+				<name>Predicted Right SV Cut-In Behavior</name>
+				<interior color="ffcc99" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>541 675 650 731</position>
+				<barchart active="true" width="186" height="90" />
+			</node>
+			<node id="SV_Maneuver_Decision">
+				<name>SV Maneuver Decision</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>695 403 776 453</position>
+				<barchart active="true" width="148" height="72" />
+			</node>
+			<node id="HeavyRain">
+				<name>Heavy Rain</name>
+				<interior color="ccffcc" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>274 313 422 381</position>
+				<barchart active="true" width="171" height="90" />
+			</node>
+			<node id="FVViewRange">
+				<name>SV View Range</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>449 99 597 167</position>
+				<barchart active="true" width="157" height="90" />
+			</node>
+			<node id="Turn_Indicator">
+				<name>Turn Indicator</name>
+				<interior color="ccffcc" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>779 680 861 731</position>
+				<comment>P(Measured TTC | Real TTC, Measurement Uncertainty)</comment>
+				<barchart active="true" width="143" height="72" />
+			</node>
+			<node id="Steering_Angle">
+				<name>Steering Angle</name>
+				<interior color="ccffcc" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>941 657 1023 708</position>
+				<comment>P(Measured TTC | Real TTC, Measurement Uncertainty)</comment>
+				<barchart active="true" width="143" height="72" />
+			</node>
+			<node id="Lane_Change_Intent">
+				<name>Lane Change Trigger</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>909 298 991 349</position>
+				<comment>P(Measured TTC | Real TTC, Measurement Uncertainty)</comment>
+				<barchart active="true" width="181" height="72" />
+			</node>
+			<node id="Lane_Ends">
+				<name>Distance to SV Lane End</name>
+				<interior color="ccffcc" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>896 179 996 244</position>
+				<barchart active="true" width="175" height="73" />
+			</node>
+			<node id="Distance_Center">
+				<name>Distance to Lane Line</name>
+				<interior color="ccffcc" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>995 546 1077 597</position>
+				<comment>P(Measured TTC | Real TTC, Measurement Uncertainty)</comment>
+				<barchart active="true" width="262" height="72" />
+			</node>
+		</genie>
+	</extensions>
+</smile>

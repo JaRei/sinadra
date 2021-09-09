@@ -1,8 +1,8 @@
-\hypertarget{classimplementation_1_1bayesian__network_1_1inference_1_1interfaces_1_1_bayesian_network_data}{}\doxysection{implementation.\+bayesian\+\_\+network.\+inference.\+interfaces.\+Bayesian\+Network\+Data Class Reference}
-\label{classimplementation_1_1bayesian__network_1_1inference_1_1interfaces_1_1_bayesian_network_data}\index{implementation.bayesian\_network.inference.interfaces.BayesianNetworkData@{implementation.bayesian\_network.inference.interfaces.BayesianNetworkData}}
+\hypertarget{classimplementation_1_1bayesian__network_1_1inference_1_1interfaces_1_1_bayesian_network_data}{}\section{implementation.\+bayesian\+\_\+network.\+inference.\+interfaces.\+Bayesian\+Network\+Data Class Reference}
+\label{classimplementation_1_1bayesian__network_1_1inference_1_1interfaces_1_1_bayesian_network_data}\index{implementation.\+bayesian\+\_\+network.\+inference.\+interfaces.\+Bayesian\+Network\+Data@{implementation.\+bayesian\+\_\+network.\+inference.\+interfaces.\+Bayesian\+Network\+Data}}
 
 
-\doxysubsection{Detailed Description}
+\subsection{Detailed Description}
 \begin{DoxyVerb}Data class that is typically used as input for the methods that are part of the Bayesian network inference
 module. Each vehicle got its own data instance. If there is no Bayesian network ID set there will be no inference
 for the respective vehicle.
@@ -15,7 +15,7 @@ vehicle_id : str
 vehicle_situation_state_id : BayesianNetId
     State of the vehicle relative to the ego vehicle and its situation class.
     (E.g. indicating the state of being a front vehicle in a lane following situation.)
-vehicle_location : VehicleLocation
+vehicle_location : Location
     Position of the vehicle in the world coordinate system. Required for the filtering of vehicles, e.g., the
     filtering of the nearest front vehicle to the ego in case of several front vehicles.
 bayesian_network_id : Optional[str]
@@ -37,4 +37,4 @@ bayesian_network_model : Optional[BayesianModel]
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-implementation/bayesian\+\_\+network/inference/\mbox{\hyperlink{interfaces_8py}{interfaces.\+py}}\end{DoxyCompactItemize}
+implementation/bayesian\+\_\+network/inference/\hyperlink{interfaces_8py}{interfaces.\+py}\end{DoxyCompactItemize}

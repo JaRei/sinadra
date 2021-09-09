@@ -5,6 +5,7 @@
 # SPDX-License-Identifier: LGPL-2.1-only
 #
 #################### END LICENSE BLOCK #################################
+
 from typing import List, Optional, ClassVar, TYPE_CHECKING
 from dataclasses import dataclass
 import math
@@ -14,7 +15,10 @@ if TYPE_CHECKING:
     from bayesian_network.model_generation.config_template import BayesianNetworkConfig
     from actor_situation_class_detection.bayesian_network_id_selection.bayesian_network_id import BayesianNetId
     from pgmpy.models.BayesianModel import BayesianModel
-    import carla
+    from data_model.positions import Location
+    from data_model.vehicle import EgoVehicle, OtherVehicle
+    from data_model.map import Map
+    from data_model.environment import Environment
 
 
 @dataclass
@@ -133,7 +137,7 @@ class BayesianNetworkData:
     vehicle_situation_state_id : BayesianNetId
         State of the vehicle relative to the ego vehicle and its situation class.
         (E.g. indicating the state of being a front vehicle in a lane following situation.)
-    vehicle_location : VehicleLocation
+    vehicle_location : Location
         Position of the vehicle in the world coordinate system. Required for the filtering of vehicles, e.g., the
         filtering of the nearest front vehicle to the ego in case of several front vehicles.
     bayesian_network_id : Optional[str]
@@ -154,7 +158,7 @@ class BayesianNetworkData:
 
     vehicle_id: str
     vehicle_situation_state_id: "BayesianNetId"
-    vehicle_location: VehicleLocation
+    vehicle_location: "Location"
     bayesian_network_id: Optional[str] = None
     sinadra_risk_sensor_data: Optional["SINADRARiskSensorData"] = None
     bayesian_network_config: Optional["BayesianNetworkConfig"] = None
@@ -162,7 +166,7 @@ class BayesianNetworkData:
 
 
 @dataclass()
-class CARLABayesianNetworkInputFeatureData:
+class BayesianNetworkInputFeatureData:
     """Data class that is used as input for the creation of the Bayesian network's specific input feature data classes
     that are used in the Bayesian network configurations.
     (Python dataclasses.dataclass object.)
@@ -171,42 +175,41 @@ class CARLABayesianNetworkInputFeatureData:
     ----------
     vehicle_id : str
         Identifier of the respective vehicle.
-    carla_vehicle : carla.Vehicle
-        Vehicle object for the given vehicle from the CARLA simulator.
+    vehicle : EgoVehicle,  OtherVehicle
+        Vehicle object for the given vehicle
     bayesian_network_id : Optional[str]
         Identifier for the Bayesian network that shall be used for the inference. Will only be set if the inference
         will be performed for this specific vehicle. (The default value is None.)
 
-    carla_world : carla.World
-        (Class attribute) World object for the current CARLA simulator world which is the access point for the vehicle's
-        environment.
-    carla_map : carla.Map
-        (Class attribute) Map object for the current CARLA simulator world which is the access point for the topology
+    environment : Environment
+        (Class attribute) Environment object, containing information about the weather etc
+    map : Map
+        (Class attribute) Map object for the current world which is the access point for the topology
     """
 
     vehicle_id: str
-    carla_vehicle: "carla.Vehicle"
+    vehicle: Union["EgoVehicle", "OtherVehicle"]
     bayesian_network_id: Optional[str] = None
-
-    carla_world: ClassVar["carla.World"]
-    carla_map: ClassVar["carla.Map"]
+    map: ClassVar["Map"] = None
+    environment: ClassVar["Environment"]
 
     @staticmethod
-    def set_carla_world(carla_world: "carla.World") -> None:
-        """Sets the given CARLA world object.
+    def set_environment(environment: "Environment") -> None:
+        """Sets the given Environment
 
         Parameters
         ----------
-        carla_world : carla.World
+        environment : Environment
         """
-        CARLABayesianNetworkInputFeatureData.carla_world = carla_world
+        BayesianNetworkInputFeatureData.environment = environment
 
     @staticmethod
-    def set_carla_map(carla_map: "carla.Map") -> None:
-        """Sets the given CARLA map object.
+    def set_map(map: "Map") -> None:
+        """Sets the given Map object.
 
         Parameters
         ----------
-        carla_map : carla.Map
+        map : Map
         """
-        CARLABayesianNetworkInputFeatureData.carla_map = carla_map
+        print("Setting map for network feature data")
+        BayesianNetworkInputFeatureData.map = map

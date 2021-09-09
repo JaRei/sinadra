@@ -1,187 +1,178 @@
-\hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client}{}\doxysection{implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client Class Reference}
-\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client}\index{implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}}
-\doxysubsection*{Public Member Functions}
+\hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client}{}\section{implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client Class Reference}
+\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client}\index{implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client@{implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client}}
+\subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-def \mbox{\hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_aad834989947c7a59057585a61033bc02}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+def \hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a84329d20e8b5e7455783f51edd03bcf5}{\+\_\+\+\_\+init\+\_\+\+\_\+}
 \item 
-def \mbox{\hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_abe9d274f0e0aa4d91c9e8246bf22de29}{\+\_\+\+\_\+del\+\_\+\+\_\+}} (self)
+def \hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_ac10cb9eb1969653d2da9fb16ff8afacf}{generate\+\_\+and\+\_\+save\+\_\+data} (self, img\+\_\+risk)
 \item 
-def \mbox{\hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_abfcf4fc9a3e0a3bcc4b5725ae7154422}{set\+\_\+up\+\_\+carla\+\_\+camera}} (self, carla\+\_\+world)
+def \hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a72dc644b563e8b5c9511f6f152947fb4}{save\+\_\+raw\+\_\+trajectories} (self, path\+\_\+to\+\_\+data)
 \item 
-def \mbox{\hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a278a108dc86d14cb1c2b20bb410ecd6e}{game\+\_\+loop}} (self, carla\+\_\+world, carla\+\_\+map, state\+\_\+machine)
+def \hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a9042de0eaf88c0fe147a8da991dc9a40}{generate\+\_\+and\+\_\+save\+\_\+bn\+\_\+output} (self, path\+\_\+to\+\_\+data)
 \item 
-def \mbox{\hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_af089dade74d6a484d7335b76038ab397}{log\+\_\+hero\+\_\+sit\+\_\+class\+\_\+info}} (self, wrapped\+\_\+hero\+\_\+vehicle, hero\+\_\+situation\+\_\+class)
+def \hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_ae6ad18ad914f568a4180ed7d1506720b}{generate\+\_\+and\+\_\+save\+\_\+distance\+\_\+distribution\+\_\+and\+\_\+trajectory\+\_\+plots} (self, path\+\_\+to\+\_\+data)
+\item 
+def \hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_abe9d274f0e0aa4d91c9e8246bf22de29}{\+\_\+\+\_\+del\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_ad26e89ca6152ef6cc3b0226344ce1d2d}{risk\+\_\+computation\+\_\+loop\+\_\+step}
+\item 
+def \hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a58a6cfb24a4a625451a28eedd07a4c47}{generate\+\_\+trajectory\+\_\+and\+\_\+compute\+\_\+risk\+\_\+for\+\_\+vehicle\+\_\+and\+\_\+bn} (self, data, network\+\_\+output)
+\item 
+def \hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_ab5ac8b18ba8535ceeb08924a083538f0}{generate\+\_\+ego\+\_\+vehicle\+\_\+trajectory} (self, data)
+\item 
+def \hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a4f5ba0eceaba2fd5bb3134a221e9b705}{compute\+\_\+risk\+\_\+front\+\_\+vehicle\+\_\+braking} (self, data, ego\+\_\+half\+\_\+length, ego\+\_\+pos\+\_\+x\+\_\+mean, ego\+\_\+pos\+\_\+x\+\_\+std, network\+\_\+output, node)
+\item 
+def \hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a8e493d0fd00a2662527603365f07e92e}{compute\+\_\+risk\+\_\+side\+\_\+vehicle\+\_\+cut\+\_\+in\+\_\+from\+\_\+right} (self, data, ego\+\_\+np\+\_\+vec\+\_\+front, ego\+\_\+pos\+\_\+x\+\_\+mean, ego\+\_\+pos\+\_\+x\+\_\+std, network\+\_\+output, node)
+\item 
+def \hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a5b19f550350c401fc6565e6451e712e6}{compute\+\_\+risk\+\_\+side\+\_\+vehicle\+\_\+cut\+\_\+in\+\_\+from\+\_\+left} (self, data, ego\+\_\+np\+\_\+vec\+\_\+front, ego\+\_\+pos\+\_\+x\+\_\+mean, ego\+\_\+pos\+\_\+x\+\_\+std, network\+\_\+output, node)
+\item 
+def \hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a901977934f44713c406f388873681c71}{log\+\_\+hero\+\_\+sit\+\_\+class\+\_\+info} (self, hero\+\_\+vehicle, hero\+\_\+situation\+\_\+class)
 \begin{DoxyCompactList}\small\item\em Logging. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a4c37db8ca3e27a6a8d169863b30bbcf6}{log\+\_\+active\+\_\+bn\+\_\+info}} (self, vehicle\+\_\+dependent\+\_\+bn\+\_\+ids)
+def \hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a4c37db8ca3e27a6a8d169863b30bbcf6}{log\+\_\+active\+\_\+bn\+\_\+info} (self, vehicle\+\_\+dependent\+\_\+bn\+\_\+ids)
 \item 
-None \mbox{\hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_ae0f1d0fe1d7c862f8e3f40d633864520}{log\+\_\+bayesian\+\_\+network\+\_\+inference\+\_\+outputs}} (self, List\mbox{[}\char`\"{}Bayesian\+Network\+Output\char`\"{}\mbox{]} infered\+\_\+bn\+\_\+outputs)
+def \hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a421d4d0f2e706d5a77db9a052ab83ec3}{log\+\_\+bayesian\+\_\+network\+\_\+inference\+\_\+outputs}
 \item 
-def \mbox{\hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a921e207c7a0988fd03410064e6c1842d}{log\+\_\+kinematic\+\_\+info}} (self, ego\+\_\+pos, ego\+\_\+speed, fv\+\_\+front\+\_\+pos, fv\+\_\+front\+\_\+speed, fv\+\_\+pos, fv\+\_\+speed)
+def \hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a921e207c7a0988fd03410064e6c1842d}{log\+\_\+kinematic\+\_\+info} (self, ego\+\_\+pos, ego\+\_\+speed, fv\+\_\+front\+\_\+pos, fv\+\_\+front\+\_\+speed, fv\+\_\+pos, fv\+\_\+speed)
 \end{DoxyCompactItemize}
-\doxysubsection*{Static Public Member Functions}
+\subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-None \mbox{\hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_af1cc9050843835e9c5f5443d7fc74c02}{camera\+\_\+callback}} (weak\+\_\+self, carla.\+Image sensor\+\_\+data\+\_\+image)
-\end{DoxyCompactItemize}
-\doxysubsection*{Public Attributes}
-\begin{DoxyCompactItemize}
+\hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_ae710a8360d6e04454fcc857815f4378c}{stored\+\_\+trajectories}
 \item 
-\mbox{\hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a8049f1f91288f6e6df3c833f5e078787}{cycle\+\_\+counter}}
+\hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a6f349e1aab9d70147c0584e94035fade}{stored\+\_\+bayesian\+\_\+output}
 \item 
-\mbox{\hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a8a13e226206e4f1ab3479843c2070728}{ax\+\_\+risk}}
-\item 
-\mbox{\hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a85ac0fae4f33f048aed5a0d0fb208567}{x}}
-\item 
-\mbox{\hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a3403c4555f57b2224e9512629b2eb094}{fv\+\_\+risk\+\_\+x\+\_\+value}}
-\begin{DoxyCompactList}\small\item\em Classify actors in situation class. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_ae7529c6d60d6a36a5f09ca1aa35821f3}{sv\+\_\+risk\+\_\+x\+\_\+value}}
-\begin{DoxyCompactList}\small\item\em Side Vehicle Cutin From Right Behavior Prediction. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_ab9a9ae6b6f543ab5719cb67e5db83711}{sv\+\_\+risk\+\_\+y\+\_\+value}}
-\item 
-\mbox{\hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_af60b3ea2f8b0de87c1736306ed95abdb}{bn\+\_\+inference\+\_\+multiprocessing\+\_\+pool}}
-\item 
-\mbox{\hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_ae59ae0132bfaa386ca923537ad6bb848}{hero\+\_\+camera}}
+\hyperlink{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_af60b3ea2f8b0de87c1736306ed95abdb}{bn\+\_\+inference\+\_\+multiprocessing\+\_\+pool}
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_aad834989947c7a59057585a61033bc02}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_aad834989947c7a59057585a61033bc02}} 
-\index{implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}!\_\_init\_\_@{\_\_init\_\_}}
-\index{\_\_init\_\_@{\_\_init\_\_}!implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}}
-\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
-{\footnotesize\ttfamily def implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a84329d20e8b5e7455783f51edd03bcf5}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a84329d20e8b5e7455783f51edd03bcf5}} 
+\index{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{simulator\+\_\+controller }\end{DoxyParamCaption})}
 
-\begin{DoxyVerb}:return:
-\end{DoxyVerb}
- \mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_abe9d274f0e0aa4d91c9e8246bf22de29}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_abe9d274f0e0aa4d91c9e8246bf22de29}} 
-\index{implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}!\_\_del\_\_@{\_\_del\_\_}}
-\index{\_\_del\_\_@{\_\_del\_\_}!implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}}
-\doxysubsubsection{\texorpdfstring{\_\_del\_\_()}{\_\_del\_\_()}}
+\mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_abe9d274f0e0aa4d91c9e8246bf22de29}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_abe9d274f0e0aa4d91c9e8246bf22de29}} 
+\index{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}!\+\_\+\+\_\+del\+\_\+\+\_\+@{\+\_\+\+\_\+del\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+del\+\_\+\+\_\+@{\+\_\+\+\_\+del\+\_\+\+\_\+}!implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+del\+\_\+\+\_\+()}{\_\_del\_\_()}}
 {\footnotesize\ttfamily def implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+\_\+\+\_\+del\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
 
 
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_af1cc9050843835e9c5f5443d7fc74c02}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_af1cc9050843835e9c5f5443d7fc74c02}} 
-\index{implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}!camera\_callback@{camera\_callback}}
-\index{camera\_callback@{camera\_callback}!implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}}
-\doxysubsubsection{\texorpdfstring{camera\_callback()}{camera\_callback()}}
-{\footnotesize\ttfamily  None implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+camera\+\_\+callback (\begin{DoxyParamCaption}\item[{}]{weak\+\_\+self,  }\item[{carla.\+Image}]{sensor\+\_\+data\+\_\+image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a4f5ba0eceaba2fd5bb3134a221e9b705}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a4f5ba0eceaba2fd5bb3134a221e9b705}} 
+\index{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}!compute\+\_\+risk\+\_\+front\+\_\+vehicle\+\_\+braking@{compute\+\_\+risk\+\_\+front\+\_\+vehicle\+\_\+braking}}
+\index{compute\+\_\+risk\+\_\+front\+\_\+vehicle\+\_\+braking@{compute\+\_\+risk\+\_\+front\+\_\+vehicle\+\_\+braking}!implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}}
+\subsubsection{\texorpdfstring{compute\+\_\+risk\+\_\+front\+\_\+vehicle\+\_\+braking()}{compute\_risk\_front\_vehicle\_braking()}}
+{\footnotesize\ttfamily def implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+compute\+\_\+risk\+\_\+front\+\_\+vehicle\+\_\+braking (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data,  }\item[{}]{ego\+\_\+half\+\_\+length,  }\item[{}]{ego\+\_\+pos\+\_\+x\+\_\+mean,  }\item[{}]{ego\+\_\+pos\+\_\+x\+\_\+std,  }\item[{}]{network\+\_\+output,  }\item[{}]{node }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a278a108dc86d14cb1c2b20bb410ecd6e}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a278a108dc86d14cb1c2b20bb410ecd6e}} 
-\index{implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}!game\_loop@{game\_loop}}
-\index{game\_loop@{game\_loop}!implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}}
-\doxysubsubsection{\texorpdfstring{game\_loop()}{game\_loop()}}
-{\footnotesize\ttfamily def implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+game\+\_\+loop (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{carla\+\_\+world,  }\item[{}]{carla\+\_\+map,  }\item[{}]{state\+\_\+machine }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a5b19f550350c401fc6565e6451e712e6}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a5b19f550350c401fc6565e6451e712e6}} 
+\index{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}!compute\+\_\+risk\+\_\+side\+\_\+vehicle\+\_\+cut\+\_\+in\+\_\+from\+\_\+left@{compute\+\_\+risk\+\_\+side\+\_\+vehicle\+\_\+cut\+\_\+in\+\_\+from\+\_\+left}}
+\index{compute\+\_\+risk\+\_\+side\+\_\+vehicle\+\_\+cut\+\_\+in\+\_\+from\+\_\+left@{compute\+\_\+risk\+\_\+side\+\_\+vehicle\+\_\+cut\+\_\+in\+\_\+from\+\_\+left}!implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}}
+\subsubsection{\texorpdfstring{compute\+\_\+risk\+\_\+side\+\_\+vehicle\+\_\+cut\+\_\+in\+\_\+from\+\_\+left()}{compute\_risk\_side\_vehicle\_cut\_in\_from\_left()}}
+{\footnotesize\ttfamily def implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+compute\+\_\+risk\+\_\+side\+\_\+vehicle\+\_\+cut\+\_\+in\+\_\+from\+\_\+left (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data,  }\item[{}]{ego\+\_\+np\+\_\+vec\+\_\+front,  }\item[{}]{ego\+\_\+pos\+\_\+x\+\_\+mean,  }\item[{}]{ego\+\_\+pos\+\_\+x\+\_\+std,  }\item[{}]{network\+\_\+output,  }\item[{}]{node }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a8e493d0fd00a2662527603365f07e92e}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a8e493d0fd00a2662527603365f07e92e}} 
+\index{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}!compute\+\_\+risk\+\_\+side\+\_\+vehicle\+\_\+cut\+\_\+in\+\_\+from\+\_\+right@{compute\+\_\+risk\+\_\+side\+\_\+vehicle\+\_\+cut\+\_\+in\+\_\+from\+\_\+right}}
+\index{compute\+\_\+risk\+\_\+side\+\_\+vehicle\+\_\+cut\+\_\+in\+\_\+from\+\_\+right@{compute\+\_\+risk\+\_\+side\+\_\+vehicle\+\_\+cut\+\_\+in\+\_\+from\+\_\+right}!implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}}
+\subsubsection{\texorpdfstring{compute\+\_\+risk\+\_\+side\+\_\+vehicle\+\_\+cut\+\_\+in\+\_\+from\+\_\+right()}{compute\_risk\_side\_vehicle\_cut\_in\_from\_right()}}
+{\footnotesize\ttfamily def implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+compute\+\_\+risk\+\_\+side\+\_\+vehicle\+\_\+cut\+\_\+in\+\_\+from\+\_\+right (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data,  }\item[{}]{ego\+\_\+np\+\_\+vec\+\_\+front,  }\item[{}]{ego\+\_\+pos\+\_\+x\+\_\+mean,  }\item[{}]{ego\+\_\+pos\+\_\+x\+\_\+std,  }\item[{}]{network\+\_\+output,  }\item[{}]{node }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a9042de0eaf88c0fe147a8da991dc9a40}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a9042de0eaf88c0fe147a8da991dc9a40}} 
+\index{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}!generate\+\_\+and\+\_\+save\+\_\+bn\+\_\+output@{generate\+\_\+and\+\_\+save\+\_\+bn\+\_\+output}}
+\index{generate\+\_\+and\+\_\+save\+\_\+bn\+\_\+output@{generate\+\_\+and\+\_\+save\+\_\+bn\+\_\+output}!implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}}
+\subsubsection{\texorpdfstring{generate\+\_\+and\+\_\+save\+\_\+bn\+\_\+output()}{generate\_and\_save\_bn\_output()}}
+{\footnotesize\ttfamily def implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+generate\+\_\+and\+\_\+save\+\_\+bn\+\_\+output (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{path\+\_\+to\+\_\+data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_ac10cb9eb1969653d2da9fb16ff8afacf}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_ac10cb9eb1969653d2da9fb16ff8afacf}} 
+\index{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}!generate\+\_\+and\+\_\+save\+\_\+data@{generate\+\_\+and\+\_\+save\+\_\+data}}
+\index{generate\+\_\+and\+\_\+save\+\_\+data@{generate\+\_\+and\+\_\+save\+\_\+data}!implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}}
+\subsubsection{\texorpdfstring{generate\+\_\+and\+\_\+save\+\_\+data()}{generate\_and\_save\_data()}}
+{\footnotesize\ttfamily def implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+generate\+\_\+and\+\_\+save\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{img\+\_\+risk }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_ae6ad18ad914f568a4180ed7d1506720b}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_ae6ad18ad914f568a4180ed7d1506720b}} 
+\index{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}!generate\+\_\+and\+\_\+save\+\_\+distance\+\_\+distribution\+\_\+and\+\_\+trajectory\+\_\+plots@{generate\+\_\+and\+\_\+save\+\_\+distance\+\_\+distribution\+\_\+and\+\_\+trajectory\+\_\+plots}}
+\index{generate\+\_\+and\+\_\+save\+\_\+distance\+\_\+distribution\+\_\+and\+\_\+trajectory\+\_\+plots@{generate\+\_\+and\+\_\+save\+\_\+distance\+\_\+distribution\+\_\+and\+\_\+trajectory\+\_\+plots}!implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}}
+\subsubsection{\texorpdfstring{generate\+\_\+and\+\_\+save\+\_\+distance\+\_\+distribution\+\_\+and\+\_\+trajectory\+\_\+plots()}{generate\_and\_save\_distance\_distribution\_and\_trajectory\_plots()}}
+{\footnotesize\ttfamily def implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+generate\+\_\+and\+\_\+save\+\_\+distance\+\_\+distribution\+\_\+and\+\_\+trajectory\+\_\+plots (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{path\+\_\+to\+\_\+data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_ab5ac8b18ba8535ceeb08924a083538f0}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_ab5ac8b18ba8535ceeb08924a083538f0}} 
+\index{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}!generate\+\_\+ego\+\_\+vehicle\+\_\+trajectory@{generate\+\_\+ego\+\_\+vehicle\+\_\+trajectory}}
+\index{generate\+\_\+ego\+\_\+vehicle\+\_\+trajectory@{generate\+\_\+ego\+\_\+vehicle\+\_\+trajectory}!implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}}
+\subsubsection{\texorpdfstring{generate\+\_\+ego\+\_\+vehicle\+\_\+trajectory()}{generate\_ego\_vehicle\_trajectory()}}
+{\footnotesize\ttfamily def implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+generate\+\_\+ego\+\_\+vehicle\+\_\+trajectory (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a58a6cfb24a4a625451a28eedd07a4c47}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a58a6cfb24a4a625451a28eedd07a4c47}} 
+\index{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}!generate\+\_\+trajectory\+\_\+and\+\_\+compute\+\_\+risk\+\_\+for\+\_\+vehicle\+\_\+and\+\_\+bn@{generate\+\_\+trajectory\+\_\+and\+\_\+compute\+\_\+risk\+\_\+for\+\_\+vehicle\+\_\+and\+\_\+bn}}
+\index{generate\+\_\+trajectory\+\_\+and\+\_\+compute\+\_\+risk\+\_\+for\+\_\+vehicle\+\_\+and\+\_\+bn@{generate\+\_\+trajectory\+\_\+and\+\_\+compute\+\_\+risk\+\_\+for\+\_\+vehicle\+\_\+and\+\_\+bn}!implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}}
+\subsubsection{\texorpdfstring{generate\+\_\+trajectory\+\_\+and\+\_\+compute\+\_\+risk\+\_\+for\+\_\+vehicle\+\_\+and\+\_\+bn()}{generate\_trajectory\_and\_compute\_risk\_for\_vehicle\_and\_bn()}}
+{\footnotesize\ttfamily def implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+generate\+\_\+trajectory\+\_\+and\+\_\+compute\+\_\+risk\+\_\+for\+\_\+vehicle\+\_\+and\+\_\+bn (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data,  }\item[{}]{network\+\_\+output }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a4c37db8ca3e27a6a8d169863b30bbcf6}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a4c37db8ca3e27a6a8d169863b30bbcf6}} 
-\index{implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}!log\_active\_bn\_info@{log\_active\_bn\_info}}
-\index{log\_active\_bn\_info@{log\_active\_bn\_info}!implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}}
-\doxysubsubsection{\texorpdfstring{log\_active\_bn\_info()}{log\_active\_bn\_info()}}
+\index{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}!log\+\_\+active\+\_\+bn\+\_\+info@{log\+\_\+active\+\_\+bn\+\_\+info}}
+\index{log\+\_\+active\+\_\+bn\+\_\+info@{log\+\_\+active\+\_\+bn\+\_\+info}!implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}}
+\subsubsection{\texorpdfstring{log\+\_\+active\+\_\+bn\+\_\+info()}{log\_active\_bn\_info()}}
 {\footnotesize\ttfamily def implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+log\+\_\+active\+\_\+bn\+\_\+info (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{vehicle\+\_\+dependent\+\_\+bn\+\_\+ids }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_ae0f1d0fe1d7c862f8e3f40d633864520}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_ae0f1d0fe1d7c862f8e3f40d633864520}} 
-\index{implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}!log\_bayesian\_network\_inference\_outputs@{log\_bayesian\_network\_inference\_outputs}}
-\index{log\_bayesian\_network\_inference\_outputs@{log\_bayesian\_network\_inference\_outputs}!implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}}
-\doxysubsubsection{\texorpdfstring{log\_bayesian\_network\_inference\_outputs()}{log\_bayesian\_network\_inference\_outputs()}}
-{\footnotesize\ttfamily  None implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+log\+\_\+bayesian\+\_\+network\+\_\+inference\+\_\+outputs (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{List\mbox{[}\char`\"{}Bayesian\+Network\+Output\char`\"{}\mbox{]}}]{infered\+\_\+bn\+\_\+outputs }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a421d4d0f2e706d5a77db9a052ab83ec3}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a421d4d0f2e706d5a77db9a052ab83ec3}} 
+\index{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}!log\+\_\+bayesian\+\_\+network\+\_\+inference\+\_\+outputs@{log\+\_\+bayesian\+\_\+network\+\_\+inference\+\_\+outputs}}
+\index{log\+\_\+bayesian\+\_\+network\+\_\+inference\+\_\+outputs@{log\+\_\+bayesian\+\_\+network\+\_\+inference\+\_\+outputs}!implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}}
+\subsubsection{\texorpdfstring{log\+\_\+bayesian\+\_\+network\+\_\+inference\+\_\+outputs()}{log\_bayesian\_network\_inference\_outputs()}}
+{\footnotesize\ttfamily def implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+log\+\_\+bayesian\+\_\+network\+\_\+inference\+\_\+outputs (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{infered\+\_\+bn\+\_\+outputs }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_af089dade74d6a484d7335b76038ab397}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_af089dade74d6a484d7335b76038ab397}} 
-\index{implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}!log\_hero\_sit\_class\_info@{log\_hero\_sit\_class\_info}}
-\index{log\_hero\_sit\_class\_info@{log\_hero\_sit\_class\_info}!implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}}
-\doxysubsubsection{\texorpdfstring{log\_hero\_sit\_class\_info()}{log\_hero\_sit\_class\_info()}}
-{\footnotesize\ttfamily def implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+log\+\_\+hero\+\_\+sit\+\_\+class\+\_\+info (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{wrapped\+\_\+hero\+\_\+vehicle,  }\item[{}]{hero\+\_\+situation\+\_\+class }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a901977934f44713c406f388873681c71}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a901977934f44713c406f388873681c71}} 
+\index{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}!log\+\_\+hero\+\_\+sit\+\_\+class\+\_\+info@{log\+\_\+hero\+\_\+sit\+\_\+class\+\_\+info}}
+\index{log\+\_\+hero\+\_\+sit\+\_\+class\+\_\+info@{log\+\_\+hero\+\_\+sit\+\_\+class\+\_\+info}!implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}}
+\subsubsection{\texorpdfstring{log\+\_\+hero\+\_\+sit\+\_\+class\+\_\+info()}{log\_hero\_sit\_class\_info()}}
+{\footnotesize\ttfamily def implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+log\+\_\+hero\+\_\+sit\+\_\+class\+\_\+info (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{hero\+\_\+vehicle,  }\item[{}]{hero\+\_\+situation\+\_\+class }\end{DoxyParamCaption})}
 
 
 
 Logging. 
 
 \mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a921e207c7a0988fd03410064e6c1842d}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a921e207c7a0988fd03410064e6c1842d}} 
-\index{implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}!log\_kinematic\_info@{log\_kinematic\_info}}
-\index{log\_kinematic\_info@{log\_kinematic\_info}!implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}}
-\doxysubsubsection{\texorpdfstring{log\_kinematic\_info()}{log\_kinematic\_info()}}
+\index{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}!log\+\_\+kinematic\+\_\+info@{log\+\_\+kinematic\+\_\+info}}
+\index{log\+\_\+kinematic\+\_\+info@{log\+\_\+kinematic\+\_\+info}!implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}}
+\subsubsection{\texorpdfstring{log\+\_\+kinematic\+\_\+info()}{log\_kinematic\_info()}}
 {\footnotesize\ttfamily def implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+log\+\_\+kinematic\+\_\+info (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ego\+\_\+pos,  }\item[{}]{ego\+\_\+speed,  }\item[{}]{fv\+\_\+front\+\_\+pos,  }\item[{}]{fv\+\_\+front\+\_\+speed,  }\item[{}]{fv\+\_\+pos,  }\item[{}]{fv\+\_\+speed }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_abfcf4fc9a3e0a3bcc4b5725ae7154422}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_abfcf4fc9a3e0a3bcc4b5725ae7154422}} 
-\index{implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}!set\_up\_carla\_camera@{set\_up\_carla\_camera}}
-\index{set\_up\_carla\_camera@{set\_up\_carla\_camera}!implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}}
-\doxysubsubsection{\texorpdfstring{set\_up\_carla\_camera()}{set\_up\_carla\_camera()}}
-{\footnotesize\ttfamily def implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+set\+\_\+up\+\_\+carla\+\_\+camera (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{carla\+\_\+world }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_ad26e89ca6152ef6cc3b0226344ce1d2d}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_ad26e89ca6152ef6cc3b0226344ce1d2d}} 
+\index{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}!risk\+\_\+computation\+\_\+loop\+\_\+step@{risk\+\_\+computation\+\_\+loop\+\_\+step}}
+\index{risk\+\_\+computation\+\_\+loop\+\_\+step@{risk\+\_\+computation\+\_\+loop\+\_\+step}!implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}}
+\subsubsection{\texorpdfstring{risk\+\_\+computation\+\_\+loop\+\_\+step()}{risk\_computation\_loop\_step()}}
+{\footnotesize\ttfamily def implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+risk\+\_\+computation\+\_\+loop\+\_\+step (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a72dc644b563e8b5c9511f6f152947fb4}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a72dc644b563e8b5c9511f6f152947fb4}} 
+\index{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}!save\+\_\+raw\+\_\+trajectories@{save\+\_\+raw\+\_\+trajectories}}
+\index{save\+\_\+raw\+\_\+trajectories@{save\+\_\+raw\+\_\+trajectories}!implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}}
+\subsubsection{\texorpdfstring{save\+\_\+raw\+\_\+trajectories()}{save\_raw\_trajectories()}}
+{\footnotesize\ttfamily def implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+save\+\_\+raw\+\_\+trajectories (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{path\+\_\+to\+\_\+data }\end{DoxyParamCaption})}
 
 
 
-\doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a8a13e226206e4f1ab3479843c2070728}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a8a13e226206e4f1ab3479843c2070728}} 
-\index{implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}!ax\_risk@{ax\_risk}}
-\index{ax\_risk@{ax\_risk}!implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}}
-\doxysubsubsection{\texorpdfstring{ax\_risk}{ax\_risk}}
-{\footnotesize\ttfamily implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+ax\+\_\+risk}
-
+\subsection{Member Data Documentation}
 \mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_af60b3ea2f8b0de87c1736306ed95abdb}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_af60b3ea2f8b0de87c1736306ed95abdb}} 
-\index{implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}!bn\_inference\_multiprocessing\_pool@{bn\_inference\_multiprocessing\_pool}}
-\index{bn\_inference\_multiprocessing\_pool@{bn\_inference\_multiprocessing\_pool}!implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}}
-\doxysubsubsection{\texorpdfstring{bn\_inference\_multiprocessing\_pool}{bn\_inference\_multiprocessing\_pool}}
+\index{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}!bn\+\_\+inference\+\_\+multiprocessing\+\_\+pool@{bn\+\_\+inference\+\_\+multiprocessing\+\_\+pool}}
+\index{bn\+\_\+inference\+\_\+multiprocessing\+\_\+pool@{bn\+\_\+inference\+\_\+multiprocessing\+\_\+pool}!implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}}
+\subsubsection{\texorpdfstring{bn\+\_\+inference\+\_\+multiprocessing\+\_\+pool}{bn\_inference\_multiprocessing\_pool}}
 {\footnotesize\ttfamily implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+bn\+\_\+inference\+\_\+multiprocessing\+\_\+pool}
 
-\mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a8049f1f91288f6e6df3c833f5e078787}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a8049f1f91288f6e6df3c833f5e078787}} 
-\index{implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}!cycle\_counter@{cycle\_counter}}
-\index{cycle\_counter@{cycle\_counter}!implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}}
-\doxysubsubsection{\texorpdfstring{cycle\_counter}{cycle\_counter}}
-{\footnotesize\ttfamily implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+cycle\+\_\+counter}
+\mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a6f349e1aab9d70147c0584e94035fade}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a6f349e1aab9d70147c0584e94035fade}} 
+\index{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}!stored\+\_\+bayesian\+\_\+output@{stored\+\_\+bayesian\+\_\+output}}
+\index{stored\+\_\+bayesian\+\_\+output@{stored\+\_\+bayesian\+\_\+output}!implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}}
+\subsubsection{\texorpdfstring{stored\+\_\+bayesian\+\_\+output}{stored\_bayesian\_output}}
+{\footnotesize\ttfamily implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+stored\+\_\+bayesian\+\_\+output}
 
-\mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a3403c4555f57b2224e9512629b2eb094}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a3403c4555f57b2224e9512629b2eb094}} 
-\index{implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}!fv\_risk\_x\_value@{fv\_risk\_x\_value}}
-\index{fv\_risk\_x\_value@{fv\_risk\_x\_value}!implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}}
-\doxysubsubsection{\texorpdfstring{fv\_risk\_x\_value}{fv\_risk\_x\_value}}
-{\footnotesize\ttfamily implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+fv\+\_\+risk\+\_\+x\+\_\+value}
-
-
-
-Classify actors in situation class. 
-
-Bayesian Network Inference for actors relevant for ego
-
-Trajectory sampling for relevant behaviors of other actors and pair-\/wise risk assessment
-
-Ego Trajectory Generation
-
-Front Vehicle Brake Behavior Prediction
-
-Emergency Brake Behavior Risk
-
-Target Brake Behavior Risk
-
-Intelligent Driver Model Behavior Risk (Follow Vehicle and Follow Road) \mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_ae59ae0132bfaa386ca923537ad6bb848}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_ae59ae0132bfaa386ca923537ad6bb848}} 
-\index{implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}!hero\_camera@{hero\_camera}}
-\index{hero\_camera@{hero\_camera}!implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}}
-\doxysubsubsection{\texorpdfstring{hero\_camera}{hero\_camera}}
-{\footnotesize\ttfamily implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+hero\+\_\+camera}
-
-\mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_ae7529c6d60d6a36a5f09ca1aa35821f3}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_ae7529c6d60d6a36a5f09ca1aa35821f3}} 
-\index{implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}!sv\_risk\_x\_value@{sv\_risk\_x\_value}}
-\index{sv\_risk\_x\_value@{sv\_risk\_x\_value}!implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}}
-\doxysubsubsection{\texorpdfstring{sv\_risk\_x\_value}{sv\_risk\_x\_value}}
-{\footnotesize\ttfamily implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+sv\+\_\+risk\+\_\+x\+\_\+value}
-
-
-
-Side Vehicle Cutin From Right Behavior Prediction. 
-
-Side Vehicle Cutin From Left Behavior Prediction \mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_ab9a9ae6b6f543ab5719cb67e5db83711}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_ab9a9ae6b6f543ab5719cb67e5db83711}} 
-\index{implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}!sv\_risk\_y\_value@{sv\_risk\_y\_value}}
-\index{sv\_risk\_y\_value@{sv\_risk\_y\_value}!implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}}
-\doxysubsubsection{\texorpdfstring{sv\_risk\_y\_value}{sv\_risk\_y\_value}}
-{\footnotesize\ttfamily implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+sv\+\_\+risk\+\_\+y\+\_\+value}
-
-\mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a85ac0fae4f33f048aed5a0d0fb208567}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_a85ac0fae4f33f048aed5a0d0fb208567}} 
-\index{implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}!x@{x}}
-\index{x@{x}!implementation.sinadra\_risk\_sensor\_client.SinadraClient@{implementation.sinadra\_risk\_sensor\_client.SinadraClient}}
-\doxysubsubsection{\texorpdfstring{x}{x}}
-{\footnotesize\ttfamily implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+x}
+\mbox{\Hypertarget{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_ae710a8360d6e04454fcc857815f4378c}\label{classimplementation_1_1sinadra__risk__sensor__client_1_1_sinadra_client_ae710a8360d6e04454fcc857815f4378c}} 
+\index{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}!stored\+\_\+trajectories@{stored\+\_\+trajectories}}
+\index{stored\+\_\+trajectories@{stored\+\_\+trajectories}!implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client@{implementation\+::sinadra\+\_\+risk\+\_\+sensor\+\_\+client\+::\+Sinadra\+Client}}
+\subsubsection{\texorpdfstring{stored\+\_\+trajectories}{stored\_trajectories}}
+{\footnotesize\ttfamily implementation.\+sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+Sinadra\+Client.\+stored\+\_\+trajectories}
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-implementation/\mbox{\hyperlink{sinadra__risk__sensor__client_8py}{sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+py}}\end{DoxyCompactItemize}
+implementation/\hyperlink{sinadra__risk__sensor__client_8py}{sinadra\+\_\+risk\+\_\+sensor\+\_\+client.\+py}\end{DoxyCompactItemize}

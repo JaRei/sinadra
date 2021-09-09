@@ -1,0 +1,4 @@
+[ADMap]
+map=/maps/Town03.xodr
+openDriveOverlapMargin=0.2
+
